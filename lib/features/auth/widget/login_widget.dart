@@ -1,45 +1,30 @@
 
 import 'package:flutter/material.dart';
-import 'package:limix_test/features/auth/view/login_view.dart';
+import 'package:limix_test/features/auth/view/forget_screen.dart';
+import 'package:limix_test/features/auth/view/signup_view.dart';
+import 'package:limix_test/features/home/view/home_screen.dart';
 import 'package:limix_test/features/auth/widget/custom_text_field.dart';
 
-class SignupView extends StatelessWidget {
-   SignupView({super.key});
-  final TextEditingController fullNameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
-  final TextEditingController locationController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController = TextEditingController();
+
+class LoginWidget extends StatelessWidget {
+   LoginWidget({super.key});
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new, color: Color(0xff0891B2)),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        title: const Text(
-          "Sign Up",
-          style: TextStyle(
-            color: Color(0xff0891B2),
-            fontWeight: FontWeight.bold,
+          backgroundColor: Colors.white,
+          appBar: AppBar(
+            //title: const Text('Login'),
+            backgroundColor: Colors.white,
           ),
-        ),
-       // centerTitle: true,
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
-      body: SingleChildScrollView(
-         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
-         child: Column(
-          //crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(height: 24),
+          body: SingleChildScrollView(
+            child: Column(
+              //crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(height: 24),
                 const Text(
                   'Limix',
                   textAlign: TextAlign.center,
@@ -55,35 +40,16 @@ class SignupView extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 16),
                 ),
-                const SizedBox(height: 16),
-                CustomTextField(
-                  controller: fullNameController,
-                  label: "Full Name",
-                  prefixIcon: Icons.person_outline,
-                  hint: 'Enter your full name',
-                ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 40),
                 CustomTextField(
                   controller: emailController,
                   label: "Email",
                   prefixIcon: Icons.email_outlined,
                   hint: 'Enter your email',
                 ),
-                const SizedBox(height: 16),
-                CustomTextField(
-                  controller: phoneController,
-                  label: "Phone Number",
-                  prefixIcon: Icons.phone_outlined,
-                  hint: 'Enter your phone number',
-                ),
-                const SizedBox(height: 16),
-                CustomTextField(
-                  controller: locationController,
-                  label: "Location",
-                  prefixIcon: Icons.location_on_outlined,
-                  hint: 'Enter your location',
-                ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 20),
+
+                /// Password Field
                 CustomTextField(
                   controller: passwordController,
                   label: "Password",
@@ -91,20 +57,31 @@ class SignupView extends StatelessWidget {
                   hint: 'Enter your password',
                   isPassword: true,
                 ),
-                const SizedBox(height: 16),
-                CustomTextField(
-                  controller: confirmPasswordController,
-                  label: "Confirm Password",
-                  prefixIcon: Icons.lock_outline,
-                  hint: 'Re-enter your password',
-                  isPassword: true,
+
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ForgetScreen(),));
+                    },
+                    child: const Text(
+                      "Forgot Password?",
+                      style: TextStyle(
+                        color: Color(0xff06B6D4),
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 20),
+
+                /// Login Button
                 GestureDetector(
                   onTap: () {
-                   Navigator.push(
-                      context,MaterialPageRoute(builder:(context) => LoginScreen(),));
-                         
+                      Navigator.push(
+                     context,
+            MaterialPageRoute(builder: (context) => const HomeScreen()),
+                   );       
                     },
                   child: Container(
                     width: 375,
@@ -133,7 +110,7 @@ class SignupView extends StatelessWidget {
                     ),
                     child: const Center(
                       child: Text(
-                        'Sign Up',
+                        'Login',
                         style: TextStyle(
                           fontSize: 18,
                           color: Colors.white,
@@ -165,7 +142,7 @@ class SignupView extends StatelessWidget {
                 const SizedBox(height: 20),
                 GestureDetector(
                   onTap: () {
-                   // هنا بعدين هتحطي تسجيل الدخول بجوجل
+                    // هنا بعدين هتحطي تسجيل الدخول بجوجل
                   },
                   child: Container(
                     width: 375,
@@ -194,15 +171,15 @@ class SignupView extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Already have an account?"),
+                    const Text("Don’t have an account? "),
                     TextButton(
                       onPressed: () {
                         Navigator.push(context, 
-                        MaterialPageRoute(builder:(context) => LoginScreen(),)
+                        MaterialPageRoute(builder:(context) => SignupView(),)
                         );
                       },
                       child: const Text(
-                        "Login",
+                        "Sign Up",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Color(0xff0891B2),
@@ -211,10 +188,9 @@ class SignupView extends StatelessWidget {
                     ),
                   ],
                 ),
-                
-          ],
-         ),
-      ),
-    );
+              ],
+            ),
+          ),
+        );
   }
 }

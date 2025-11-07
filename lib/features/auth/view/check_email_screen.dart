@@ -1,0 +1,103 @@
+import 'package:flutter/material.dart';
+import 'package:limix_test/features/auth/view/login_view.dart';
+
+class CheckEmailScreen extends StatelessWidget {
+  const CheckEmailScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // ✅ Success Icon
+              Container(
+                height: 100,
+                width: 100,
+                decoration: const BoxDecoration(
+                  color: Color(0xFF22C55E), // الأخضر
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(
+                  Icons.check_circle_outline,
+                  size: 60,
+                  color: Colors.white,
+                ),
+              ),
+              const SizedBox(height: 32),
+
+              
+              const Text(
+                "Check Your Email",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff0891B2),
+                ),
+              ),
+              const SizedBox(height: 12),
+              const Text(
+                "We've sent a password reset link to your email address. "
+                "Please check your inbox and follow the instructions.",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.black87,
+                  height: 1.4,
+                ),
+              ),
+               const SizedBox(height: 24),
+                GestureDetector(
+                  onTap: () {
+                   Navigator.push(
+                      context,MaterialPageRoute(builder:(context) => LoginScreen(),));
+                         
+                    },
+                  child: Container(
+                    width: 375,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      gradient: const LinearGradient(
+                        colors: [Color(0xff0E7490), Color(0xff0891B2)],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0x1A000000),
+                          offset: Offset(0, 4),
+                          blurRadius: 6,
+                          spreadRadius: -4,
+                        ),
+                        BoxShadow(
+                          color: const Color(0x1A000000),
+                          offset: const Offset(0, 10),
+                          blurRadius: 15,
+                          spreadRadius: -3,
+                        ),
+                      ],
+                    ),
+                    child: const Center(
+                      child: Text(
+                        'Back to Login',
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+            ]
+          ),
+        ),
+      ),
+    );
+  }
+}
