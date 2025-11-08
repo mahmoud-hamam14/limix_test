@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:limix_test/features/analytics/view/analytics_screen.dart';
 import 'package:limix_test/features/auth/cubit/cubit/login_cubit.dart';
 import 'package:limix_test/features/auth/view/login_view.dart';
 
@@ -15,10 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BlocProvider(
-        create: (context) => LoginCubit(),
-        child: LoginScreen(),
-      ),
+      home: AnalyticsScreen(),
     );
   }
 }
