@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:limix_test/features/analytics/widget/farm_health_card.dart';
-import 'package:limix_test/features/analytics/widget/monthly_production_card.dart';
-import 'package:limix_test/features/analytics/widget/overview_cars_widget.dart';
-import 'package:limix_test/features/analytics/widget/performance_trend_card.dart';
+import 'package:limix_test/features/analytics/farm_overview/view/widget/farm_health_card.dart';
+import 'package:limix_test/features/analytics/farm_overview/view/widget/monthly_production_card.dart';
+import 'package:limix_test/features/analytics/farm_overview/view/widget/overview_cars_widget.dart';
+import 'package:limix_test/features/analytics/farm_overview/view/widget/performance_trend_card.dart';
 
 
 class FarmOverviewWidget extends StatelessWidget {
@@ -14,10 +14,10 @@ class FarmOverviewWidget extends StatelessWidget {
        Column(
         children: [
          Padding(
-  padding: const EdgeInsets.symmetric(horizontal: 16.0), // عشان المسافات من الجنب
+  padding: const EdgeInsets.symmetric(horizontal: 16.0), 
   child: Row(
     children: [
-      // --- الكارت الأول ---
+      
       Expanded(
         child: StatCard(
           title: "Efficiency",
@@ -27,9 +27,8 @@ class FarmOverviewWidget extends StatelessWidget {
           baseColor: Colors.green,
         ),
       ),
-      const SizedBox(width: 12), // مسافة بين الكروت
-
-      // --- الكارت التاني ---
+      const SizedBox(width: 12), 
+     
       Expanded(
         child: StatCard(
           title: "Production",
@@ -39,9 +38,7 @@ class FarmOverviewWidget extends StatelessWidget {
           baseColor: Colors.blue,
         ),
       ),
-      const SizedBox(width: 12), // مسافة بين الكروت
-
-      // --- الكارت التالت ---
+      const SizedBox(width: 12),
       Expanded(
         child: StatCard(
           title: "Quality",
@@ -54,28 +51,22 @@ class FarmOverviewWidget extends StatelessWidget {
     ],
   ),
 ),
-const SizedBox(height: 16), // مسافة
+const SizedBox(height: 16),
       const Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0),
-        child: FarmHealthCard(), // ده الكارت الجديد
+        child: FarmHealthCard(), 
       ),
-      const SizedBox(height: 16), // مسافة
+      const SizedBox(height: 16), 
       const Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0),
-        child: PerformanceTrendCard(), // ده الكارت الجديد
+        child: PerformanceTrendCard(), 
       ),
-      // --- ----------------------- ---
-      
-      // ضيف مسافة تحت خالص عشان السكرول
       const SizedBox(height: 16),
-      const SizedBox(height: 16), // مسافة
+      const SizedBox(height: 16), 
       const Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0),
-        child: MonthlyProductionCard(), // ده الكارت الأخير
+        child: MonthlyProductionCard(), 
       ),
-      // --- ----------------------- ---
-      
-      // ضيف مسافة تحت خالص عشان السكرول
       const SizedBox(height: 32),
           
         ]

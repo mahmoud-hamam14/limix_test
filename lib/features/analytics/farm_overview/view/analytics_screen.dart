@@ -1,7 +1,8 @@
 import 'package:custom_sliding_segmented_control/custom_sliding_segmented_control.dart';
 import 'package:flutter/material.dart';
-import 'package:limix_test/features/analytics/widget/farm_overview_widget.dart';
-import 'package:limix_test/features/analytics/widget/sensor_performance_widget.dart';
+import 'package:limix_test/features/analytics/farm_overview/view/widget/farm_overview_widget.dart';
+import 'package:limix_test/features/analytics/sensor_performance/view/sensor_performance_screen.dart';
+
 
 
 class AnalyticsScreen extends StatefulWidget {
@@ -160,7 +161,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
             if (selectedValue == 1)
                FarmOverviewWidget()
             else
-              SensorPerformanceWidget(),
+              SensorPerformanceScreen(),
       
     ]
   )

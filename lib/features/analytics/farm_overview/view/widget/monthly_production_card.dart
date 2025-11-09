@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
-// --- ويدجت لكارت الـ Bar Chart ---
 class MonthlyProductionCard extends StatelessWidget {
   const MonthlyProductionCard({super.key});
 
-  // اللون الأساسي للأعمدة
+
   static const Color barColor = Color(0xFF9AD8F1); 
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      // 1. الكارت الأبيض
+      
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -47,22 +46,20 @@ class MonthlyProductionCard extends StatelessWidget {
 
          
           AspectRatio(
-            aspectRatio: 1.6, // نسبة الطول للعرض
+            aspectRatio: 1.6,
             child: BarChart(
               BarChartData(
                 
                 minY: 0,
-                maxY: 600, // أعلى قيمة في الـ y
-                 // 6 شهور + مسافة
-                
-                // --- 5. الشبكة (Grid) ---
+                maxY: 600,
+                 
                 gridData: FlGridData(
                   show: true,
                   drawVerticalLine: true, 
                   horizontalInterval: 150,
                   verticalInterval: 1,
                   getDrawingHorizontalLine: (value) {
-                    // دي اللي بتعمل الخطوط المنقطة
+                    
                     return FlLine(
                       color: Color(0xff9CA3AF),
                       strokeWidth: 1,
@@ -70,7 +67,7 @@ class MonthlyProductionCard extends StatelessWidget {
                     );
                   },
                 ),
-                // --- 6. الإطار (Border) ---
+               
                 borderData: FlBorderData(
                   show: true,
                   border: Border(
@@ -79,34 +76,34 @@ class MonthlyProductionCard extends StatelessWidget {
                   ),
                   
                 ),
-                // --- 7. إعدادات العناوين (الأرقام والشهور) ---
+                
                 titlesData: FlTitlesData(
-                  // العناوين اللي فوق واليمين
+                  
                   topTitles: const AxisTitles(
                       sideTitles: SideTitles(showTitles: false)),
                   rightTitles: const AxisTitles(
                       sideTitles: SideTitles(showTitles: false)),
-                  // العناوين اللي عالشمال (الأرقام)
+                  
                   leftTitles: AxisTitles(
                     sideTitles: SideTitles(
                       showTitles: true,
                       reservedSize: 40,
-                      getTitlesWidget: leftTitleWidgets, // دالة مساعدة تحت
-                      interval: 150, // كل 150 (0, 150, 300, 450, 600)
+                      getTitlesWidget: leftTitleWidgets, 
+                      interval: 150, 
                     ),
                   ),
-                  // العناوين اللي تحت (الشهور)
+                
                   bottomTitles: AxisTitles(
                     sideTitles: SideTitles(
                       showTitles: true,
                       reservedSize: 30,
-                      getTitlesWidget: bottomTitleWidgets, // دالة مساعدة تحت
-                      interval: 1, // كل 1 (شهر)
+                      getTitlesWidget: bottomTitleWidgets, 
+                      interval: 1, 
                     ),
                   ),
                 ),
-                // --- 8. الأعمدة نفسها ---
-                barGroups: getBarGroups(), // دالة مساعدة تحت
+                
+                barGroups: getBarGroups(), 
               ),
             ),
           ),
@@ -115,11 +112,8 @@ class MonthlyProductionCard extends StatelessWidget {
     );
   }
 
-  // --- دوال مساعدة عشان الكود يبقى نضيف ---
-
-  // دالة بترجع الأعمدة
   List<BarChartGroupData> getBarGroups() {
-    // البيانات لكل شهر
+   
     final List<double> monthlyData = [
       420, // Jan
       450, // Feb
@@ -129,33 +123,33 @@ class MonthlyProductionCard extends StatelessWidget {
       500, // Jun
     ];
 
-    // بنحول البيانات دي لـ BarChartGroupData
+    
     return List.generate(monthlyData.length, (index) {
       return BarChartGroupData(
-        x: index, // الـ index بتاع الشهر هو الـ x
+        x: index,
         barRods: [
           BarChartRodData(
-            toY: monthlyData[index], // الـ y هو قيمة الشهر
+            toY: monthlyData[index], 
             color: barColor,
             width: 25, // عرض العمود
-            borderRadius: BorderRadius.circular(6), // تدوير حواف العمود
+            borderRadius: BorderRadius.circular(6), 
           ),
         ],
       );
     });
   }
 
-  // دالة بترجع الأرقام اللي على الشمال
+  
   Widget leftTitleWidgets(double value, TitleMeta meta) {
     const style = TextStyle(color: Color(0xff9CA3AF), fontSize: 11);
-    // بما إننا عملنا interval: 150
+    
     if (value == 0 || value == 150 || value == 300 || value == 450 || value == 600) {
       return Text(value.toInt().toString(), style: style, textAlign: TextAlign.right);
     }
     return Container();
   }
 
-  // دالة بترجع الشهور اللي تحت
+
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
     const style = TextStyle(color: Color(0xff9CA3AF), fontSize: 11);
     String text;

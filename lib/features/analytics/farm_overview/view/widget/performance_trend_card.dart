@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
-// --- ويدجت لكارت الـ Line Chart (النسخة الصح) ---
+
 class PerformanceTrendCard extends StatelessWidget {
   const PerformanceTrendCard({super.key});
 
@@ -185,7 +185,7 @@ class PerformanceTrendCard extends StatelessWidget {
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
     const style = TextStyle(color: Colors.grey, fontSize: 12);
     String text;
-    // بما إننا عملنا interval: 1، الدالة دي مش هتتنفذ غير عند (0, 1, 2, 3, 4, 5)
+    
     switch (value.toInt()) {
       case 0:
         text = 'Jan';
@@ -214,8 +214,8 @@ class PerformanceTrendCard extends StatelessWidget {
   Widget buildLegendItem(Color color, String text) {
     return Row(
       children: [
-        Icon(Icons.horizontal_rule_rounded, color: color, size: 20),
-        Icon(Icons.circle_outlined, color: color, size: 8),
+        Icon(Icons.commit, color: color, size: 20),
+        Icon(Icons.commit_rounded, color: color, size: 8),
         const SizedBox(width: 4),
         Text(text, style: TextStyle(color: color, fontSize: 14)),
       ],

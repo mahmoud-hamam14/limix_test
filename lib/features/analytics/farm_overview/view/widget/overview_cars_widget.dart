@@ -48,9 +48,8 @@ class StatCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // --- الأيقونة (من غير خلفية داخلية) ---
-              Icon(icon, color: baseColor, size: 24), // كبرت الأيقونة شوية
-              // --- النص (+12%) ---
+             
+              Icon(icon, color: baseColor, size: 24),
               Text(
                 change,
                 style: TextStyle(
