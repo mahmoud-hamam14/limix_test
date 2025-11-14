@@ -49,7 +49,7 @@ class SensorCard extends StatelessWidget {
             ) ,
             ),
             Spacer(),
-            Icon(Icons.show_chart_sharp,size: 20,color: Color(0xff82B8FE),),
+            Icon(Icons.show_chart_outlined,size: 20,color: Color(0xff82B8FE),),
           ],
           ),
           const SizedBox(height: 40,),

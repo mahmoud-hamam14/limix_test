@@ -4,6 +4,7 @@ import 'package:limix_test/features/auth/view/forget_screen.dart';
 import 'package:limix_test/features/auth/view/signup_view.dart';
 import 'package:limix_test/features/home/view/home_screen.dart';
 import 'package:limix_test/features/auth/widget/custom_text_field.dart';
+import 'package:limix_test/features/navigation/view/main_nav_screen.dart';
 
 
 class LoginWidget extends StatelessWidget {
@@ -80,7 +81,7 @@ class LoginWidget extends StatelessWidget {
                   onTap: () {
                       Navigator.push(
                      context,
-            MaterialPageRoute(builder: (context) => const HomeScreen()),
+            MaterialPageRoute(builder: (context) => const MainNavScreen()),
                    );       
                     },
                   child: Container(
@@ -142,7 +143,7 @@ class LoginWidget extends StatelessWidget {
                 const SizedBox(height: 20),
                 GestureDetector(
                   onTap: () {
-                    // هنا بعدين هتحطي تسجيل الدخول بجوجل
+                 
                   },
                   child: Container(
                     width: 375,

@@ -14,16 +14,16 @@ class CheckEmailScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // ✅ Success Icon
+            
               Container(
                 height: 100,
                 width: 100,
                 decoration: const BoxDecoration(
-                  color: Color(0xFF22C55E), // الأخضر
+                  color: Color(0xFF22C55E), 
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(
-                  Icons.check_circle_outline,
+                  Icons.task_alt,
                   size: 60,
                   color: Colors.white,
                 ),
