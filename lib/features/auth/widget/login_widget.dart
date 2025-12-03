@@ -63,7 +63,7 @@ class LoginWidget extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => ForgetScreen(),));
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ForgetScreen(),));
                     },
                     child: const Text(
                       "Forgot Password?",
@@ -79,7 +79,7 @@ class LoginWidget extends StatelessWidget {
                 /// Login Button
                 GestureDetector(
                   onTap: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                      context,
             MaterialPageRoute(builder: (context) => const MainNavScreen()),
                    );       
@@ -175,7 +175,7 @@ class LoginWidget extends StatelessWidget {
                     const Text("Don’t have an account? "),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(context, 
+                        Navigator.pushReplacement(context, 
                         MaterialPageRoute(builder:(context) => SignupView(),)
                         );
                       },

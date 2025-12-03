@@ -3,6 +3,7 @@ import 'package:limix_test/features/ai_models/view/ai_model_screen.dart';
 import 'package:limix_test/features/alerts/view/alerts_screen.dart';
 import 'package:limix_test/features/analytics/farm_overview/view/analytics_screen.dart';
 import 'package:limix_test/features/home/view/home_screen.dart';
+import 'package:limix_test/features/home/view/home_view.dart';
 import 'package:limix_test/features/navigation/view/widget/custom_bottom_nav_bar.dart';
 import 'package:limix_test/features/settings/view/settings_screen.dart';
 
@@ -17,7 +18,8 @@ class _MainNavStateState extends State<MainNavScreen> {
   int currentIndex = 0;
 
   final List<Widget> screens = [
-    HomeScreen(),
+    //HomeScreen(),
+    HomeView(),
     AnalyticsScreen(),
     AlertsScreen(),
     AiModelScreen(),

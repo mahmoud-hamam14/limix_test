@@ -102,7 +102,7 @@ class SignupView extends StatelessWidget {
                 const SizedBox(height: 24),
                 GestureDetector(
                   onTap: () {
-                   Navigator.push(
+                   Navigator.pushReplacement(
                       context,MaterialPageRoute(builder:(context) => LoginScreen(),));
                          
                     },
@@ -165,7 +165,7 @@ class SignupView extends StatelessWidget {
                 const SizedBox(height: 20),
                 GestureDetector(
                   onTap: () {
-                   // هنا بعدين هتحطي تسجيل الدخول بجوجل
+                
                   },
                   child: Container(
                     width: 375,
@@ -197,7 +197,7 @@ class SignupView extends StatelessWidget {
                     const Text("Already have an account?"),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(context, 
+                        Navigator.pushReplacement(context, 
                         MaterialPageRoute(builder:(context) => LoginScreen(),)
                         );
                       },
