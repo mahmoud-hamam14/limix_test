@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gradient_app_bar/flutter_gradient_app_bar.dart';
 import 'package:limix_test/features/auth/view/login_view.dart';
 import 'package:limix_test/features/settings/widget/language_widget.dart';
 
+import '../data/cubit/profile_cubit/profile_cubit.dart';
 import '../widget/Ai_card.dart';
 import '../widget/acount_setting_widget.dart';
 import '../widget/contact_card.dart';
@@ -92,7 +94,7 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 22,),
-            AcountSettingWidget(),
+        AcountSettingWidget(),
             SizedBox(height: 22,),
             Padding(
               padding: const EdgeInsets.only(left: 45),
@@ -193,18 +195,18 @@ class SettingsScreen extends StatelessWidget {
             SupportCard(),
             SizedBox(height: 25,),
         Container(
-          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20), // هوامش عشان ميبقاش لازق
-          height: 55, // ارتفاع مناسب للزرار
+          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          height: 55,
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(24), // نفس الكيرف بتاع باقي الكروت
+            borderRadius: BorderRadius.circular(24),
             border: Border.all(
-              color: Colors.redAccent, // لون الإطار الأحمر
-              width: 1.5, // سُمك الخط
+              color: Colors.redAccent,
+              width: 1.5,
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.red.withOpacity(0.1), // ضل أحمر خفيف جداً
+                color: Colors.red.withOpacity(0.1),
                 blurRadius: 10,
                 offset: const Offset(0, 4),
               ),

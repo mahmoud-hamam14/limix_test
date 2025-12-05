@@ -9,6 +9,7 @@ import 'package:limix_test/features/navigation/view/main_nav_screen.dart';
 import 'package:limix_test/features/home/view/home_view.dart';
 import 'package:limix_test/features/settings/data/cubit/language_cubit/cubit/language_cubit.dart';
 import 'package:limix_test/features/settings/data/cubit/language_cubit/cubit/language_state.dart';
+import 'package:limix_test/features/settings/data/cubit/profile_cubit/profile_cubit.dart';
 import 'package:limix_test/splash.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -38,10 +39,11 @@ void main() {
       };
 
       runApp(
-        // BlocProvider(
-      //create: (_) => LanguageCubit(),
-         const LimixApp()
-        // ),
+         BlocProvider(
+      create: (_) => ProfileCubit(),
+             child: const LimixApp()
+        ),
+
         );
     },
     (error, stack) {

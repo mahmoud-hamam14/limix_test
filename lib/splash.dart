@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'dart:async';
-
 import 'package:limix_test/features/auth/view/login_view.dart'; // عشان التايمر للنقل للصفحة اللي بعدها
 
 class SplashScreen extends StatefulWidget {
@@ -83,8 +82,6 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
               ),
             ),
           ),
-
-          // --- 2. الكورة اللي تحت شمال ---
           Positioned(
             bottom: -50,
             left: -100,
@@ -106,7 +103,6 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                         width: 200,
                         fit: BoxFit.fill,
                       ),
-                // أنيميشن اللوجو
                 ScaleTransition(
                   scale: _scaleAnimation,
                   child: FadeTransition(
