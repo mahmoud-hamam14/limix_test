@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:limix_test/core/constants/custom_appbar.dart';
 import 'package:limix_test/features/settings/data/cubit/profile_cubit/profile_cubit.dart';
 import 'package:limix_test/features/settings/widget/profile_widgets/farm_details_container.dart';
 import 'package:limix_test/features/settings/widget/profile_widgets/profile_image_widget.dart';
@@ -14,47 +15,45 @@ class AccountSettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
+      appBar:
+      AppBar(
         iconTheme: IconThemeData(color: Colors.white),
         flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color(0xff0891B2),
-                  Color(0xff06B6D4)
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color(0xff0891B2),
+                      Color(0xff06B6D4)
+                    ]
+                ),
+                boxShadow: [
+                  BoxShadow(
+                      offset: Offset(0, 4),
+                      blurRadius: 6,
+                      spreadRadius: -4,
+                      color: Color(0x1A000000)
+                  ),
+                  BoxShadow(
+                      offset: Offset(0 ,10),
+                      blurRadius:15,
+                      spreadRadius: -3,
+                      color: Color(0x1A000000)
+                  )
                 ]
-            ),
-            boxShadow: [
-              BoxShadow(
-                  offset: Offset(0, 4),
-                  blurRadius: 6,
-                  spreadRadius: -4,
-                  color: Color(0x1A000000)
-              ),
-              BoxShadow(
-                offset: Offset(0 ,10),
-                blurRadius:15,
-                spreadRadius: -3,
-                color: Color(0x1A000000)
-              )
-            ]
-          )
+            )
         ),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Account Settings',
+            Text( 'Account Settings',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
                 color: Colors.white,
               ),
-            ),
-            Text(
-              'Manage your information',
+            ), Text( 'Manage your information',
               style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
@@ -105,21 +104,21 @@ class AccountSettingScreen extends StatelessWidget {
                   ]
               ),
               child: Material(
-                color: Colors.transparent, // عشان الـ InkWell يشتغل صح فوق الـ Container
+                color: Colors.transparent,
                 child: InkWell(
-                  borderRadius: BorderRadius.circular(24), // عشان التحديد لما تدوس يبقى واخد الكيرف
+                  borderRadius: BorderRadius.circular(24),
                   onTap: () {
 
                     print("Logout Tapped");
                   },
                   child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center, // سنتر الكلام والأيقونة
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        Icons.save_outlined, // أيقونة الخروج
+                        Icons.save_outlined,
                         color: Colors.white,
                       ),
-                      SizedBox(width: 10), // مسافة بين الأيقونة والكلمة
+                      SizedBox(width: 10),
                       Text(
                         "Save Changes",
                         style: TextStyle(
@@ -153,21 +152,21 @@ class AccountSettingScreen extends StatelessWidget {
                 ],
               ),
               child: Material(
-                color: Colors.transparent, // عشان الـ InkWell يشتغل صح فوق الـ Container
+                color: Colors.transparent,
                 child: InkWell(
-                  borderRadius: BorderRadius.circular(24), // عشان التحديد لما تدوس يبقى واخد الكيرف
+                  borderRadius: BorderRadius.circular(24),
                   onTap: () {
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
-                    print("Logout Tapped");
+
                   },
                   child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center, // سنتر الكلام والأيقونة
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        Icons.delete, // أيقونة الخروج
+                        Icons.delete,
                         color: Color(0xffE7000B),
                       ),
-                      SizedBox(width: 10), // مسافة بين الأيقونة والكلمة
+                      SizedBox(width: 10),
                       Text(
                         "Delete Account",
                         style: TextStyle(

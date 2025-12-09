@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gradient_app_bar/flutter_gradient_app_bar.dart';
+import 'package:limix_test/core/constants/custom_appbar.dart';
+import 'package:limix_test/features/alerts/view/alerts_screen.dart';
 import 'package:limix_test/features/auth/view/login_view.dart';
 import 'package:limix_test/features/settings/widget/language_widget.dart';
 
@@ -21,61 +23,65 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        flexibleSpace:Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xff6366F1),
-                Color(0xff8B5CF6),
-              ]
-          ),
-          boxShadow: [
-            BoxShadow(
-              offset: Offset(0, 4),
-              blurRadius: 6,
-              spreadRadius: -4,
-              color: Color(0x1A000000)
-            ),
-            BoxShadow(
-              offset: Offset(0, 10),
-              blurRadius: 15,
-              spreadRadius: -3,
-              color: Color(0x1A000000)
-            )
-          ]
-        ) ,
-      ),
-      title: Row(
-        children: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back, color: Colors.white,size: 16,)),
-          SizedBox(width: 2,),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Settings',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.white,
-                ),
-              ),
-              Text(
-                'Manage your preferences',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.white.withOpacity(0.7),
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-      ),
+      appBar:
+       AppBar(
+         flexibleSpace:
+         Container(
+           decoration:
+           BoxDecoration(
+               gradient: LinearGradient(
+                   begin: Alignment.topCenter,
+                   end: Alignment.bottomCenter,
+                   colors: [
+                     Color(0xff6366F1),
+                     Color(0xff8B5CF6),
+                   ] ),
+               boxShadow: [
+                 BoxShadow(
+                     offset: Offset(0, 4),
+                     blurRadius: 6,
+                     spreadRadius: -4,
+                     color: Color(0x1A000000)
+                 ),
+                 BoxShadow(
+                     offset: Offset(0, 10),
+                     blurRadius: 15,
+                     spreadRadius: -3,
+                     color: Color(0x1A000000)
+                 )
+               ]
+           ) ,
+         ),
+         title:
+         Row(
+           children: [
+             IconButton(
+                 onPressed: (){},
+                 icon: Icon(Icons.arrow_back, color: Colors.white,size: 16,)
+             ),
+             SizedBox(width: 2,),
+             Column(
+               crossAxisAlignment: CrossAxisAlignment.start,
+               children: [
+                 Text( 'Settings',
+                   style: TextStyle(
+                     fontSize: 16,
+                     fontWeight: FontWeight.w400,
+                     color: Colors.white,
+                   ),
+                 ),
+                 Text( 'Manage your preferences',
+                   style: TextStyle(
+                     fontSize: 12,
+                     fontWeight: FontWeight.w400,
+                     color: Colors.white.withOpacity(0.7),
+                   ),
+                 ),
+               ],
+             ),
+           ],
+         ),
+       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

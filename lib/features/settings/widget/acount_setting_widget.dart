@@ -48,8 +48,8 @@ class AcountSettingWidget extends StatelessWidget {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                builder: (context) => BlocProvider.value( // 👈 هنا السر كله
-                value: profileCubit, // بنمرر الـ Cubit اللي مسكناه
+                builder: (context) => BlocProvider.value(
+                value: profileCubit,
                 child: AccountSettingScreen(),
             ),
             ),

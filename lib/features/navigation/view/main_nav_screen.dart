@@ -5,6 +5,7 @@ import 'package:limix_test/features/analytics/farm_overview/view/analytics_scree
 import 'package:limix_test/features/home/view/home_screen.dart';
 import 'package:limix_test/features/home/view/home_view.dart';
 import 'package:limix_test/features/navigation/view/widget/custom_bottom_nav_bar.dart';
+import 'package:limix_test/features/settings/view/account_setting_screen.dart';
 import 'package:limix_test/features/settings/view/settings_screen.dart';
 
 class MainNavScreen extends StatefulWidget {
@@ -24,6 +25,9 @@ class _MainNavStateState extends State<MainNavScreen> {
     AlertsScreen(),
     AiModelScreen(),
     SettingsScreen(),
+    AccountSettingScreen(),
+
+
   ];
   @override
   Widget build(BuildContext context) {
