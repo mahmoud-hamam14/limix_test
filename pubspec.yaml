@@ -44,11 +44,13 @@ dependencies:
   custom_sliding_segmented_control: ^1.8.5
   google_nav_bar: ^5.0.7
   flutter_spinkit: ^5.2.2
-  flutter_svg: ^2.2.2
+
   flutter_launcher_icons: ^0.14.4
   flutter_gradient_app_bar: ^0.3.1
   equatable: ^2.0.7
   image_picker: ^1.2.1
+  flutter_vlc_player: ^7.4.4
+  flutter_mjpeg: ^2.0.4
 
 
 
@@ -57,15 +59,9 @@ dependencies:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  
-  # دي الأيقونة العادية (للأجهزة القديمة و iOS)
   image_path: "assets/images/logo.png"
-
-  # --- الإعدادات السحرية للأندرويد الجديد ---
-  # 1. الخلفية: هنخليها لون (أبيض أو أي لون تحبه)
   adaptive_icon_background: "#FFFFFF" 
 
-  # 2. اللوجو: دي الصورة الشفافة اللي بتتحط فوق الخلفية
   adaptive_icon_foreground: "assets/images/limix_logo.png"
 
 dev_dependencies:

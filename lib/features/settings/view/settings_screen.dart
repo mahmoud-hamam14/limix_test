@@ -4,16 +4,13 @@ import 'package:flutter_gradient_app_bar/flutter_gradient_app_bar.dart';
 import 'package:limix_test/core/constants/custom_appbar.dart';
 import 'package:limix_test/features/alerts/view/alerts_screen.dart';
 import 'package:limix_test/features/auth/view/login_view.dart';
-import 'package:limix_test/features/settings/widget/language_widget.dart';
 
 import '../data/cubit/profile_cubit/profile_cubit.dart';
 import '../widget/Ai_card.dart';
 import '../widget/acount_setting_widget.dart';
 import '../widget/contact_card.dart';
 import '../widget/device_maintenance_card.dart';
-import '../widget/display_card.dart';
 import '../widget/notification_card.dart';
-import '../widget/sensor_thresholds_card.dart';
 import '../widget/support_card.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -86,8 +83,7 @@ class SettingsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            LanguageWidget(),
-            SizedBox(height: 22,),
+           SizedBox(height:16),
             Padding(
               padding: const EdgeInsets.only(left: 45),
               child: Text('Account',
@@ -115,34 +111,7 @@ class SettingsScreen extends StatelessWidget {
             ),
             SizedBox(height: 12,),
             NotificationsCard(),
-            SizedBox(height: 22,),
-            Padding(
-              padding: const EdgeInsets.only(left: 45),
-              child: Text('Sensor Thresholds',
-                style: TextStyle(
-                    color: Color(0xff0891B2),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'Inter'
-                ),
-              ),
-            ),
-            SizedBox(height: 12,),
-            SensorThresholdsCard(),
-            SizedBox(height: 22,),
-            Padding(
-              padding: const EdgeInsets.only(left: 45),
-              child: Text('Display',
-                style: TextStyle(
-                    color: Color(0xff0891B2),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'Inter'
-                ),
-              ),
-            ),
-            SizedBox(height: 12,),
-            DisplayCard(),
+
             SizedBox(height: 22,),
             Padding(
               padding: const EdgeInsets.only(left: 45),
@@ -171,20 +140,7 @@ class SettingsScreen extends StatelessWidget {
             ),
             SizedBox(height: 12,),
             AiCard(),
-            SizedBox(height: 22,),
-            Padding(
-              padding: const EdgeInsets.only(left: 45),
-              child: Text('Contact Us',
-                style: TextStyle(
-                    color: Color(0xff0891B2),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'Inter'
-                ),
-              ),
-            ),
-            SizedBox(height: 12,),
-            ContactCard(),
+
             SizedBox(height: 22,),
             Padding(
               padding: const EdgeInsets.only(left: 45),
@@ -230,10 +186,10 @@ class SettingsScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center, // سنتر الكلام والأيقونة
                 children: [
                   Icon(
-                    Icons.logout, // أيقونة الخروج
+                    Icons.logout,
                     color: Color(0xffE7000B),
                   ),
-                  SizedBox(width: 10), // مسافة بين الأيقونة والكلمة
+                  SizedBox(width: 10),
                   Text(
                     "Logout",
                     style: TextStyle(

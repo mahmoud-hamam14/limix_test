@@ -109,7 +109,6 @@ class AccountSettingScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(24),
                   onTap: () {
 
-                    print("Logout Tapped");
                   },
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -163,12 +162,12 @@ class AccountSettingScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        Icons.delete,
+                        Icons.login_outlined,
                         color: Color(0xffE7000B),
                       ),
                       SizedBox(width: 10),
                       Text(
-                        "Delete Account",
+                        "Log out",
                         style: TextStyle(
                           color: Color(0xffE7000B),
                           fontWeight: FontWeight.bold,

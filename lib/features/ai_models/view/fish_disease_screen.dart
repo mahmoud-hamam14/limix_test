@@ -25,148 +25,58 @@ class _FishDiseaseScreenState extends State<FishDiseaseScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Column(
-          children: [
-            // Header
-            Container(
-              decoration: BoxDecoration(
-
+      appBar:
+      AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
+        flexibleSpace: Container(
+            decoration: BoxDecoration(
                 gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
                     colors: [
                       Color(0xff224B8F),
                       Color(0xff3A6BC1)
-                    ],
+                    ]
                 ),
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0, 4),
-                    blurRadius: 6,
-                    spreadRadius: -4,
-                    color: Color(0x1A000000)
+                      offset: Offset(0, 4),
+                      blurRadius: 6,
+                      spreadRadius: -4,
+                      color: Color(0x1A000000)
                   ),
                   BoxShadow(
-                    offset: Offset(0, 10),
-                    blurRadius: 15,
-                    spreadRadius: -3,
+                      offset: Offset(0 ,10),
+                      blurRadius:15,
+                      spreadRadius: -3,
                       color: Color(0x1A000000)
-
                   )
                 ]
-
+            )
+        ),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text( 'Fish Disease Detectoin',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+                color: Colors.white,
               ),
-              child: Padding(
-                padding: EdgeInsets.all(20),
-                child: Column(
-                  children: [
-                    // Title Bar
-                    Row(
-                      children: [
-                        IconButton(
-                          icon: Icon(
-                            Icons.arrow_back,
-                            color: Colors.white,
-                          ),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        ),
-                        SizedBox(width: 16),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Fish Disease Detection',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            Text(
-                              'AI-powered health monitoring',
-                              style: TextStyle(
-                                color: Colors.white.withOpacity(0.7),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 20),
-
-                    // Stats Card
-                    Container(
-                      height: 110,
-                      width: 336.01,
-
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(24),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Column(
-                            children: [
-                              Text(
-                                'Infected Fish',
-                                style: TextStyle(
-                                  color: Color(0xff4A5565),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                             // SizedBox(height: 2),
-                              Text(
-                                '$infectedCount',
-                                style: TextStyle(
-                                  color: Color(0xffE7000B),
-                                  fontSize: 30,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Container(
-                            width: 1,
-                            height: 60,
-                            color: Colors.grey[300],
-                          ),
-                          Column(
-                            children: [
-                              Text(
-                                'Fresh Fish',
-                                style: TextStyle(
-                                  color: Color(0xff4A5565),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                              SizedBox(height: 2),
-                              Text(
-                                '$freshCount',
-                                style: TextStyle(
-                                  color: Colors.green,
-                                  fontSize: 30,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+            ), Text( 'AI-powered health monitoring',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                color: Colors.white.withOpacity(0.7),
               ),
             ),
+          ],
+        ),
+      ),
+      body: SafeArea(
+        child: Column(
+          children: [
+
 
             SizedBox(height: 16),
 

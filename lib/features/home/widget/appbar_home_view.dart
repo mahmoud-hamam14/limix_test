@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../camera/view/camera_view.dart';
+
 class AppBarHomeView extends StatelessWidget {
   const AppBarHomeView({super.key});
 
@@ -39,7 +41,12 @@ class AppBarHomeView extends StatelessWidget {
       ),
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => CameraView()),
+            );
+          },
           icon: const Icon(Icons.camera_alt_outlined, color: Colors.white),
         ),
         Stack(

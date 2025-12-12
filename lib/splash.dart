@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+//import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'dart:async';
 import 'package:limix_test/features/auth/view/login_view.dart'; // عشان التايمر للنقل للصفحة اللي بعدها
@@ -20,10 +20,10 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   void initState() {
     super.initState();
 
-    // 1. إعداد الأنيميشن (عشان اللوجو يظهر بـ Fade و Scale)
+
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2), // مدة ظهور اللوجو
+      duration: const Duration(seconds: 2),
     );
 
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
@@ -31,12 +31,10 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
       CurvedAnimation(parent: _controller, curve: Curves.easeOutBack),
     );
 
-    // تشغيل الأنيميشن
     _controller.forward();
 
-    // 2. الانتقال للصفحة التالية بعد وقت معين (مثلاً 4 ثواني)
     Timer(const Duration(seconds: 4), () {
-      // هنا حط كود الانتقال لصفحة الـ Login أو Home
+
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen()));
      
     });
@@ -109,13 +107,12 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                     opacity: _fadeAnimation,
                     child: Column(
                       children: [
-                        SvgPicture.asset(
+                      //  SvgPicture.asset(
 
-                            'assets/images/n_logo.png',
-                          width: 400,
+                         //   'assets/images/n_logo.png',width: 400,
 
 
-                          ),
+                         // ),
 
                       
                         const SizedBox(height: 10),
@@ -133,18 +130,15 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                   ),
                 ),
                 
-                const SizedBox(height:10), // مسافة بين اللوجو والتحميل
-
-                // --- 4. أنيميشن التحميل (النقط) ---
+                const SizedBox(height:10),
                 SpinKitThreeBounce(
-                  color: const Color(0xFF0092B8), // لون النقط (تركواز)
+                  color: const Color(0xFF0092B8),
                   size: 30.0,
                 ),
               ],
             ),
           ),
 
-          // --- 5. النص اللي تحت خالص (Footer) ---
           Positioned(
             bottom: 30,
             left: 0,
