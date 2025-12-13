@@ -5,7 +5,6 @@ class CustomSupportContainer extends StatelessWidget {
   final IconData icon;
   final Color iconColor;
   final Color backgroundColor;
-
   final VoidCallback onTap;
 
   const CustomSupportContainer({super.key,

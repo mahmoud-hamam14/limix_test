@@ -13,11 +13,6 @@ class AppBarHomeView extends StatelessWidget {
       titleSpacing: 10,
       title: Row(
         children: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu, color: Colors.white),
-          ),
-
           const SizedBox(width: 10),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:limix_test/core/constants/custom_appbar.dart';
 import 'package:limix_test/features/settings/data/cubit/profile_cubit/profile_cubit.dart';
+import 'package:limix_test/features/settings/widget/profile_widgets/custom_button.dart';
 import 'package:limix_test/features/settings/widget/profile_widgets/farm_details_container.dart';
 import 'package:limix_test/features/settings/widget/profile_widgets/profile_image_widget.dart';
 import 'package:limix_test/features/settings/widget/profile_widgets/secuirty_container.dart';
@@ -74,9 +75,10 @@ class AccountSettingScreen extends StatelessWidget {
             FarmDetailsContainer(),
             SizedBox(height: 24,),
             SecuirtyContainer(),
-            SizedBox(height: 25,),
+            SizedBox(height: 20,),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              width: 328.39,
               height: 48,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(24),
@@ -131,56 +133,6 @@ class AccountSettingScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20,),
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              height: 55,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(24),
-                border: Border.all(
-                  color: Colors.redAccent,
-                  width: 1.5,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.red.withOpacity(0.1),
-                    blurRadius: 10,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
-              ),
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(24),
-                  onTap: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
-
-                  },
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.login_outlined,
-                        color: Color(0xffE7000B),
-                      ),
-                      SizedBox(width: 10),
-                      Text(
-                        "Log out",
-                        style: TextStyle(
-                          color: Color(0xffE7000B),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            )
-
-
     ]
         )
       ),

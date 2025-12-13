@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:limix_test/features/settings/widget/contact_card.dart';
 import 'package:limix_test/features/settings/widget/custom_support_container.dart';
-import 'package:limix_test/features/settings/widget/support_card.dart';
+
 class SupportView extends StatelessWidget {
   const SupportView({super.key});
 

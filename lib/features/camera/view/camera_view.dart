@@ -26,27 +26,12 @@ class _CameraViewState extends State<CameraView> {
       body: Container(
         height: 851.48,
         width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-            colors: [
-              const Color(0xff1C398E).withOpacity(0.5),
-              const Color(0xff005F5A).withOpacity(0.5),
-              const Color(0xff0D542B).withOpacity(0.5),
-            ],
-          ),
-        ),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 15),
-              SizedBox(
-                height: 400,
-                width: double.infinity,
-                child: RotatedBox(
-                  quarterTurns: 4,
+                RotatedBox(
+                  quarterTurns: 1,
                   child: Mjpeg(
                     isLive: isRunning,
                     stream: cameraUrl,
@@ -63,23 +48,7 @@ class _CameraViewState extends State<CameraView> {
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 10),
-              Text("Camera Feed",
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white.withOpacity(0.5),
-                  )),
-              const SizedBox(height: 8),
-              Text("Live view from pond camera",
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white.withOpacity(0.5),
-                  )),
-              const SizedBox(height: 21.5),
-
+             // const SizedBox(height: 15),
               Container(
                 height: 98.5,
                 width: 336,
@@ -133,54 +102,7 @@ class _CameraViewState extends State<CameraView> {
                   ],
                 ),
               ),
-              const SizedBox(height: 12),
 
-
-              Container(
-                height: 48,
-                width: 336,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(24),
-                    gradient: const LinearGradient(
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                        colors: [Color(0xffAD46FF), Color(0xffF6339A)]),
-                    boxShadow: const [
-                      BoxShadow(
-                          offset: Offset(0, 4),
-                          blurRadius: 6,
-                          spreadRadius: -4,
-                          color: Color(0x1A000000)),
-                      BoxShadow(
-                          offset: Offset(0, 10),
-                          blurRadius: 15,
-                          spreadRadius: -3,
-                          color: Color(0x1A000000))
-                    ]),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.transparent,
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24))
-                  ),
-                  onPressed: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Icon(Icons.psychology, color: Colors.white, size: 28),
-                      SizedBox(width: 10),
-                      Text(
-                        "Analyze with AI",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
               const SizedBox(height: 20),
             ],
           ),

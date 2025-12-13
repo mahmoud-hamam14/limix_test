@@ -93,7 +93,7 @@ class HomeView extends StatelessWidget {
                 Expanded(
                   child: CustomContainer(
                     container: ContainerModel(
-                      icon: Icons.monitor_rounded,
+                      icon: Icons.show_chart_outlined,
                       title: "pH Level",
                       value: "7.5",
                       unit: "pH",
@@ -142,7 +142,7 @@ class HomeView extends StatelessWidget {
                 Expanded(
                   child: CustomContainer(
                     container: ContainerModel(
-                      icon: Icons.troubleshoot_outlined,
+                      icon: Icons.speed_outlined,
                       title: "Turbidity",
                       value: "12",
                       unit: "NTU",
@@ -185,64 +185,6 @@ class HomeView extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
-
-            Text(
-              'Quick Actions',
-              style: TextStyle(fontSize: 20, color: Color(0xff0892B3)),
-            ),
-            const SizedBox(height: 20),
-
-            Row(
-              children: [
-                Expanded(
-                  child: CustomQuickActions(
-                    quickActionsModel: QuickActionsModel(
-                      icon: Icons.add,
-                      title: 'Reading',
-                      iconColor: Colors.green,
-                      containerBg: Color(0xffD1FAE5),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 15),
-                Expanded(
-                  child: CustomQuickActions(
-                    quickActionsModel: QuickActionsModel(
-                      icon: Icons.description_outlined,
-                      title: 'Reports',
-                      iconColor: Colors.blue,
-                      containerBg: Color(0xffDBEAFE),
-                    ),
-                  ),
-                ),
-
-                const SizedBox(width: 15),
-                Expanded(
-                  child: CustomQuickActions(
-                    quickActionsModel: QuickActionsModel(
-                      icon: Icons.trending_up,
-                      title: 'Analytics',
-                      iconColor: Colors.purple,
-                      containerBg: Color(0xffE9D5FF),
-                    ),
-                  ),
-                ),
-
-                const SizedBox(width: 15),
-                Expanded(
-                  child: CustomQuickActions(
-                    quickActionsModel: QuickActionsModel(
-                      icon: Icons.warning_amber,
-                      title: 'Alerts',
-                      iconColor: Colors.orange,
-                      containerBg: Color(0xffFEF3C7),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-
             Text(
               'Pond Status',
               style: TextStyle(fontSize: 20, color: Color(0xff0892B3)),

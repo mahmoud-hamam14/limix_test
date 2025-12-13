@@ -4,14 +4,15 @@ import 'package:flutter_gradient_app_bar/flutter_gradient_app_bar.dart';
 import 'package:limix_test/core/constants/custom_appbar.dart';
 import 'package:limix_test/features/alerts/view/alerts_screen.dart';
 import 'package:limix_test/features/auth/view/login_view.dart';
+import 'package:limix_test/features/settings/view/account_setting_screen.dart';
+import 'package:limix_test/features/settings/view/support_view.dart';
+import 'package:limix_test/features/settings/widget/custom_setting_container.dart';
+import 'package:limix_test/features/settings/widget/profile_widgets/custom_button.dart';
 
 import '../data/cubit/profile_cubit/profile_cubit.dart';
-import '../widget/Ai_card.dart';
-import '../widget/acount_setting_widget.dart';
-import '../widget/contact_card.dart';
-import '../widget/device_maintenance_card.dart';
 import '../widget/notification_card.dart';
-import '../widget/support_card.dart';
+import 'ai_assistant_screen.dart';
+import 'device_maintenance_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -96,7 +97,16 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 22,),
-        AcountSettingWidget(),
+            CustomSettingContainer(
+                title: "Account Settings ",
+                subtitle: "Email, password, security",
+                icon: Icons.lock_outline_rounded,
+                backgroundColor: Color(0xFFDBEAFE),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => AccountSettingScreen(),));
+                },
+                iconColor: Color(0xff155DFC),
+            ),
             SizedBox(height: 22,),
             Padding(
               padding: const EdgeInsets.only(left: 45),
@@ -111,7 +121,6 @@ class SettingsScreen extends StatelessWidget {
             ),
             SizedBox(height: 12,),
             NotificationsCard(),
-
             SizedBox(height: 22,),
             Padding(
               padding: const EdgeInsets.only(left: 45),
@@ -125,7 +134,16 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 12,),
-            DeviceMaintenanceCard(),
+            CustomSettingContainer(
+              title: 'Device Maintenance',
+              subtitle: 'Manage device health',
+              icon: Icons.build_outlined,
+              backgroundColor: Color(0xFFF3E8FF),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DeviceMaintenanceScreen(),));
+              },
+              iconColor: Color(0xff9810FA),
+            ),
             SizedBox(height: 22,),
             Padding(
               padding: const EdgeInsets.only(left: 45),
@@ -139,8 +157,16 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 12,),
-            AiCard(),
-
+            CustomSettingContainer(
+              title: 'Chat with AI Assistant',
+              subtitle: 'Get help and insights',
+              icon: Icons.chat_bubble_outline,
+              backgroundColor: Color(0xFFFCE7F3),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => AiAssistantScreen(),));
+              },
+              iconColor: Color(0xff9810FA),
+            ),
             SizedBox(height: 22,),
             Padding(
               padding: const EdgeInsets.only(left: 45),
@@ -154,55 +180,17 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 12,),
-            SupportCard(),
+            CustomSettingContainer(
+                title: "Help & Support",
+                icon: Icons.help_outline_outlined,
+                backgroundColor: Color(0xFFFEF3C6),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => SupportView(),));
+                },
+                iconColor: Color(0xffE17100)
+            ),
             SizedBox(height: 25,),
-        Container(
-          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-          height: 55,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(24),
-            border: Border.all(
-              color: Colors.redAccent,
-              width: 1.5,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.red.withOpacity(0.1),
-                blurRadius: 10,
-                offset: const Offset(0, 4),
-              ),
-            ],
-          ),
-          child: Material(
-            color: Colors.transparent, // عشان الـ InkWell يشتغل صح فوق الـ Container
-            child: InkWell(
-              borderRadius: BorderRadius.circular(24), // عشان التحديد لما تدوس يبقى واخد الكيرف
-              onTap: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
-                print("Logout Tapped");
-              },
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.center, // سنتر الكلام والأيقونة
-                children: [
-                  Icon(
-                    Icons.logout,
-                    color: Color(0xffE7000B),
-                  ),
-                  SizedBox(width: 10),
-                  Text(
-                    "Logout",
-                    style: TextStyle(
-                      color: Color(0xffE7000B),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          )
+           Center(child: CustomButton())
         
           ],
         ),
