@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:limix_test/core/constants/custom_appbar.dart';
 import 'package:limix_test/features/settings/data/cubit/profile_cubit/profile_cubit.dart';
+import 'package:limix_test/features/settings/widget/appbar_setting_view.dart';
 import 'package:limix_test/features/settings/widget/profile_widgets/custom_button.dart';
-import 'package:limix_test/features/settings/widget/profile_widgets/farm_details_container.dart';
+import 'package:limix_test/features/settings/widget/profile_widgets/custom_profile_container.dart';
 import 'package:limix_test/features/settings/widget/profile_widgets/profile_image_widget.dart';
-import 'package:limix_test/features/settings/widget/profile_widgets/secuirty_container.dart';
-
 import '../../auth/view/login_view.dart';
-import '../widget/profile_widgets/profile_container.dart';
+import '../widget/profile_widgets/costum_password_field.dart';
+import '../widget/profile_widgets/custom_input_field.dart';
+
 class AccountSettingScreen extends StatelessWidget {
   const AccountSettingScreen({super.key});
 
@@ -17,122 +18,157 @@ class AccountSettingScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar:
-      AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
-        flexibleSpace: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xff0891B2),
-                      Color(0xff06B6D4)
-                    ]
-                ),
-                boxShadow: [
-                  BoxShadow(
-                      offset: Offset(0, 4),
-                      blurRadius: 6,
-                      spreadRadius: -4,
-                      color: Color(0x1A000000)
-                  ),
-                  BoxShadow(
-                      offset: Offset(0 ,10),
-                      blurRadius:15,
-                      spreadRadius: -3,
-                      color: Color(0x1A000000)
-                  )
-                ]
-            )
-        ),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text( 'Account Settings',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                color: Colors.white,
-              ),
-            ), Text( 'Manage your information',
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                color: Colors.white.withOpacity(0.7),
-              ),
-            ),
-          ],
-        ),
+        PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight),
+      child: AppbarSettingView(
+          title: "Account Settings",
+          subTitle: "Manage your information",
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xff0891B2),
+                Color(0xff06B6D4)
+              ]
+          ),
+        iconTheme: IconThemeData(color:Colors.white),
+        showBackButton: false,
+        onTap: (){},
       ),
+        ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(height: 20,),
            ProfileImageWidget(),
             SizedBox(height: 24,),
-            ProfileContainer(),
+            CustomProfileContainer(
+                height: 460,
+                width: 328.39,
+                children: [
+                  SizedBox(height: 20,),
+                  Text("Personal Information",
+                      style: TextStyle(
+                        color: Color(0xff0891B2),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      )
+                  ),
+                  SizedBox(height: 30,),
+                  CustomInputField(
+                    label: "Full Name",
+                    hint: "Ahmed Mohamed",
+                    icon: Icons.person_outline,
+                    controller: TextEditingController(),
+                  ),
+                  CustomInputField(
+                    label: "Email",
+                    hint: "ahmed@limix.eg",
+                    icon: Icons.email_outlined,
+                    controller: TextEditingController(),
+                  ),
+                  CustomInputField(
+                    label: "Phone",
+                    hint: "+20 123 456 7890",
+                    icon: Icons.phone,
+                    controller: TextEditingController(),
+                  ),
+                  CustomInputField(
+                    label: "Location",
+                    hint: "Cairo, Egypt",
+                    icon: Icons.location_on_outlined,
+                    controller: TextEditingController(),
+                  ),
+                ]
+            ),
             SizedBox(height: 24,),
-            FarmDetailsContainer(),
+            CustomProfileContainer(
+                height: 280,
+                width: 328.39,
+                children: [
+                  SizedBox(height: 18,),
+                  Text(
+                      "Farm Details",
+                      style: TextStyle(
+                        color: Color(0xff0891B2),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      )
+                  ),
+                  SizedBox(height: 30,),
+                  CustomInputField(
+                    label: "Farm Name",
+                    hint: "Farm Name",
+                    icon: Icons.home_outlined,
+                    controller: TextEditingController(),
+                  ),
+                  CustomInputField(
+                    label: "Farm Size",
+                    hint: "ex:2.5 hectares",
+                    icon: Icons.crop_square_outlined,
+                    controller: TextEditingController(),
+                  ),
+                ]
+            ),
             SizedBox(height: 24,),
-            SecuirtyContainer(),
+            CustomProfileContainer(
+                height: 400,
+                width: 328.29,
+                children: [
+                  SizedBox(height: 18,),
+                  Text(
+                      "Security",
+                      style: TextStyle(
+                        color: Color(0xff0891B2),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      )
+                  ),
+                  SizedBox(height: 30,),
+                  CustomPasswordField(
+                    label: "Current Password",
+                    controller: TextEditingController(),
+                  ),
+                  CustomPasswordField(
+                    label: "New Password",
+                    controller: TextEditingController(),
+                  ),
+                  CustomPasswordField(
+                    label: "Confirm New Password",
+                    controller: TextEditingController(),
+                  ),
+                ]
+            ),
             SizedBox(height: 20,),
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              width: 328.39,
-              height: 48,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(24),
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
+            CustomButton(
+                title:"Save Changes",
+                icon: Icons.save_outlined,
+                iconColor: Colors.white,
+                titleColor: Colors.white,
+                onTap: (){},
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0x1A000000),
+                    offset: Offset(0, 4),
+                    blurRadius: 6,
+                    spreadRadius: -4,
+                  ),
+                  BoxShadow(
+                    color: Color(0x1A000000),
+                    offset: Offset(0, 10),
+                    blurRadius: 15,
+                    spreadRadius: -3,
+                  )
+                ],
+              gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
                   colors: [
                     Color(0xff0891B2),
                     Color(0xff0E7490)
                   ]
-                ),
-                  boxShadow: [
-                    BoxShadow(
-                        offset: Offset(0, 4),
-                        blurRadius: 6,
-                        spreadRadius: -4,
-                        color: Color(0x1A000000)
-                    ),
-                    BoxShadow(
-                        offset: Offset(0 ,10),
-                        blurRadius:15,
-                        spreadRadius: -3,
-                        color: Color(0x1A000000)
-                    )
-                  ]
               ),
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(24),
-                  onTap: () {
-
-                  },
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.save_outlined,
-                        color: Colors.white,
-                      ),
-                      SizedBox(width: 10),
-                      Text(
-                        "Save Changes",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            )
     ]
         )
       ),

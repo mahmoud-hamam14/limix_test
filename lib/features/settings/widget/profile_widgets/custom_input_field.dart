@@ -5,7 +5,12 @@ class CustomInputField extends StatelessWidget {
   final IconData icon;
   final TextEditingController controller;
 
-  const CustomInputField({super.key, required this.label, required this.hint, required this.icon, required this.controller});
+  const CustomInputField({
+    super.key, required this.label,
+    required this.hint,
+    required this.icon,
+    required this.controller
+  });
 
   @override
   Widget build(BuildContext context) {

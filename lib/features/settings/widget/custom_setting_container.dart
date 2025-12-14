@@ -6,6 +6,7 @@ class CustomSettingContainer extends StatelessWidget {
   final Color backgroundColor;
   final Color iconColor;
   final VoidCallback onTap;
+  final EdgeInsets? titlePadding;
 
   const CustomSettingContainer({
     super.key,
@@ -15,6 +16,8 @@ class CustomSettingContainer extends StatelessWidget {
     required this.backgroundColor,
     required this.onTap,
     required this.iconColor,
+     this.titlePadding,
+
   });
 
   @override
@@ -28,7 +31,7 @@ class CustomSettingContainer extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
           height: 70.5,
-          width: 380,
+          width: 365,
         decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24),
         color: Colors.white,
@@ -72,15 +75,18 @@ class CustomSettingContainer extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    title,
-                    style: TextStyle(
-                        color: Color(0xff101828),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'Inter'
-                    ),
+              Padding(
+              padding: titlePadding ?? EdgeInsets.zero,
+                child: Text(
+                  title,
+                  style: TextStyle(
+                    color: Color(0xff101828),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Inter',
                   ),
+                ),
+              ),
                   SizedBox(height: 2,),
                   Text(
                       subtitle!=null? subtitle! : '',

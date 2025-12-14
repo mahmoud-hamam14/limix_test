@@ -10,6 +10,7 @@ import 'package:limix_test/features/settings/widget/custom_setting_container.dar
 import 'package:limix_test/features/settings/widget/profile_widgets/custom_button.dart';
 
 import '../data/cubit/profile_cubit/profile_cubit.dart';
+import '../widget/appbar_setting_view.dart';
 import '../widget/notification_card.dart';
 import 'ai_assistant_screen.dart';
 import 'device_maintenance_screen.dart';
@@ -22,64 +23,24 @@ class SettingsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar:
-       AppBar(
-         flexibleSpace:
-         Container(
-           decoration:
-           BoxDecoration(
-               gradient: LinearGradient(
-                   begin: Alignment.topCenter,
-                   end: Alignment.bottomCenter,
-                   colors: [
-                     Color(0xff6366F1),
-                     Color(0xff8B5CF6),
-                   ] ),
-               boxShadow: [
-                 BoxShadow(
-                     offset: Offset(0, 4),
-                     blurRadius: 6,
-                     spreadRadius: -4,
-                     color: Color(0x1A000000)
-                 ),
-                 BoxShadow(
-                     offset: Offset(0, 10),
-                     blurRadius: 15,
-                     spreadRadius: -3,
-                     color: Color(0x1A000000)
-                 )
-               ]
-           ) ,
-         ),
-         title:
-         Row(
-           children: [
-             IconButton(
-                 onPressed: (){},
-                 icon: Icon(Icons.arrow_back, color: Colors.white,size: 16,)
-             ),
-             SizedBox(width: 2,),
-             Column(
-               crossAxisAlignment: CrossAxisAlignment.start,
-               children: [
-                 Text( 'Settings',
-                   style: TextStyle(
-                     fontSize: 16,
-                     fontWeight: FontWeight.w400,
-                     color: Colors.white,
-                   ),
-                 ),
-                 Text( 'Manage your preferences',
-                   style: TextStyle(
-                     fontSize: 12,
-                     fontWeight: FontWeight.w400,
-                     color: Colors.white.withOpacity(0.7),
-                   ),
-                 ),
-               ],
-             ),
-           ],
-         ),
-       ),
+      PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight),
+        child: AppbarSettingView(
+          title: "Settings",
+          subTitle: "Manage your preferences",
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xff6366F1),
+                Color(0xff8B5CF6)
+              ]
+          ),
+           showBackButton: true,
+          onTap: (){},
+
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -187,10 +148,37 @@ class SettingsScreen extends StatelessWidget {
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => SupportView(),));
                 },
-                iconColor: Color(0xffE17100)
+                iconColor: Color(0xffE17100),
+              titlePadding: EdgeInsets.only(top: 10),
             ),
             SizedBox(height: 25,),
-           Center(child: CustomButton())
+           Center(child:
+               CustomButton(
+                   title: "logout",
+                   icon: Icons.logout,
+                   iconColor: Color(0xffE7000B),
+                   titleColor: Color(0xffE7000B),
+                   onTap: (){
+                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
+                   },
+                   boxShadow: [
+                     BoxShadow(
+                         color: Color(0x1A000000),
+                         offset: Offset(0, 2),
+                         blurRadius: 4,
+                         spreadRadius: -2,
+                     ),
+                     BoxShadow(
+                         color: Color(0x1A000000),
+                         offset: Offset(0, 4),
+                         blurRadius: 6,
+                         spreadRadius: -1,
+                     )
+                   ],
+                   backgroundColor: Colors.white,
+                 borderColor: Color(0xffE7000B),
+               )
+           )
         
           ],
         ),

@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
-class CustomAppbar extends StatelessWidget {
+class AppbarSettingView extends StatelessWidget {
   final String title;
   final String subTitle;
   final Gradient? gradient;
   final Widget? leading;
-  final Color? backgroundColor;
+ final Color? backgroundColor;
   final IconThemeData? iconTheme;
   final bool showBackButton;
   final VoidCallback onTap;
   final IconData? icon;
-  const CustomAppbar({
+  const AppbarSettingView({
     super.key,
     required this.title,
     required this.subTitle,
     this.gradient,
     this.leading,
     this.iconTheme,
-    required this.showBackButton,
+     required this.showBackButton,
     required this.onTap,
     this.icon,
     this.backgroundColor,
@@ -49,17 +49,17 @@ class CustomAppbar extends StatelessWidget {
       title: Row(
         children: [
           if (icon != null)
-            Container(
-              height: 39.972755432128906,
-              width: 39.972755432128906,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  shape: BoxShape.rectangle,
-                  color: Colors.white.withOpacity(0.2)
-              ),
-              child: Icon(icon,color: Colors.white,size: 30,
-              ),
+          Container(
+            height: 39.972755432128906,
+            width: 39.972755432128906,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                shape: BoxShape.rectangle,
+                color: Colors.white.withOpacity(0.2)
             ),
+            child: Icon(icon,color: Colors.white,size: 30,
+            ),
+          ),
           SizedBox(
             width: 12,
           ),
@@ -86,8 +86,8 @@ class CustomAppbar extends StatelessWidget {
       leading:
       showBackButton
           ? IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed:onTap
+        icon: const Icon(Icons.arrow_back, color: Colors.white),
+        onPressed:onTap
       )
           : null,
 

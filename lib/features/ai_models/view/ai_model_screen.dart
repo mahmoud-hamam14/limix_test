@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:limix_test/features/ai_models/widget/custom_container.dart';
 
+import '../../../core/constants/custom_appbar.dart';
 import 'fish_disease_screen.dart';
 
 class AiModelScreen extends StatelessWidget {
@@ -11,78 +12,22 @@ class AiModelScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar:
-      AppBar(
-        flexibleSpace:
-        Container(
-          decoration:
-          BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Color(0xff224B8F),
-                    Color(0xff3A6BC1),
-                  ] ),
-              boxShadow: [
-                BoxShadow(
-                    offset: Offset(0, 4),
-                    blurRadius: 6,
-                    spreadRadius: -4,
-                    color: Color(0x1A000000)
-                ),
-                BoxShadow(
-                    offset: Offset(0, 10),
-                    blurRadius: 15,
-                    spreadRadius: -3,
-                    color: Color(0x1A000000)
-                )
-              ]
-          ) ,
-        ),
-        title:
-        Row(
-          children: [
-            IconButton(
-                onPressed: (){},
-                icon: Icon(Icons.arrow_back, color: Colors.white,size: 25,)
-            ),
-            SizedBox(width: 2,),
-            Container(
-              height: 39.972755432128906,
-             width: 39.972755432128906,
-             decoration: BoxDecoration(
-             borderRadius: BorderRadius.circular(16),
-               shape: BoxShape.rectangle,
-               color: Colors.white.withOpacity(0.2)
-               ),
-              child: Icon(Icons.psychology_outlined,color: Colors.white,size: 30,
-             ),
-            ),
-             SizedBox(
-               width: 12,
-             ),
-
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text( 'AI Models',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.white,
-                  ),
-                ),
-                Text( 'Advanced fish farming intelligence',
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.white.withOpacity(0.7),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+      PreferredSize(
+          preferredSize: const Size.fromHeight(kToolbarHeight),
+          child: CustomAppbar(
+            title: "AI Models",
+            subTitle: "Advanced fish farming intelligence",
+            showBackButton: true,
+            onTap: (){},
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xff224B8F),
+                Color(0xff3A6BC1),
+              ] ),
+            icon: Icons.psychology_outlined,
+          )
       ),
       body: SingleChildScrollView(
         child: Column(

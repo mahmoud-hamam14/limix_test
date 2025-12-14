@@ -2,7 +2,30 @@ import 'package:flutter/material.dart';
 
 import '../../../auth/view/login_view.dart';
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
+  final String title;
+  final IconData icon;
+  final Color iconColor;
+  final Color titleColor;
+  final VoidCallback onTap;
+  final Gradient? gradient;
+  final Color? backgroundColor;
+  final Color? borderColor;
+  final double borderWidth;
+  final List<BoxShadow> boxShadow;
+  const CustomButton({
+    super.key,
+    required this.title,
+    required this.icon,
+    required this.iconColor,
+    required this.titleColor,
+    required this.onTap,
+    this.gradient,
+    this.backgroundColor,
+    this.borderColor,
+    this.borderWidth = 1,
+    required this.boxShadow,
+
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -11,47 +34,33 @@ class CustomButton extends StatelessWidget {
       height: 55,
       width: 328.39,
       decoration: BoxDecoration(
-        color: Colors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(
-          color: Colors.redAccent,
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Color(0xffFFE2E2),
-            blurRadius: 4,
-            offset: const Offset(0, 2),
-            spreadRadius: -2,
-          ),
-          BoxShadow(
-            color: Color(0xffFFE2E2),
-            blurRadius: 6,
-            offset: const Offset(0, 4),
-            spreadRadius: -1,
-          ),
-        ],
+          border: borderColor != null
+              ? Border.all(
+            color: borderColor!,
+            width: borderWidth,
+          ): null,
+        boxShadow: boxShadow,
+        gradient: gradient,
+        color: gradient == null ? backgroundColor : null,
       ),
       child: Material(
-        color: Colors.transparent, // عشان الـ InkWell يشتغل صح فوق الـ Container
+        color: Colors.transparent,
         child: InkWell(
-          borderRadius: BorderRadius.circular(24), // عشان التحديد لما تدوس يبقى واخد الكيرف
-          onTap: () {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
-            print("Logout Tapped");
-          },
-          child: const Row(
+          borderRadius: BorderRadius.circular(24),
+          onTap: onTap,
+          child:  Row(
             mainAxisAlignment: MainAxisAlignment.center, // سنتر الكلام والأيقونة
             children: [
               Icon(
-                Icons.logout,
-                color: Color(0xffE7000B),
+                icon,
+                color: iconColor
               ),
               SizedBox(width: 10),
               Text(
-                "Logout",
+                title,
                 style: TextStyle(
-                  color: Color(0xffE7000B),
+                  color: titleColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),

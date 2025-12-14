@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:limix_test/features/settings/widget/contact_card.dart';
 import 'package:limix_test/features/settings/widget/custom_support_container.dart';
 
+import '../widget/appbar_setting_view.dart';
+
 class SupportView extends StatelessWidget {
   const SupportView({super.key});
 
@@ -10,51 +12,23 @@ class SupportView extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar:
-      AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
-        flexibleSpace: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                    colors: [
-                      Color(0xffF59E0B),
-                      Color(0xffFBBF24)
-                    ]
-                ),
-                boxShadow: [
-                  BoxShadow(
-                      offset: Offset(0, 4),
-                      blurRadius: 6,
-                      spreadRadius: -4,
-                      color: Color(0x1A000000)
-                  ),
-                  BoxShadow(
-                      offset: Offset(0 ,10),
-                      blurRadius:15,
-                      spreadRadius: -3,
-                      color: Color(0x1A000000)
-                  )
-                ]
-            )
-        ),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text( 'Help & Support',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                color: Colors.white,
-              ),
-            ), Text( 'We are here to help',
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-                color: Colors.white.withOpacity(0.7),
-              ),
-            ),
-          ],
+      PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight),
+        child: AppbarSettingView(
+          title: "Help & Support",
+          subTitle: "We're here to help",
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xffF59E0B),
+                Color(0xffFBBF24)
+              ]
+          ),
+          iconTheme: IconThemeData(color:Colors.white),
+          showBackButton:false,
+          onTap: (){},
+
         ),
       ),
       body: SingleChildScrollView(
