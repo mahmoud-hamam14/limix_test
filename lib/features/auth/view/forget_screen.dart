@@ -70,7 +70,7 @@ class ForgetScreen extends StatelessWidget {
                  const SizedBox(height: 24),
                 GestureDetector(
                   onTap: () {
-                   Navigator.push(
+                   Navigator.pushReplacement(
                       context,MaterialPageRoute(builder:(context) => CheckEmailScreen(),));
                          
                     },
@@ -114,7 +114,7 @@ class ForgetScreen extends StatelessWidget {
                  const SizedBox(height: 24),
                  TextButton(
                       onPressed: () {
-                        Navigator.push(context, 
+                        Navigator.pushReplacement(context, 
                         MaterialPageRoute(builder:(context) => LoginScreen(),)
                         );
                       },

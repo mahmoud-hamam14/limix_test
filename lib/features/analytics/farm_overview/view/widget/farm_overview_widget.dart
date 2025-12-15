@@ -54,11 +54,6 @@ class FarmOverviewWidget extends StatelessWidget {
       const SizedBox(height: 16),
             const Padding(
        padding: EdgeInsets.symmetric(horizontal: 16.0),
-       child: FarmHealthCard(), 
-            ),
-            const SizedBox(height: 16), 
-            const Padding(
-       padding: EdgeInsets.symmetric(horizontal: 16.0),
        child: PerformanceTrendCard(), 
             ),
             const SizedBox(height: 16),

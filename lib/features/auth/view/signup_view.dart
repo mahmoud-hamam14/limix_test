@@ -102,7 +102,7 @@ class SignupView extends StatelessWidget {
                 const SizedBox(height: 24),
                 GestureDetector(
                   onTap: () {
-                   Navigator.push(
+                   Navigator.pushReplacement(
                       context,MaterialPageRoute(builder:(context) => LoginScreen(),));
                          
                     },
@@ -165,7 +165,7 @@ class SignupView extends StatelessWidget {
                 const SizedBox(height: 20),
                 GestureDetector(
                   onTap: () {
-                   // هنا بعدين هتحطي تسجيل الدخول بجوجل
+                
                   },
                   child: Container(
                     width: 375,
@@ -177,7 +177,14 @@ class SignupView extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.camera, color: Colors.black),
+                        Container(
+                          // decoration: BoxDecoration(color: Colors.blue),
+                            child:
+                            Image.network(
+                                'http://pngimg.com/uploads/google/google_PNG19635.png',
+                                fit:BoxFit.cover
+                            )
+                        ),
                         const SizedBox(width: 10),
                         const Text(
                           'Continue with Google',
@@ -197,7 +204,7 @@ class SignupView extends StatelessWidget {
                     const Text("Already have an account?"),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(context, 
+                        Navigator.pushReplacement(context, 
                         MaterialPageRoute(builder:(context) => LoginScreen(),)
                         );
                       },

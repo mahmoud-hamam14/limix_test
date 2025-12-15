@@ -53,7 +53,7 @@ class CheckEmailScreen extends StatelessWidget {
                const SizedBox(height: 24),
                 GestureDetector(
                   onTap: () {
-                   Navigator.push(
+                   Navigator.pushReplacement(
                       context,MaterialPageRoute(builder:(context) => LoginScreen(),));
                          
                     },
