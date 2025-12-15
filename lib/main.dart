@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:limix_test/features/home/view/home_view.dart';
+import 'package:limix_test/features/auth/view/login_view.dart';
+// import 'package:limix_test/features/home/view/home_view.dart';
 
 void main() {
   runZonedGuarded(
@@ -46,7 +47,7 @@ class LimixApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeView(),
+      home: LoginScreen(),
     );
   }
 }
