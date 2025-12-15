@@ -90,7 +90,6 @@ flutter:
   # تعريف الـ Assets
   assets:
     - assets/images/
-    - assets/images/limix.jpg
     - assets/images/newlimix.png
     - assets/images/limix_logo.png
     - assets/images/logo.png
@@ -100,6 +99,7 @@ flutter:
     - assets/images/fish3.png
     - assets/images/fish4.png
     - assets/images/fish5.png
+    - assets/images/google.png
 
     - assets/images/ImageWithFallback.png
 

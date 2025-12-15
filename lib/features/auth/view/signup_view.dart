@@ -177,7 +177,14 @@ class SignupView extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.camera, color: Colors.black),
+                        Container(
+                          // decoration: BoxDecoration(color: Colors.blue),
+                            child:
+                            Image.network(
+                                'http://pngimg.com/uploads/google/google_PNG19635.png',
+                                fit:BoxFit.cover
+                            )
+                        ),
                         const SizedBox(width: 10),
                         const Text(
                           'Continue with Google',

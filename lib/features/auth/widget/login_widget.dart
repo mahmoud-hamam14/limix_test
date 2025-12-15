@@ -1,56 +1,80 @@
-
 import 'package:flutter/material.dart';
-import 'package:limix_test/features/auth/view/forget_screen.dart';
-import 'package:limix_test/features/auth/view/signup_view.dart';
-import 'package:limix_test/features/home/view/home_screen.dart';
 import 'package:limix_test/features/auth/widget/custom_text_field.dart';
 import 'package:limix_test/features/navigation/view/main_nav_screen.dart';
+import 'package:limix_test/features/auth/view/forget_screen.dart';
+import 'package:limix_test/features/auth/view/signup_view.dart';
 
+class LoginWidget extends StatefulWidget {
+  const LoginWidget({super.key});
 
-class LoginWidget extends StatelessWidget {
-   LoginWidget({super.key});
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  @override
+  State<LoginWidget> createState() => _LoginWidgetState();
+}
 
+class _LoginWidgetState extends State<LoginWidget> {
+  bool _animate = false;
+
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(milliseconds: 150), () {
+      setState(() {
+        _animate = true;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          backgroundColor: Colors.white,
-          appBar: AppBar(
-            //title: const Text('Login'),
-            backgroundColor: Colors.white,
-          ),
-          body: SingleChildScrollView(
+      backgroundColor: Colors.white,
+      body: AnimatedSlide(
+        offset: _animate ? Offset.zero : const Offset(0, 0.25),
+        duration: const Duration(milliseconds: 700),
+        curve: Curves.easeOut,
+        child: AnimatedOpacity(
+          opacity: _animate ? 1 : 0,
+          duration: const Duration(milliseconds: 700),
+          child: SingleChildScrollView(
             child: Column(
-              //crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(height: 24),
-                const Text(
-                  'Limix',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xff0891B2),
+                const SizedBox(height: 80),
+
+                /// LOGO (Hero)
+                const Hero(
+                  tag: 'logo',
+                  child: Text(
+                    'Limix',
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff0891B2),
+                    ),
                   ),
                 ),
+
                 const SizedBox(height: 8),
                 const Text(
                   'Manage your aquaculture farm',
-                  textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 16),
                 ),
+
                 const SizedBox(height: 40),
+
+                /// EMAIL
                 CustomTextField(
                   controller: emailController,
                   label: "Email",
                   prefixIcon: Icons.email_outlined,
                   hint: 'Enter your email',
                 ),
+
                 const SizedBox(height: 20),
 
-                /// Password Field
+                /// PASSWORD
                 CustomTextField(
                   controller: passwordController,
                   label: "Password",
@@ -59,11 +83,17 @@ class LoginWidget extends StatelessWidget {
                   isPassword: true,
                 ),
 
+                /// FORGOT PASSWORD
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ForgetScreen(),));
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) =>  ForgetScreen(),
+                        ),
+                      );
                     },
                     child: const Text(
                       "Forgot Password?",
@@ -74,16 +104,19 @@ class LoginWidget extends StatelessWidget {
                     ),
                   ),
                 ),
+
                 const SizedBox(height: 20),
 
-                /// Login Button
+                /// LOGIN BUTTON
                 GestureDetector(
                   onTap: () {
-                      Navigator.pushReplacement(
-                     context,
-            MaterialPageRoute(builder: (context) => const MainNavScreen()),
-                   );       
-                    },
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const MainNavScreen(),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 375,
                     height: 50,
@@ -91,23 +124,7 @@ class LoginWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(25),
                       gradient: const LinearGradient(
                         colors: [Color(0xff0E7490), Color(0xff0891B2)],
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
                       ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0x1A000000),
-                          offset: Offset(0, 4),
-                          blurRadius: 6,
-                          spreadRadius: -4,
-                        ),
-                        BoxShadow(
-                          color: const Color(0x1A000000),
-                          offset: const Offset(0, 10),
-                          blurRadius: 15,
-                          spreadRadius: -3,
-                        ),
-                      ],
                     ),
                     child: const Center(
                       child: Text(
@@ -121,31 +138,25 @@ class LoginWidget extends StatelessWidget {
                     ),
                   ),
                 ),
+
                 const SizedBox(height: 30),
+
+                /// DIVIDER
                 Row(
                   children: const [
-                    Expanded(child: Divider(thickness: 1, color: Colors.grey)),
+                    Expanded(child: Divider()),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Text(
-                        "Or continue with",
-                        style: TextStyle(
-                          color: Color(0xff6A7282),
-                          fontSize: 14,
-                        ),
-                      ),
+                      child: Text("Or continue with"),
                     ),
-                    Expanded(
-                      child: Divider(thickness: 1, color: Color(0xff6A7282)),
-                    ),
+                    Expanded(child: Divider()),
                   ],
                 ),
+
                 const SizedBox(height: 20),
-                GestureDetector(
-                  onTap: () {
-                 
-                  },
-                  child: Container(
+
+                /// GOOGLE BUTTON
+                Container(
                     width: 375,
                     height: 50,
                     decoration: BoxDecoration(
@@ -155,28 +166,37 @@ class LoginWidget extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.camera, color: Colors.black),
-                        const SizedBox(width: 10),
-                        const Text(
+                        Container(
+                          // decoration: BoxDecoration(color: Colors.blue),
+                            child:
+                            Image.network(
+                                'http://pngimg.com/uploads/google/google_PNG19635.png',
+                                fit:BoxFit.cover
+                            )
+                        ),
+                        SizedBox(width: 8),
+                        Text(
                           'Continue with Google',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style: TextStyle(fontSize: 16),
                         ),
                       ],
                     ),
-                  ),
-                ),
+                    ),
+
                 const SizedBox(height: 25),
+
+                /// SIGN UP
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text("Don’t have an account? "),
                     TextButton(
                       onPressed: () {
-                        Navigator.pushReplacement(context, 
-                        MaterialPageRoute(builder:(context) => SignupView(),)
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => SignupView(),
+                          ),
                         );
                       },
                       child: const Text(
@@ -192,6 +212,8 @@ class LoginWidget extends StatelessWidget {
               ],
             ),
           ),
-        );
+        ),
+      ),
+    );
   }
 }
