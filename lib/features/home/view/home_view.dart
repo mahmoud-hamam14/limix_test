@@ -1,6 +1,12 @@
 // import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:limix_test/features/categoris/view/dissolved_oxygen.dart';
+import 'package:limix_test/features/categoris/view/ec.dart';
+import 'package:limix_test/features/categoris/view/ph_level.dart';
+import 'package:limix_test/features/categoris/view/salinity.dart';
+import 'package:limix_test/features/categoris/view/temperature.dart';
+import 'package:limix_test/features/categoris/view/turbidity.dart';
 import 'package:limix_test/features/home/models/container_model.dart';
 import 'package:limix_test/features/home/models/quick_actions_model.dart';
 import 'package:limix_test/features/home/view/avg_temp_view.dart';
@@ -62,7 +68,9 @@ class HomeView extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AvgTempView()),
+                        MaterialPageRoute(
+                          builder: (context) => TemperatureView(),
+                        ),
                       );
                     },
                   ),
@@ -84,7 +92,9 @@ class HomeView extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AvgTempView()),
+                        MaterialPageRoute(
+                          builder: (context) => DissolvedOxygen(),
+                        ),
                       );
                     },
                   ),
@@ -106,7 +116,7 @@ class HomeView extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AvgTempView()),
+                        MaterialPageRoute(builder: (context) => PhLevel()),
                       );
                     },
                   ),
@@ -133,7 +143,7 @@ class HomeView extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AvgTempView()),
+                        MaterialPageRoute(builder: (context) => Salinity()),
                       );
                     },
                   ),
@@ -155,7 +165,7 @@ class HomeView extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AvgTempView()),
+                        MaterialPageRoute(builder: (context) => Turbidity()),
                       );
                     },
                   ),
@@ -177,7 +187,7 @@ class HomeView extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AvgTempView()),
+                        MaterialPageRoute(builder: (context) => Ec()),
                       );
                     },
                   ),
