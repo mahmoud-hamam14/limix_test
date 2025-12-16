@@ -11,7 +11,7 @@ class CameraView extends StatefulWidget {
 
 class _CameraViewState extends State<CameraView> {
 
-  final String cameraUrl = "http://192.168.1.3:8080/video";
+  final String cameraUrl = "http://192.168.1.183:8080/video";
 
   bool isRunning = true;
 

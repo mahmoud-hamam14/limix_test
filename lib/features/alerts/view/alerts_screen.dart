@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:limix_test/core/constants/custom_appbar.dart';
 import 'package:limix_test/features/alerts/view/critical_view.dart';
 import 'package:limix_test/features/alerts/view/warning_view.dart';
+import 'package:limix_test/features/categoris/widget/custom_app_bar.dart';
 
 class AlertsScreen extends StatefulWidget {
   const AlertsScreen({super.key});
@@ -15,29 +17,15 @@ class _AlertsScreenState extends State<AlertsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFF224B8F),
-        automaticallyImplyLeading: false,
-        leading: SizedBox(),
-        leadingWidth: 30,
-
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Notifications',
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 22,
-                // fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              'Stay updated on farm alerts',
-              style: const TextStyle(color: Colors.white70, fontSize: 17),
-            ),
-          ],
-        ),
+      appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(kToolbarHeight),
+          child: CustomAppbar(
+              title: "Notifications",
+              subTitle: "Stay updated on farm alerts",
+              showBackButton: true,
+              onTap: (){},
+            backgroundColor: Color(0xff224B8F),
+          ),
       ),
 
       body: Column(
