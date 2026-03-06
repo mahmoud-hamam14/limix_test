@@ -1,7 +1,9 @@
 import 'package:custom_sliding_segmented_control/custom_sliding_segmented_control.dart';
 import 'package:flutter/material.dart';
+import 'package:limix_test/core/constants/custom_appbar.dart';
 import 'package:limix_test/features/analytics/farm_overview/view/widget/farm_overview_widget.dart';
 import 'package:limix_test/features/analytics/sensor_performance/view/sensor_performance_screen.dart';
+import 'package:limix_test/features/categoris/widget/custom_app_bar.dart';
 
 
 
@@ -19,37 +21,10 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Color(0xff224B8F),
-         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white,),
-          onPressed: () {
-          },
-        ),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              "Analytics",
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const Text(
-              "Performance insights",
-              style: TextStyle(
-                color: Colors.white60,
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ],
-        ),
-       // centerTitle: true,
-       
-        elevation: 0,
-      ),
+      appBar:  PreferredSize(
+    preferredSize: const Size.fromHeight(kToolbarHeight),
+    child:CustomAppbar(title: 'analytics', subTitle: "Performance insights", showBackButton: true, onTap: (){}),
+    ),
       body: SingleChildScrollView(
         child: Column(
           children: [

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 class CustomAppbar extends StatelessWidget {
   final String title;
   final String subTitle;
-  final Gradient? gradient;
+  //final Gradient? gradient;
   final Widget? leading;
   final Color? backgroundColor;
   final IconThemeData? iconTheme;
@@ -13,7 +13,7 @@ class CustomAppbar extends StatelessWidget {
     super.key,
     required this.title,
     required this.subTitle,
-    this.gradient,
+    //this.gradient,
     this.leading,
     this.iconTheme,
     required this.showBackButton,
@@ -28,8 +28,11 @@ class CustomAppbar extends StatelessWidget {
       iconTheme: iconTheme,
       flexibleSpace: Container(
           decoration: BoxDecoration(
-              gradient: gradient,
-              color: gradient == null ? backgroundColor : null,
+              gradient: LinearGradient(colors: [
+                Color(0xff01378E),
+                Color(0xff2563EB),
+              ]),
+              //color: gradient == null ? backgroundColor : null,
               boxShadow: [
                 BoxShadow(
                     offset: Offset(0, 4),

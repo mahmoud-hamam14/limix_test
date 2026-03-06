@@ -38,7 +38,7 @@ class HomeView extends StatelessWidget {
 
             const Text(
               "Welcome back, Farmer",
-              style: TextStyle(fontSize: 20, color: Color(0xff0892B3)),
+              style: TextStyle(fontSize: 20, color: Color(0xff01378E)),
             ),
 
             const SizedBox(height: 4),
@@ -197,7 +197,7 @@ class HomeView extends StatelessWidget {
             const SizedBox(height: 20),
             Text(
               'Pond Status',
-              style: TextStyle(fontSize: 20, color: Color(0xff0892B3)),
+              style: TextStyle(fontSize: 20, color: Color(0xff01378E)),
             ),
             const SizedBox(height: 15),
 
@@ -211,7 +211,7 @@ class HomeView extends StatelessWidget {
             const SizedBox(height: 20),
             Text(
               'Farm Overview',
-              style: TextStyle(fontSize: 20, color: Color(0xff0892B3)),
+              style: TextStyle(fontSize: 20, color: Color(0xff01378E)),
             ),
             const SizedBox(height: 15),
             FarmOverviewCard(
@@ -224,7 +224,7 @@ class HomeView extends StatelessWidget {
 
             Text(
               'Recent Activity',
-              style: TextStyle(fontSize: 20, color: Color(0xff0892B3)),
+              style: TextStyle(fontSize: 20, color: Color(0xff01378E)),
             ),
 
             const SizedBox(height: 15),

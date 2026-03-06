@@ -30,8 +30,25 @@ class _LoginWidgetState extends State<LoginWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: AnimatedSlide(
+      backgroundColor: Colors.transparent,
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+        gradient: LinearGradient(
+
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+          colors: [
+            Color(0xFFEFF6FF),
+            Color(0xFFFFFFFF),
+            Color(0xFFDBEAFE),
+          ],
+         stops: [0.0, 0.5, 1.0],
+
+    ),
+    ),
+    child:   AnimatedSlide(
         offset: _animate ? Offset.zero : const Offset(0, 0.25),
         duration: const Duration(milliseconds: 700),
         curve: Curves.easeOut,
@@ -41,7 +58,7 @@ class _LoginWidgetState extends State<LoginWidget> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(height: 80),
+                const SizedBox(height: 200),
 
                 /// LOGO (Hero)
                 const Hero(
@@ -51,7 +68,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xff0891B2),
+                      color: Color(0xff01378E),
                     ),
                   ),
                 ),
@@ -98,7 +115,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     child: const Text(
                       "Forgot Password?",
                       style: TextStyle(
-                        color: Color(0xff06B6D4),
+                        color: Color(0xff01378E),
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -122,8 +139,24 @@ class _LoginWidgetState extends State<LoginWidget> {
                     height: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
+                      boxShadow:  [
+                        BoxShadow(
+                        color: Color(0x1A000000),
+                    offset: Offset(0, 4),
+                    blurRadius: 6,
+                    spreadRadius: -4,
+                  ),
+                  BoxShadow(
+                    color: Color(0x1A000000),
+                    offset: Offset(0, 10),
+                    blurRadius: 15,
+                    spreadRadius: -3,
+                  )
+                  ],
                       gradient: const LinearGradient(
-                        colors: [Color(0xff0E7490), Color(0xff0891B2)],
+                        colors: [Color(0xff01378E), Color(0xff2563EB)],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
                       ),
                     ),
                     child: const Center(
@@ -203,7 +236,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                         "Sign Up",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Color(0xff0891B2),
+                          color: Color(0xff2563EB),
                         ),
                       ),
                     ),
@@ -214,6 +247,7 @@ class _LoginWidgetState extends State<LoginWidget> {
           ),
         ),
       ),
+    ),
     );
   }
 }

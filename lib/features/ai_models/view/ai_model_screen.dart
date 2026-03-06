@@ -19,13 +19,7 @@ class AiModelScreen extends StatelessWidget {
             subTitle: "Advanced fish farming intelligence",
             showBackButton: true,
             onTap: (){},
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xff224B8F),
-                Color(0xff3A6BC1),
-              ] ),
+
             icon: Icons.psychology_outlined,
           )
       ),

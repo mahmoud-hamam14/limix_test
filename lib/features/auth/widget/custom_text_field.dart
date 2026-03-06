@@ -22,7 +22,7 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const Color primaryColor = Color(0xFF00A9B7);
+    const Color primaryColor = Color(0xFF01378E);
     const Color fieldBgColor = Colors.white; 
     const Color borderColor = Color(0xFFE8ECF4);
 

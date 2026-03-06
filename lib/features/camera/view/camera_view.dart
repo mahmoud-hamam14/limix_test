@@ -11,7 +11,7 @@ class CameraView extends StatefulWidget {
 
 class _CameraViewState extends State<CameraView> {
 
-  final String cameraUrl = "http://192.168.1.183:8080/video";
+  final String cameraUrl = "https://hornless-maura-uncontrovertedly.ngrok-free.dev/live";
 
   bool isRunning = true;
 

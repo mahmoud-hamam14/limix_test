@@ -35,14 +35,7 @@ class _FishDiseaseScreenState extends State<FishDiseaseScreen> {
             subTitle: 'AI-powered health monitoring',
             showBackButton: false,
             onTap: (){},
-            gradient: LinearGradient(
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-                colors: [
-                  Color(0xff224B8F),
-                  Color(0xff3A6BC1)
-                ]
-            ),
+
             iconTheme: IconThemeData(color: Colors.white),
           )
       ),

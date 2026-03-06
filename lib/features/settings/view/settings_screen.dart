@@ -25,21 +25,12 @@ class SettingsScreen extends StatelessWidget {
       appBar:
       PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
-        child: AppbarSettingView(
-          title: "Settings",
-          subTitle: "Manage your preferences",
-          gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xff6366F1),
-                Color(0xff8B5CF6)
-              ]
-          ),
-           showBackButton: true,
-          onTap: (){},
-
-        ),
+        child: CustomAppbar(
+            title: "Settings",
+            subTitle: "Manage your preferences",
+            showBackButton: true,
+            onTap: (){}
+        )
       ),
       body: SingleChildScrollView(
         child: Column(

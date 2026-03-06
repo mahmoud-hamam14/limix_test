@@ -8,7 +8,29 @@ class AppBarHomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Color(0xff0892B3),
+        flexibleSpace: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [
+                  Color(0xff01378E),
+                  Color(0xff2563EB),
+                ]),
+                //color: gradient == null ? backgroundColor : null,
+                boxShadow: [
+                  BoxShadow(
+                      offset: Offset(0, 4),
+                      blurRadius: 6,
+                      spreadRadius: -4,
+                      color: Color(0x1A000000)
+                  ),
+                  BoxShadow(
+                      offset: Offset(0 ,10),
+                      blurRadius:15,
+                      spreadRadius: -3,
+                      color: Color(0x1A000000)
+                  )
+                ]
+            )
+        ),
       elevation: 1,
       titleSpacing: 10,
       title: Row(
