@@ -19,8 +19,9 @@ class AiModelScreen extends StatelessWidget {
             subTitle: "Advanced fish farming intelligence",
             showBackButton: true,
             onTap: (){},
-
+            iconBgColor:Colors.white.withOpacity(0.2) ,
             icon: Icons.psychology_outlined,
+            iconColor: Colors.white
           )
       ),
       body: SingleChildScrollView(
