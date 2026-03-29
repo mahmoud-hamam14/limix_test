@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../camera/view/camera_view.dart';
+import '../../../../camera/view/camera_view.dart';
 
 class AppBarHomeView extends StatelessWidget {
   const AppBarHomeView({super.key});

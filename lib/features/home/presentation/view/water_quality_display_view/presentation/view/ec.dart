@@ -1,10 +1,10 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:limix_test/features/categoris/widget/custom_app_bar.dart';
-import 'package:limix_test/features/categoris/widget/custom_current_reading.dart';
-import 'package:limix_test/features/categoris/widget/custom_historical_data.dart';
-import 'package:limix_test/features/categoris/widget/custom_stat_card.dart';
-import 'package:limix_test/features/categoris/widget/custom_trend_analysis.dart';
+import 'package:limix_test/features/home/presentation/view/water_quality_display_view/presentation/view/widget/custom_app_bar.dart';
+import 'package:limix_test/features/home/presentation/view/water_quality_display_view/presentation/view/widget/custom_current_reading.dart';
+import 'package:limix_test/features/home/presentation/view/water_quality_display_view/presentation/view/widget/custom_historical_data.dart';
+import 'package:limix_test/features/home/presentation/view/water_quality_display_view/presentation/view/widget/custom_stat_card.dart';
+import 'package:limix_test/features/home/presentation/view/water_quality_display_view/presentation/view/widget/custom_trend_analysis.dart';
 
 class Ec extends StatelessWidget {
   const Ec({super.key});

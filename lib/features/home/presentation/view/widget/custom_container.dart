@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:limix_test/features/home/models/container_model.dart';
+import 'package:limix_test/features/home/presentation/view/widget/container_model.dart';
 
 class CustomContainer extends StatelessWidget {
   

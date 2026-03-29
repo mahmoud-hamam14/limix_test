@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:limix_test/features/home/models/quick_actions_model.dart';
+import 'package:limix_test/features/home/presentation/view/widget/quick_actions_model.dart';
 
 class CustomQuickActions extends StatelessWidget {
   const CustomQuickActions({super.key, required this.quickActionsModel});

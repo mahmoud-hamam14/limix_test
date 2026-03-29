@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:limix_test/core/constants/custom_appbar.dart';
 import 'package:limix_test/features/analytics/farm_overview/view/widget/farm_overview_widget.dart';
 import 'package:limix_test/features/analytics/sensor_performance/view/sensor_performance_screen.dart';
-import 'package:limix_test/features/categoris/widget/custom_app_bar.dart';
+import 'package:limix_test/features/home/presentation/view/water_quality_display_view/presentation/view/widget/custom_app_bar.dart';
 
 
 
