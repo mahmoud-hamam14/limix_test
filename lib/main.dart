@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:limix_test/features/home/data/services/water_api_service.dart';
+import 'package:limix_test/features/home/presentation/manger/water_quality_display_cubit/waret_quality_display_cubit.dart';
 // import 'package:limix_test/features/analytics/farm_overview/view/analytics_screen.dart';
 // import 'package:limix_test/features/auth/cubit/cubit/login_cubit.dart';
 // import 'package:limix_test/features/auth/view/login_view.dart';
@@ -54,7 +56,17 @@ class LimixApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: SplashScreen());
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => WaterQualityDisplayCubit(WaterApiService()),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: SplashScreen(),
+      ),
+    );
     // }
     // );
   }

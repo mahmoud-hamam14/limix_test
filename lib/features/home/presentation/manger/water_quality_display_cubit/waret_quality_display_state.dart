@@ -1,24 +1,35 @@
-part of 'waret_quality_display_cubit.dart';
+import 'package:equatable/equatable.dart';
+import 'package:limix_test/features/home/data/models/water_quality_model/water.quality.display.model.dart';
 
-sealed class WaretQualityDisplayState extends Equatable {
-  const WaretQualityDisplayState();
+sealed class WaterQualityDisplayState extends Equatable {
+  const WaterQualityDisplayState();
 
   @override
   List<Object> get props => [];
 }
 
-final class WaretQualityDisplayInitial extends WaretQualityDisplayState {}
+// أول حالة عند البداية
+final class WaterQualityDisplayInitial extends WaterQualityDisplayState {}
 
-final class WaretQualityDisplayLoading extends WaretQualityDisplayState {}
+// حالة تحميل البيانات
+final class WaterQualityDisplayLoading extends WaterQualityDisplayState {}
 
-final class WaretQualityDisplaySuccess extends WaretQualityDisplayState {
+// حالة نجاح تحميل البيانات
+final class WaterQualityDisplaySuccess extends WaterQualityDisplayState {
   final WaterQualityModel waterQualityData;
 
-  const WaretQualityDisplaySuccess(this.waterQualityData);
+  const WaterQualityDisplaySuccess(this.waterQualityData);
+
+  @override
+  List<Object> get props => [waterQualityData];
 }
 
-final class WaretQualityDisplayError extends WaretQualityDisplayState {
-  final String errmessage;
+// حالة وجود خطأ
+final class WaterQualityDisplayError extends WaterQualityDisplayState {
+  final String errorMessage;
 
-  const WaretQualityDisplayError(this.errmessage);
+  const WaterQualityDisplayError(this.errorMessage);
+
+  @override
+  List<Object> get props => [errorMessage];
 }
