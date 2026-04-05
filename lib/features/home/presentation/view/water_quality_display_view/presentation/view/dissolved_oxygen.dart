@@ -1,5 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:limix_test/features/home/presentation/manger/water_quality_display_cubit/waret_quality_display_cubit.dart';
+import 'package:limix_test/features/home/presentation/manger/water_quality_display_cubit/waret_quality_display_state.dart';
 import 'package:limix_test/features/home/presentation/view/water_quality_display_view/presentation/view/widget/custom_app_bar.dart';
 import 'package:limix_test/features/home/presentation/view/water_quality_display_view/presentation/view/widget/custom_current_reading.dart';
 import 'package:limix_test/features/home/presentation/view/water_quality_display_view/presentation/view/widget/custom_historical_data.dart';
@@ -29,16 +32,31 @@ class DissolvedOxygen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomCurrentReading(
-              value: '9.2',
-              unit: 'mg/L',
-              status: 'Optimal',
-              range: '6-9 mg/L',
-              rate: '2.4%',
-              rateColor: Color(0xFF00A63E),
-              icon: Icons.update,
-              iconColor: Color(0xFF00A63E),
-              iconBgColor: Color(0xFFDCFCE7),
+            BlocBuilder<WaterQualityDisplayCubit, WaterQualityDisplayState>(
+              builder: (context, state) {
+                if (state is WaterQualityDisplaySuccess) {
+                  return CustomCurrentReading(
+                    value:
+                        state.waterQualityData.data?.dissolvedOxygen
+                            ?.toStringAsFixed(1) ??
+                        "--",
+                    unit: 'mg/L',
+                    status: 'Optimal',
+                    range: '5-9 mg/L',
+                    rate: '2.4%',
+                    rateColor: Color(0xFF00A63E),
+                    icon: Icons.update,
+                    iconColor: Color(0xFF00A63E),
+                    iconBgColor: Color(0xFFDCFCE7),
+                  );
+                } else if (state is WaterQualityDisplayLoading) {
+                  return Center(child: CircularProgressIndicator());
+                } else if (state is WaterQualityDisplayError) {
+                  return Center(child: Text('Error: ${state.errorMessage}'));
+                } else {
+                  return Center(child: Text('No data available'));
+                }
+              },
             ),
             CustomHistoricalData(),
 

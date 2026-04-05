@@ -67,10 +67,7 @@ class _SplashScreenState extends State<SplashScreen>
           transitionDuration: const Duration(milliseconds: 600),
           pageBuilder: (_, __, ___) => LoginScreen(),
           transitionsBuilder: (_, animation, __, child) {
-            return FadeTransition(
-              opacity: animation,
-              child: child,
-            );
+            return FadeTransition(opacity: animation, child: child);
           },
         ),
       );
@@ -85,18 +82,14 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
-    final Color lightCircleColor =
-    const Color(0xFF00B8DB).withOpacity(0.1);
+    final Color lightCircleColor = const Color(0xFF00B8DB).withOpacity(0.1);
 
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [
-            Color(0xFFFFFFFF),
-            Color(0xFFECFEFF),
-          ],
+          colors: [Color(0xFFFFFFFF), Color(0xFFECFEFF)],
         ),
       ),
       child: Scaffold(
@@ -145,6 +138,18 @@ class _SplashScreenState extends State<SplashScreen>
                             Image.asset(
                               'assets/images/n_logo.png',
                               width: 180,
+                              errorBuilder: (context, error, stackTrace) {
+                                return Container(
+                                  width: 180,
+                                  height: 180,
+                                  color: Colors.grey[300],
+                                  child: const Icon(
+                                    Icons.image_not_supported,
+                                    size: 50,
+                                    color: Colors.grey,
+                                  ),
+                                );
+                              },
                             ),
                             const SizedBox(height: 12),
                             const Text(
@@ -198,11 +203,3 @@ class _SplashScreenState extends State<SplashScreen>
     );
   }
 }
-
-
-
-
-
-
-
-

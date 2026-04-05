@@ -1,5 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:limix_test/features/home/presentation/manger/water_quality_display_cubit/waret_quality_display_cubit.dart';
+import 'package:limix_test/features/home/presentation/manger/water_quality_display_cubit/waret_quality_display_state.dart';
 import 'package:limix_test/features/home/presentation/view/water_quality_display_view/presentation/view/widget/custom_app_bar.dart';
 import 'package:limix_test/features/home/presentation/view/water_quality_display_view/presentation/view/widget/custom_current_reading.dart';
 import 'package:limix_test/features/home/presentation/view/water_quality_display_view/presentation/view/widget/custom_historical_data.dart';
@@ -29,16 +32,30 @@ class PhLevel extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomCurrentReading(
-              value: '7.74',
-              unit: 'pH',
-              status: 'Optimal',
-              range: '6.5-8.5 pH',
-              rate: '4.2%',
-              rateColor: Color(0xFF00A63E),
-              icon: Icons.update,
-              iconColor: Color(0xFF00A63E),
-              iconBgColor: Color(0xFFDCFCE7),
+            BlocBuilder<WaterQualityDisplayCubit, WaterQualityDisplayState>(
+              builder: (context, state) {
+                if (state is WaterQualityDisplaySuccess) {
+                  return CustomCurrentReading(
+                    value:
+                        state.waterQualityData.data?.ph?.toStringAsFixed(2) ??
+                        "--",
+                    unit: 'pH',
+                    status: 'Optimal',
+                    range: '6.5-8.5 pH',
+                    rate: '4.2%',
+                    rateColor: Color(0xFF00A63E),
+                    icon: Icons.update,
+                    iconColor: Color(0xFF00A63E),
+                    iconBgColor: Color(0xFFDCFCE7),
+                  );
+                } else if (state is WaterQualityDisplayLoading) {
+                  return Center(child: CircularProgressIndicator());
+                } else if (state is WaterQualityDisplayError) {
+                  return Center(child: Text('Error: ${state.errorMessage}'));
+                } else {
+                  return Center(child: Text('No data available'));
+                }
+              },
             ),
             CustomHistoricalData(),
 
