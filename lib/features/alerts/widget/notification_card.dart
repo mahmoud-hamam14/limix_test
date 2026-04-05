@@ -9,7 +9,7 @@ class NotificationCard extends StatelessWidget {
     required this.titleColor,
     required this.message,
     required this.timeAgo,
-    required this.backgroundColor,
+    required this.borderColor,
   });
 
   final IconData icon;
@@ -18,7 +18,7 @@ class NotificationCard extends StatelessWidget {
   final Color titleColor;
   final String message;
   final String timeAgo;
-  final Color backgroundColor;
+  final Color borderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +26,12 @@ class NotificationCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20.0),
       child: Container(
         decoration: BoxDecoration(
-          color: backgroundColor,
+          color: Colors.white,
           borderRadius: BorderRadius.circular(25),
+          border: Border.all(
+            color: borderColor,
+                width: 2
+          ),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.3),

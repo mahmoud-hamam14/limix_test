@@ -16,8 +16,8 @@ class TemperatureView extends StatelessWidget {
       appBar: CustomAppBar(
         title: 'Temperature',
         // subtitle: 'Real-time monitoring',
-        beginColor: Color(0xFFD97706),
-        endColor: Color(0xFFF59E0B),
+        beginColor: Color(0xFF01378E),
+        endColor: Color(0xFF2563EB),
         leftIcon: Icons.arrow_back,
         onLeftIconTap: () {
           Navigator.pop(context);
@@ -47,9 +47,9 @@ class TemperatureView extends StatelessWidget {
               interval: 8,
               herizontalInterval: 6,
               maxY: 32,
-              lineColor: Color(0xFFF59E0B),
-              gradientbeginColor: Color(0xFFF59E0B).withOpacity(0.18),
-              gradientEndColor: Color(0xFFF59E0B).withOpacity(0.0),
+              lineColor: Color(0xFF82B8FE),
+              gradientbeginColor: Color(0xFF3B82F6).withOpacity(0.3),
+              gradientEndColor: Color(0xFF3B82F6).withOpacity(0.0),
               spots: [
                 FlSpot(0, 22),
                 FlSpot(4, 21),

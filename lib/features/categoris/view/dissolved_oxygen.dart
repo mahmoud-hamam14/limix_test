@@ -16,8 +16,8 @@ class DissolvedOxygen extends StatelessWidget {
       appBar: CustomAppBar(
         title: 'Dissolved Oxygen',
         // subtitle: 'Real-time monitoring',
-        beginColor: Color(0xFF2563EB),
-        endColor: Color(0xFF3B82F6),
+        beginColor: Color(0xFF01378E),
+        endColor: Color(0xFF2563EB),
         leftIcon: Icons.arrow_back,
         onLeftIconTap: () {
           Navigator.pop(context);
@@ -47,7 +47,7 @@ class DissolvedOxygen extends StatelessWidget {
               herizontalInterval: 2,
               maxY: 12,
               lineColor: Color(0xFF3B82F6),
-              gradientbeginColor: Color(0xFF3B82F6).withOpacity(0.18),
+              gradientbeginColor: Color(0xFF3B82F6).withOpacity(0.3),
               gradientEndColor: Color(0xFF3B82F6).withOpacity(0.0),
               spots: [
                 FlSpot(0, 8.2),

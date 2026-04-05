@@ -19,7 +19,29 @@ class CheckEmailScreen extends StatelessWidget {
                 height: 100,
                 width: 100,
                 decoration: const BoxDecoration(
-                  color: Color(0xFF22C55E), 
+                  //color: Color(0xFF22C55E),
+                  gradient: LinearGradient(
+                      colors: [
+                        Color(0xff4E80DE),
+                        Color(0xff0064BC),
+                      ],
+                    begin: Alignment.topCenter
+                    ,end: Alignment.bottomCenter
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0x1A000000),
+                      offset: Offset(0, 8),
+                      blurRadius: 10,
+                      spreadRadius: -6,
+                    ),
+                    BoxShadow(
+                      color:  Color(0x1A000000),
+                      offset:  Offset(0, 20),
+                      blurRadius: 25,
+                      spreadRadius: -5,
+                    ),
+                  ],
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(
@@ -36,7 +58,7 @@ class CheckEmailScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xff0891B2),
+                  color: Color(0xff01378E),
                 ),
               ),
               const SizedBox(height: 12),
@@ -63,9 +85,11 @@ class CheckEmailScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
                       gradient: const LinearGradient(
-                        colors: [Color(0xff0E7490), Color(0xff0891B2)],
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
+                        colors: [
+                          Color(0xff01378E),
+                          Color(0xff2563EB)],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
                       ),
                       boxShadow: [
                         BoxShadow(

@@ -22,7 +22,7 @@ class ForgetScreen extends StatelessWidget {
         title: const Text(
           "Forgot Password?",
           style: TextStyle(
-            color: Color(0xff0891B2),
+            color: Color(0xff01378E),
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -39,12 +39,12 @@ class ForgetScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xff0891B2),
+                    color: Color(0xff01378E),
                   ),
                 ),
                 const SizedBox(height: 8),
                 const Text(
-                  'Manage your aquaculture farm',
+                  'Reset your password',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 16),
                 ),
@@ -80,9 +80,9 @@ class ForgetScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
                       gradient: const LinearGradient(
-                        colors: [Color(0xff0E7490), Color(0xff0891B2)],
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
+                        colors: [Color(0xff01378E), Color(0xff2563EB)],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
                       ),
                       boxShadow: [
                         BoxShadow(
@@ -122,7 +122,7 @@ class ForgetScreen extends StatelessWidget {
                         "Back to Login",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Color(0xff0891B2),
+                          color: Color(0xff2563EB),
                         ),
                       ),
                     ),

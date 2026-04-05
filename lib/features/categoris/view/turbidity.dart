@@ -16,8 +16,8 @@ class Turbidity extends StatelessWidget {
       appBar: CustomAppBar(
         title: 'Turbidity',
         // subtitle: 'Real-time monitoring',
-        beginColor: Color(0xFFEA580C),
-        endColor: Color(0xFFF97316),
+        beginColor: Color(0xFF01378E),
+        endColor: Color(0xFF2563EB),
         leftIcon: Icons.arrow_back,
         onLeftIconTap: () {
           Navigator.pop(context);
@@ -46,9 +46,9 @@ class Turbidity extends StatelessWidget {
               interval: 4,
               herizontalInterval: 4.5,
               maxY: 20,
-              lineColor: Color(0xFFF97316),
-              gradientbeginColor: Color(0xFFF97316).withOpacity(0.18),
-              gradientEndColor: Color(0xFFF97316).withOpacity(0.0),
+              lineColor: Color(0xFF82B8FE),
+              gradientbeginColor: Color(0xFF3B82F6).withOpacity(0.3),
+              gradientEndColor: Color(0xFF3B82F6).withOpacity(0.0),
               spots: [
                 FlSpot(0, 16),
                 FlSpot(4, 12),

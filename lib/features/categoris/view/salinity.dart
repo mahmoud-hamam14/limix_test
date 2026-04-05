@@ -16,8 +16,8 @@ class Salinity extends StatelessWidget {
       appBar: CustomAppBar(
         title: 'Salinity',
         // subtitle: 'Real-time monitoring',
-        beginColor: Color(0xFF059669),
-        endColor: Color(0xFF10B981),
+        beginColor: Color(0xFF01378E),
+        endColor: Color(0xFF2563EB),
         leftIcon: Icons.arrow_back,
         onLeftIconTap: () {
           Navigator.pop(context);
@@ -46,9 +46,9 @@ class Salinity extends StatelessWidget {
               interval: 8,
               herizontalInterval: 7,
               maxY: 40,
-              lineColor: Color(0xFF10B981),
-              gradientbeginColor: Color(0xFF10B981).withOpacity(0.18),
-              gradientEndColor: Color(0xFF10B981).withOpacity(0.0),
+              lineColor: Color(0xFF82B8FE),
+              gradientbeginColor: Color(0xFF3B82F6).withOpacity(0.3),
+              gradientEndColor: Color(0xFF3B82F6).withOpacity(0.0),
               spots: [
                 FlSpot(0, 32),
                 FlSpot(4, 26),

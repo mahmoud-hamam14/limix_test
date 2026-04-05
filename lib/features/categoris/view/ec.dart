@@ -16,8 +16,8 @@ class Ec extends StatelessWidget {
       appBar: CustomAppBar(
         title: 'Electrical Conductivity',
         // subtitle: 'Real-time monitoring',
-        beginColor: Color(0xFFDB2777),
-        endColor: Color(0xFFEC4899),
+        beginColor: Color(0xFF01378E),
+        endColor: Color(0xFF2563EB),
         leftIcon: Icons.arrow_back,
         onLeftIconTap: () {
           Navigator.pop(context);
@@ -46,9 +46,9 @@ class Ec extends StatelessWidget {
               interval: 150,
               herizontalInterval: 120,
               maxY: 600,
-              lineColor: Color(0xFFEC4899),
-              gradientbeginColor: Color(0xFFEC4899).withOpacity(0.18),
-              gradientEndColor: Color(0xFFEC4899).withOpacity(0.0),
+              lineColor: Color(0xFF82B8FE),
+              gradientbeginColor: Color(0xFF3B82F6).withOpacity(0.3),
+              gradientEndColor: Color(0xFF3B82F6).withOpacity(0.0),
               spots: [
                 FlSpot(0, 460),
                 FlSpot(2, 520),

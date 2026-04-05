@@ -17,6 +17,7 @@ class _AlertsScreenState extends State<AlertsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: PreferredSize(
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
@@ -55,7 +56,7 @@ class _AlertsScreenState extends State<AlertsScreen> {
                         borderRadius: BorderRadius.circular(30),
                         color:
                             selectedIndex == 0
-                                ? Colors.red
+                                ? Color(0xffD32F2F)
                                 : Colors.grey.shade200,
                       ),
                       child: Center(
