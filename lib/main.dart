@@ -39,8 +39,12 @@ void main() {
       };
 
       runApp(
-        BlocProvider(create: (_) => ProfileCubit(), child: const LimixApp()),
-      );
+         BlocProvider(
+      create: (_) => ProfileCubit(),
+             child: const LimixApp()
+        ),
+
+        );
     },
     (error, stack) {
       print('Uncaught zone error: $error');
@@ -54,8 +58,13 @@ class LimixApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: SplashScreen());
-    // }
-    // );
+    return
+    MaterialApp(
+
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(),
+    );
+     // }
+   // );
   }
 }
