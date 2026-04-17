@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gradient_app_bar/flutter_gradient_app_bar.dart';
 import 'package:limix_test/core/constants/custom_appbar.dart';
 import 'package:limix_test/features/ai_assistant/view/ai_assistant_screen.dart';
-import 'package:limix_test/features/alerts/view/alerts_screen.dart';
 import 'package:limix_test/features/auth/view/login_view.dart';
 import 'package:limix_test/features/settings/view/account_setting_screen.dart';
 import 'package:limix_test/features/settings/view/support_view.dart';
 import 'package:limix_test/features/settings/widget/custom_setting_container.dart';
 import 'package:limix_test/features/settings/widget/profile_widgets/custom_button.dart';
 
-import '../data/cubit/profile_cubit/profile_cubit.dart';
-import '../widget/appbar_setting_view.dart';
 import '../widget/notification_card.dart';
 //import 'ai_assistant_screen.dart';
 import 'device_maintenance_screen.dart';

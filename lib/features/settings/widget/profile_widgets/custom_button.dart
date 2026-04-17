@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../auth/view/login_view.dart';
 class CustomButton extends StatelessWidget {
   final String title;
   final IconData icon;

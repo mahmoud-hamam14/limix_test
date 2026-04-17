@@ -8,7 +8,7 @@ import 'package:limix_test/features/categoris/widget/custom_app_bar.dart';
 
 
 class AnalyticsScreen extends StatefulWidget {
-   AnalyticsScreen({super.key});
+   const AnalyticsScreen({super.key});
 
   @override
   State<AnalyticsScreen> createState() => _AnalyticsScreenState();

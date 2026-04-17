@@ -8,14 +8,11 @@ import 'package:limix_test/features/categoris/view/salinity.dart';
 import 'package:limix_test/features/categoris/view/temperature.dart';
 import 'package:limix_test/features/categoris/view/turbidity.dart';
 import 'package:limix_test/features/home/models/container_model.dart';
-import 'package:limix_test/features/home/models/quick_actions_model.dart';
-import 'package:limix_test/features/home/view/avg_temp_view.dart';
 import 'package:limix_test/features/home/widget/farm_overview_card.dart';
 import 'package:limix_test/features/home/widget/pond_status_card.dart';
 import 'package:limix_test/features/home/widget/recent_activity_card.dart';
 import 'package:limix_test/features/home/widget/appbar_home_view.dart';
 import 'package:limix_test/features/home/widget/custom_container.dart';
-import 'package:limix_test/features/home/widget/custom_quick_actions.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

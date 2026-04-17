@@ -23,7 +23,7 @@ class _CameraViewState extends State<CameraView> {
         preferredSize: const Size.fromHeight(kToolbarHeight),
         child: const AppbarCamera(),
       ),
-      body: Container(
+      body: SizedBox(
         height: 851.48,
         width: double.infinity,
         child: SingleChildScrollView(

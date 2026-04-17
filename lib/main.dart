@@ -2,17 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:limix_test/features/analytics/farm_overview/view/analytics_screen.dart';
-import 'package:limix_test/features/auth/cubit/cubit/login_cubit.dart';
-import 'package:limix_test/features/auth/view/login_view.dart';
-import 'package:limix_test/features/navigation/view/main_nav_screen.dart';
-import 'package:limix_test/features/home/view/home_view.dart';
-import 'package:limix_test/features/settings/data/cubit/language_cubit/cubit/language_cubit.dart';
-import 'package:limix_test/features/settings/data/cubit/language_cubit/cubit/language_state.dart';
 import 'package:limix_test/features/settings/data/cubit/profile_cubit/profile_cubit.dart';
 import 'package:limix_test/splash.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:limix_test/l10n/app_localizations.dart';
 
 void main() {
   runZonedGuarded(

@@ -41,7 +41,7 @@ class PondStatusCard extends StatelessWidget {
               Text(
                 title,
                 style: const TextStyle(
-                  color: Color(0xffF224B82),
+                  color: Color(0xfff224b82),
                   fontSize: 20,
                   fontWeight: FontWeight.w500,
                 ),
