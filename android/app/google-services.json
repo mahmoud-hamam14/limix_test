@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "229948327833",
+    "project_id": "limix-app",
+    "storage_bucket": "limix-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229948327833:android:f289aa23a89e0d15c3f508",
+        "android_client_info": {
+          "package_name": "com.example.limix_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD3ZjPQLi8T84LbLHf9QYN4H0R0iOB16k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

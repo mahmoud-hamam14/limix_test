@@ -1,11 +1,15 @@
 import 'dart:async';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:limix_test/features/settings/data/cubit/profile_cubit/profile_cubit.dart';
+import 'package:limix_test/firebase_options.dart';
 import 'package:limix_test/splash.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runZonedGuarded(
     () {
       WidgetsFlutterBinding.ensureInitialized();
@@ -30,12 +34,8 @@ void main() {
       };
 
       runApp(
-         BlocProvider(
-      create: (_) => ProfileCubit(),
-             child: const LimixApp()
-        ),
-
-        );
+        BlocProvider(create: (_) => ProfileCubit(), child: const LimixApp()),
+      );
     },
     (error, stack) {
       print('Uncaught zone error: $error');
@@ -49,13 +49,8 @@ class LimixApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-    MaterialApp(
-
-      debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
-    );
-     // }
-   // );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: SplashScreen());
+    // }
+    // );
   }
 }
