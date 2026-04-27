@@ -95,7 +95,7 @@ class _BouncingDotState extends State<_BouncingDot>
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _animation,
-      builder: (_, __) {
+      builder: (_, _) {
         return Transform.translate(
           offset: Offset(0, _animation.value),
           child: Container(

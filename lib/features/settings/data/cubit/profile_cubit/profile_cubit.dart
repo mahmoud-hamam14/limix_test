@@ -9,12 +9,12 @@ part 'profile_state.dart';
 class ProfileCubit extends Cubit<ProfileState> {
   ProfileCubit() : super(ProfileInitial());
   final ImagePicker picker= ImagePicker();
-  pickFromCamera()async{
+  Future<void> pickFromCamera()async{
     emit(ProfileImageLoading());
     final picked = await picker.pickImage(source: ImageSource.camera);
     emit(ProfileImageSuccess(image: File(picked!.path)));
   }
-  pickFromGallery()async{
+  Future<void> pickFromGallery()async{
     emit(ProfileImageLoading());
     final picked = await picker.pickImage(source: ImageSource.gallery);
     emit(ProfileImageSuccess(image: File(picked!.path)));
