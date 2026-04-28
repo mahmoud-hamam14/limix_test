@@ -1,12 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:limix_test/features/auth/core/errors/chech_erroe.dart';
+import 'package:limix_test/features/auth/core/function/firebase_auth_service.dart';
+import 'package:limix_test/features/auth/core/show_snack_bar.dart';
 import 'package:limix_test/features/auth/view/login_view.dart';
 import 'package:limix_test/features/auth/widget/custom_button.dart';
 import 'package:limix_test/features/auth/widget/custom_text_field.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class SignupView extends StatefulWidget {
-  SignupView({super.key});
+  const SignupView({super.key});
 
   @override
   State<SignupView> createState() => _SignupViewState();
@@ -39,6 +42,7 @@ class _SignupViewState extends State<SignupView> {
         extendBodyBehindAppBar: true,
         backgroundColor: Colors.transparent,
         appBar: AppBar(
+          scrolledUnderElevation: 0,
           leading: IconButton(
             icon: const Icon(
               Icons.arrow_back_ios_new,
@@ -97,6 +101,7 @@ class _SignupViewState extends State<SignupView> {
                       style: TextStyle(fontSize: 14),
                     ),
                     const SizedBox(height: 16),
+
                     CustomTextField(
                       controller: fullNameController,
                       label: "Full Name",
@@ -199,34 +204,37 @@ class _SignupViewState extends State<SignupView> {
                       text: 'Sign Up',
                       onTap: () async {
                         if (formKey.currentState!.validate()) {
-                          isLoading = true; // Show loading indicator
-                          setState(() {}); // Update UI to show loading
+                          setState(() => isLoading = true);
+
                           try {
-                            //? Sign up logic here
-                            await registerUser(context);
+                            await registerUser(
+                              emailController,
+                              passwordController,
+                            );
+
+                            showSnackBar(
+                              context,
+                              'Account created successfully',
+                            );
+
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LoginScreen(),
+                              ),
+                            );
                           } on FirebaseAuthException catch (e) {
-                            // ? Error message
-                            String message = '';
-                            message = checkErrorForSignup(e, message);
-                            // ? Show error message
-                            showSnackBar(context, message, Colors.red);
+                            final message = checkErrorForSignup(e);
+                            showSnackBar(context, message, isError: true);
                           } catch (e) {
-                            // ? Show error message
                             showSnackBar(
                               context,
                               'Something went wrong, please try again later',
-                              Colors.red,
+                              isError: true,
                             );
+                          } finally {
+                            setState(() => isLoading = false);
                           }
-                          isLoading = false; // Hide loading indicator
-                          setState(() {}); // Update UI to hide loading
-                        } else {
-                          // ? Show error message
-                          showSnackBar(
-                            context,
-                            'Please fix the errors in red',
-                            Colors.red,
-                          );
                         }
                       },
                     ),
@@ -318,54 +326,6 @@ class _SignupViewState extends State<SignupView> {
           ),
         ),
       ),
-    );
-  }
-
-  // * Check FirebaseAuthException and return user-friendly message
-  String checkErrorForSignup(FirebaseAuthException e, String message) {
-    switch (e.code) {
-      case 'weak-password':
-        message = 'Password is too weak';
-        break;
-
-      case 'email-already-in-use':
-        message = 'This email is already in use';
-        break;
-
-      case 'invalid-email':
-        message = 'Invalid email format';
-        break;
-
-      case 'network-request-failed':
-        message = 'Check your internet connection';
-        break;
-
-      default:
-        message = 'Something went wrong';
-    }
-    return message;
-  }
-
-  // * Show error message in a SnackBar
-  void showSnackBar(BuildContext context, String message, Color color) {
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text(message), backgroundColor: color));
-  }
-
-  // * Register user with Firebase Authentication
-  Future<void> registerUser(BuildContext context) async {
-    UserCredential userCredential = await FirebaseAuth.instance
-        .createUserWithEmailAndPassword(
-          email: emailController.text.trim(),
-          password: passwordController.text.trim(),
-        );
-
-    showSnackBar(context, 'Registration successful', Colors.green);
-
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => LoginScreen()),
     );
   }
 }
