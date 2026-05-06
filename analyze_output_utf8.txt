@@ -1,0 +1,92 @@
+﻿Analyzing limix_test...                                         
+
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\core\constants\custom_appbar.dart:106:43 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\ai_assistant\view\widgets\chat_bubble.dart:63:45 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\ai_assistant\view\widgets\chat_bubble.dart:95:48 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\ai_assistant\view\widgets\chat_input_bar.dart:21:33 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\ai_assistant\view\widgets\chat_input_bar.dart:63:52 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\ai_assistant\view\widgets\quick_question_grid.dart:46:43 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\ai_assistant\view\widgets\typing_indicator.dart:33:39 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\ai_models\view\ai_model_screen.dart:22:38 - deprecated_member_use
+   info - Constructors for public widgets should have a named 'key' parameter - lib\features\ai_models\view\fish_disease_screen.dart:4:7 - use_key_in_widget_constructors
+   info - Invalid use of a private type in a public API - lib\features\ai_models\view\fish_disease_screen.dart:6:3 - library_private_types_in_public_api
+warning - Unused import: 'package:limix_test/features/categoris/widget/custom_app_bar.dart' - lib\features\alerts\view\alerts_screen.dart:5:8 - unused_import
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\alerts\widget\notification_card.dart:37:34 - deprecated_member_use
+warning - Unused import: 'package:custom_sliding_segmented_control/custom_sliding_segmented_control.dart' - lib\features\analytics\farm_overview\view\analytics_screen.dart:1:8 - unused_import
+warning - Unused import: 'package:limix_test/features/categoris/widget/custom_app_bar.dart' - lib\features\analytics\farm_overview\view\analytics_screen.dart:6:8 - unused_import
+   info - Constructors in '@immutable' classes should be declared as 'const' - lib\features\analytics\farm_overview\view\analytics_screen.dart:11:4 - prefer_const_constructors_in_immutables
+   info - The variable name 'Ccontext' isn't a lowerCamelCase identifier - lib\features\analytics\farm_overview\view\widget\farm_health_card.dart:9:29 - non_constant_identifier_names
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\analytics\farm_overview\view\widget\farm_health_card.dart:94:44 - deprecated_member_use
+warning - Unused import: 'package:limix_test/features/analytics/farm_overview/view/widget/farm_health_card.dart' - lib\features\analytics\farm_overview\view\widget\farm_overview_widget.dart:2:8 - unused_import
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\analytics\farm_overview\view\widget\overview_cars_widget.dart:22:40 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\analytics\farm_overview\view\widget\overview_cars_widget.dart:24:44 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\analytics\farm_overview\view\widget\overview_cars_widget.dart:42:45 - deprecated_member_use
+   info - Unnecessary instance of 'Container' - lib\features\auth\view\signup_view.dart:200:27 - avoid_unnecessary_containers
+warning - The value of the local variable 'fieldBgColor' isn't used - lib\features\auth\widget\custom_text_field.dart:26:17 - unused_local_variable
+   info - Unnecessary instance of 'Container' - lib\features\auth\widget\login_widget.dart:202:25 - avoid_unnecessary_containers
+   info - Use a 'SizedBox' to add whitespace to a layout - lib\features\camera\view\camera_view.dart:26:13 - sized_box_for_whitespace
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\camera\widget\appbar_camera.dart:9:42 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\camera\widget\appbar_camera.dart:29:39 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\categoris\view\dissolved_oxygen.dart:50:53 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\categoris\view\dissolved_oxygen.dart:51:51 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\categoris\view\ec.dart:50:53 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\categoris\view\ec.dart:51:51 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\categoris\view\ph_level.dart:50:53 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\categoris\view\ph_level.dart:51:51 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\categoris\view\salinity.dart:50:53 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\categoris\view\salinity.dart:51:51 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\categoris\view\temperature.dart:51:53 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\categoris\view\temperature.dart:52:51 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\categoris\view\turbidity.dart:50:53 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\categoris\view\turbidity.dart:51:51 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\categoris\widget\custom_current_reading.dart:38:32 - deprecated_member_use
+   info - The variable name 'BgColor' isn't a lowerCamelCase identifier - lib\features\categoris\widget\custom_historical_data.dart:60:19 - non_constant_identifier_names
+   info - The variable name 'BgColor' isn't a lowerCamelCase identifier - lib\features\categoris\widget\custom_historical_data.dart:64:15 - non_constant_identifier_names
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\categoris\widget\custom_stat_card.dart:25:32 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\categoris\widget\custom_trend_analysis.dart:38:32 - deprecated_member_use
+warning - Unused import: 'package:limix_test/features/home/models/quick_actions_model.dart' - lib\features\home\view\home_view.dart:11:8 - unused_import
+warning - Unused import: 'package:limix_test/features/home/view/avg_temp_view.dart' - lib\features\home\view\home_view.dart:12:8 - unused_import
+warning - Unused import: 'package:limix_test/features/home/widget/custom_quick_actions.dart' - lib\features\home\view\home_view.dart:18:8 - unused_import
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\home\widget\custom_container.dart:29:34 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\home\widget\custom_quick_actions.dart:20:32 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\home\widget\farm_overview_card.dart:95:50 - deprecated_member_use
+   info - Instances of 'Color' should be created using an 8-digit hexadecimal integer (such as '0xFFFFFFFF') - lib\features\home\widget\pond_status_card.dart:44:32 - use_full_hex_values_for_flutter_colors
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\home\widget\pond_status_card.dart:106:50 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\home\widget\recent_activity_card.dart:77:41 - deprecated_member_use
+warning - Unused import: 'package:limix_test/features/home/view/home_screen.dart' - lib\features\navigation\view\main_nav_screen.dart:5:8 - unused_import
+warning - Unused import: 'package:flutter_bloc/flutter_bloc.dart' - lib\features\settings\view\account_setting_screen.dart:2:8 - unused_import
+warning - Unused import: 'package:limix_test/core/constants/custom_appbar.dart' - lib\features\settings\view\account_setting_screen.dart:3:8 - unused_import
+warning - Unused import: 'package:limix_test/features/settings/data/cubit/profile_cubit/profile_cubit.dart' - lib\features\settings\view\account_setting_screen.dart:4:8 - unused_import
+warning - Unused import: '../../auth/view/login_view.dart' - lib\features\settings\view\account_setting_screen.dart:9:8 - unused_import
+warning - Unused import: 'package:flutter_bloc/flutter_bloc.dart' - lib\features\settings\view\settings_screen.dart:2:8 - unused_import
+warning - Unused import: 'package:limix_test/features/alerts/view/alerts_screen.dart' - lib\features\settings\view\settings_screen.dart:5:8 - unused_import
+warning - Unused import: '../data/cubit/profile_cubit/profile_cubit.dart' - lib\features\settings\view\settings_screen.dart:12:8 - unused_import
+warning - Unused import: '../widget/appbar_setting_view.dart' - lib\features\settings\view\settings_screen.dart:13:8 - unused_import
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\settings\widget\appbar_setting_view.dart:58:37 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\settings\widget\appbar_setting_view.dart:79:39 - deprecated_member_use
+   info - 'activeColor' is deprecated and shouldn't be used. Use activeThumbColor instead. This feature was deprecated after v3.31.0-2.0.pre - lib\features\settings\widget\notification_card.dart:153:13 - deprecated_member_use
+   info - 'activeColor' is deprecated and shouldn't be used. Use activeThumbColor instead. This feature was deprecated after v3.31.0-2.0.pre - lib\features\settings\widget\notification_card.dart:187:15 - deprecated_member_use
+warning - Unused import: '../../../auth/view/login_view.dart' - lib\features\settings\widget\profile_widgets\custom_button.dart:3:8 - unused_import
+   info - The variable name 'ShowImagePickerSheet' isn't a lowerCamelCase identifier - lib\features\settings\widget\profile_widgets\image_picker_bottom_sheet.dart:5:6 - non_constant_identifier_names
+warning - The '!' will have no effect because the receiver can't be null - lib\features\settings\widget\profile_widgets\profile_image_widget.dart:36:67 - unnecessary_non_null_assertion
+warning - Unused import: 'package:limix_test/features/analytics/farm_overview/view/analytics_screen.dart' - lib\main.dart:5:8 - unused_import
+warning - Unused import: 'package:limix_test/features/auth/cubit/cubit/login_cubit.dart' - lib\main.dart:6:8 - unused_import
+warning - Unused import: 'package:limix_test/features/auth/view/login_view.dart' - lib\main.dart:7:8 - unused_import
+warning - Unused import: 'package:limix_test/features/navigation/view/main_nav_screen.dart' - lib\main.dart:8:8 - unused_import
+warning - Unused import: 'package:limix_test/features/home/view/home_view.dart' - lib\main.dart:9:8 - unused_import
+warning - Unused import: 'package:limix_test/features/settings/data/cubit/language_cubit/cubit/language_cubit.dart' - lib\main.dart:10:8 - unused_import
+warning - Unused import: 'package:limix_test/features/settings/data/cubit/language_cubit/cubit/language_state.dart' - lib\main.dart:11:8 - unused_import
+warning - Unused import: 'package:flutter_localizations/flutter_localizations.dart' - lib\main.dart:14:8 - unused_import
+   info - Don't invoke 'print' in production code - lib\main.dart:46:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\main.dart:47:7 - avoid_print
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\splash.dart:89:29 - deprecated_member_use
+  error - The name 'MyApp' isn't a class - test\widget_test.dart:16:35 - creation_with_non_type
+
+flutter : 81 issues found. (ran in 1.8s)
+At line:1 char:1
++ flutter analyze > analyze_output.txt 2>&1 ; Get-Content analyze_outpu ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (81 issues found. (ran in 1.8s):St 
+   ring) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
