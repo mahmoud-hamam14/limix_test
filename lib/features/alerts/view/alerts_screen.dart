@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:limix_test/core/constants/custom_appbar.dart';
 import 'package:limix_test/features/alerts/view/critical_view.dart';
 import 'package:limix_test/features/alerts/view/warning_view.dart';
-import 'package:limix_test/features/categoris/widget/custom_app_bar.dart';
 
 class AlertsScreen extends StatefulWidget {
   const AlertsScreen({super.key});

@@ -67,10 +67,7 @@ class _SplashScreenState extends State<SplashScreen>
           transitionDuration: const Duration(milliseconds: 600),
           pageBuilder: (_, __, ___) => LoginScreen(),
           transitionsBuilder: (_, animation, __, child) {
-            return FadeTransition(
-              opacity: animation,
-              child: child,
-            );
+            return FadeTransition(opacity: animation, child: child);
           },
         ),
       );
@@ -85,18 +82,14 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
-    final Color lightCircleColor =
-    const Color(0xFF00B8DB).withOpacity(0.1);
+    final Color lightCircleColor = const Color(0xFF00B8DB).withOpacity(0.1);
 
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [
-            Color(0xFFFFFFFF),
-            Color(0xFFECFEFF),
-          ],
+          colors: [Color(0xFFFFFFFF), Color(0xFFECFEFF)],
         ),
       ),
       child: Scaffold(
@@ -142,10 +135,7 @@ class _SplashScreenState extends State<SplashScreen>
                         scale: _scaleAnimation,
                         child: Column(
                           children: [
-                            Image.asset(
-                              'assets/images/n_logo.png',
-                              width: 180,
-                            ),
+                            Image.asset('assets/images/n_logo.png', width: 180),
                             const SizedBox(height: 12),
                             const Text(
                               "Smart Aquaculture System",
@@ -198,11 +188,3 @@ class _SplashScreenState extends State<SplashScreen>
     );
   }
 }
-
-
-
-
-
-
-
-

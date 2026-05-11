@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:limix_test/core/constants/custom_appbar.dart';
-import 'package:limix_test/features/settings/data/cubit/profile_cubit/profile_cubit.dart';
 import 'package:limix_test/features/settings/widget/appbar_setting_view.dart';
 import 'package:limix_test/features/settings/widget/profile_widgets/custom_button.dart';
 import 'package:limix_test/features/settings/widget/profile_widgets/custom_profile_container.dart';
 import 'package:limix_test/features/settings/widget/profile_widgets/profile_image_widget.dart';
-import '../../auth/view/login_view.dart';
 import '../widget/profile_widgets/costum_password_field.dart';
 import '../widget/profile_widgets/custom_input_field.dart';
 

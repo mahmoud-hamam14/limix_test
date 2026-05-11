@@ -150,7 +150,7 @@ class _NotificationsCardState extends State<NotificationsCard> {
           child: Switch(
             value: value,
             onChanged: onChanged,
-            activeColor: Colors.white,
+            activeThumbColor: Colors.white,
             activeTrackColor: const Color(0xFF3B82F6),
             inactiveThumbColor: Colors.white,
             inactiveTrackColor: Color(0xFFE5E7EB),
@@ -184,7 +184,7 @@ class _NotificationsCardState extends State<NotificationsCard> {
             child: Switch(
               value: value,
               onChanged: onChanged,
-              activeColor: Colors.white,
+              activeThumbColor: Colors.white,
               activeTrackColor: const Color(0xFF3B82F6),
               inactiveThumbColor: Colors.white,
               inactiveTrackColor: Color(0xFFE5E7EB),
