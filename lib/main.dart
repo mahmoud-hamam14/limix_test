@@ -9,11 +9,18 @@ import 'package:limix_test/splash.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    print('Firebase initialized successfully');
+  } catch (e) {
+    print('Firebase initialization error: $e');
+    print('Stack trace: $e');
+  }
+
   runZonedGuarded(
     () {
-      WidgetsFlutterBinding.ensureInitialized();
-
       FlutterError.onError = (FlutterErrorDetails details) {
         FlutterError.dumpErrorToConsole(details);
       };
@@ -39,7 +46,7 @@ void main() async {
     },
     (error, stack) {
       print('Uncaught zone error: $error');
-      print(stack);
+      print('Stack trace: $stack');
     },
   );
 }
