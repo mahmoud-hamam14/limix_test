@@ -70,7 +70,7 @@ class SensorAccuracyChart extends StatelessWidget {
                       sideTitles: SideTitles(
                         showTitles: true,
                         getTitlesWidget: (value, meta) {
-                          const sensors = ['Temp', 'pH', 'DO', 'Salinity', 'Turbidity'];
+                          const sensors = ['Temp', 'pH', 'DO', 'Amonia', 'Turbidity'];
                           if (value >= 0 && value < sensors.length) {
                             return Text(
                               sensors[value.toInt()],

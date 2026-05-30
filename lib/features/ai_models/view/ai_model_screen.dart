@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:limix_test/features/ai_models/view/biomass_view.dart';
+import 'package:limix_test/features/ai_models/view/fish_recommendations_view.dart';
+import 'package:limix_test/features/ai_models/view/sensor_forecast_view.dart';
 import 'package:limix_test/features/ai_models/widget/custom_container.dart';
 
 import '../../../core/constants/custom_appbar.dart';
@@ -64,7 +67,9 @@ class AiModelScreen extends StatelessWidget {
                iconColor: Color(0xff3B82F6),
                borderColor: Color(0xff2B7FFF),
                buttonColor: Color(0xff2B7FFF),
-               onTap: (){},
+               onTap: (){
+                 Navigator.push(context, MaterialPageRoute(builder: (context) => FishRecommendationsView(),));
+               },
                backgroundColor: Color(0xffDBEAFE),
                valueName:"Found:",
                valueColor:Color(0xff2B7FFF),
@@ -78,7 +83,9 @@ class AiModelScreen extends StatelessWidget {
               iconColor: Color(0xffF59E0B),
               borderColor: Color(0xffFE9A00),
               buttonColor:Color(0xffFE9A00),
-              onTap: (){},
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SensorForecastView(),));
+              },
               backgroundColor: Color(0xffFEF3C6),
               valueName:"Period:",
               valueColor:Color(0xffFE9A00),
@@ -92,7 +99,9 @@ class AiModelScreen extends StatelessWidget {
               iconColor: Color(0xff8B5CF6),
               borderColor: Color(0xff8E51FF),
               buttonColor:Color(0xff8E51FF),
-              onTap: (){},
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => BiomassView(),));
+              },
               backgroundColor: Color(0xffEDE9FE),
               valueName:"Total::",
               valueColor:Color(0xff8E51FF),

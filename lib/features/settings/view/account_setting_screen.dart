@@ -24,11 +24,11 @@ class AccountSettingScreen extends StatelessWidget {
           title: "Account Settings",
           subTitle: "Manage your information",
           gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
               colors: [
-                Color(0xff0891B2),
-                Color(0xff06B6D4)
+                Color(0xff01378E),
+                Color(0xff2563EB)
               ]
           ),
         iconTheme: IconThemeData(color:Colors.white),
@@ -49,7 +49,7 @@ class AccountSettingScreen extends StatelessWidget {
                   SizedBox(height: 20,),
                   Text("Personal Information",
                       style: TextStyle(
-                        color: Color(0xff0891B2),
+                        color: Color(0xff01378E),
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                       )
@@ -90,7 +90,7 @@ class AccountSettingScreen extends StatelessWidget {
                   Text(
                       "Farm Details",
                       style: TextStyle(
-                        color: Color(0xff0891B2),
+                        color: Color(0xff01378E),
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                       )
@@ -119,7 +119,7 @@ class AccountSettingScreen extends StatelessWidget {
                   Text(
                       "Security",
                       style: TextStyle(
-                        color: Color(0xff0891B2),
+                        color: Color(0xff01378E),
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                       )
@@ -164,8 +164,8 @@ class AccountSettingScreen extends StatelessWidget {
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                   colors: [
-                    Color(0xff0891B2),
-                    Color(0xff0E7490)
+                    Color(0xff01378E),
+                    Color(0xff2563EB)
                   ]
               ),
             )

@@ -14,7 +14,7 @@ class Salinity extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: CustomAppBar(
-        title: 'Salinity',
+        title: 'Ammonia',
         // subtitle: 'Real-time monitoring',
         beginColor: Color(0xFF01378E),
         endColor: Color(0xFF2563EB),
@@ -31,9 +31,9 @@ class Salinity extends StatelessWidget {
           children: [
             CustomCurrentReading(
               value: '35.02',
-              unit: 'ppt',
+              unit: 'mg/L',
               status: 'Optimal',
-              range: '28-35 ppt',
+              range: '28-35 mg/L',
               rate: '0.8%',
               rateColor: Color(0xFF00A63E),
               icon: Icons.update,

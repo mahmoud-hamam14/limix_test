@@ -86,7 +86,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     final Color lightCircleColor =
-    const Color(0xFF00B8DB).withOpacity(0.1);
+    const Color(0xFFC8EDFF);
 
     return Container(
       decoration: const BoxDecoration(
@@ -95,7 +95,7 @@ class _SplashScreenState extends State<SplashScreen>
           end: Alignment.bottomCenter,
           colors: [
             Color(0xFFFFFFFF),
-            Color(0xFFECFEFF),
+            Color(0xffECFEFF),
           ],
         ),
       ),
@@ -143,7 +143,7 @@ class _SplashScreenState extends State<SplashScreen>
                         child: Column(
                           children: [
                             Image.asset(
-                              'assets/images/n_logo.png',
+                              'assets/images/limix(logo).png',
                               width: 180,
                             ),
                             const SizedBox(height: 12),
@@ -168,7 +168,7 @@ class _SplashScreenState extends State<SplashScreen>
                   FadeTransition(
                     opacity: _loaderFade,
                     child: const SpinKitThreeBounce(
-                      color: Color(0xFF0092B8),
+                      color: Color(0xFF003E95),
                       size: 22,
                     ),
                   ),

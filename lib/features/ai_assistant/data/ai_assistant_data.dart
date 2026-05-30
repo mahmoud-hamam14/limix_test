@@ -4,15 +4,15 @@ class AiAssistantData {
   static final Dio dio = Dio();
 
   static const String baseUrl =
-      'https://hornless-maura-uncontrovertedly.ngrok-free.dev';
-  static const String chatEndpoint = '/ask';
+      'https://chatbot-29031828413.europe-west3.run.app';
+  static const String chatEndpoint = '/chat';
 
   static Future<String> sendMessage(String message) async {
     try {
       final response = await dio.post(
         '$baseUrl$chatEndpoint',
         data: {
-          'question': message,
+          "message": message,
         },
         options: Options(
           headers: {
@@ -25,7 +25,7 @@ class AiAssistantData {
       final data = response.data;
 
       if (data is Map<String, dynamic>) {
-        return data['answer'] ?? 'No response';
+        return data["reply"] ?? 'No response';
       }
 
       return 'Unexpected response format';

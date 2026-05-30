@@ -52,6 +52,7 @@ dependencies:
   image_picker: ^1.2.1
   flutter_vlc_player: ^7.4.4
   flutter_mjpeg: ^2.0.4
+  font_awesome_flutter: ^10.7.0
 
 
 
@@ -84,7 +85,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-  # تأكدي إن المسافة البادئة (Indentation) هنا مسافتين بس
+
   uses-material-design: true
   generate: true
 
@@ -101,6 +102,11 @@ flutter:
     - assets/images/fish4.png
     - assets/images/fish5.png
     - assets/images/google.png
+    - assets/images/limix(logo).png
+    - assets/images/fishRe1.jpg
+    - assets/images/fishRe2.jpg
+    - assets/images/fishRe3.jpg
+    - assets/images/fish live.jpg
 
     - assets/images/ImageWithFallback.png
 

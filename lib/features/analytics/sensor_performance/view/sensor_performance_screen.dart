@@ -31,7 +31,7 @@ class SensorPerformanceScreen extends StatelessWidget {
             ),
             SizedBox(height: 12),
             SensorCard(
-              sensorName: "Salinity Sensor", 
+              sensorName: "Amonia Sensor",
               accuracy: "95%",
                upTime: "98.5%",
                 alarts: "7"
