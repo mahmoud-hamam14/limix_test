@@ -33,7 +33,7 @@ class ProfileImageWidget extends StatelessWidget {
                     end: Alignment.bottomRight,
                   ),
                   image: imageFile != null
-                      ? DecorationImage(image: FileImage(imageFile!), fit: BoxFit.cover)
+                      ? DecorationImage(image: FileImage(imageFile), fit: BoxFit.cover)
                       : null,
                 ),
                 child: imageFile == null

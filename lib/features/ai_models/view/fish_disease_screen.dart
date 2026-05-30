@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../core/constants/custom_appbar.dart';
 class FishDiseaseScreen extends StatefulWidget {
+  const FishDiseaseScreen({super.key});
+
   @override
   _FishDiseaseScreenState createState() => _FishDiseaseScreenState();
 }

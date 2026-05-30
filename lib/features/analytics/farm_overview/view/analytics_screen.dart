@@ -1,14 +1,12 @@
-import 'package:custom_sliding_segmented_control/custom_sliding_segmented_control.dart';
 import 'package:flutter/material.dart';
 import 'package:limix_test/core/constants/custom_appbar.dart';
 import 'package:limix_test/features/analytics/farm_overview/view/widget/farm_overview_widget.dart';
 import 'package:limix_test/features/analytics/sensor_performance/view/sensor_performance_screen.dart';
-import 'package:limix_test/features/categoris/widget/custom_app_bar.dart';
 
 
 
 class AnalyticsScreen extends StatefulWidget {
-   AnalyticsScreen({super.key});
+   const AnalyticsScreen({super.key});
 
   @override
   State<AnalyticsScreen> createState() => _AnalyticsScreenState();
