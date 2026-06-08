@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:limix_test/features/home/models/container_model.dart';
 
 class CustomContainer extends StatelessWidget {
-  
   const CustomContainer({super.key, required this.container, this.onTap});
   final VoidCallback? onTap;
-  
+
   final ContainerModel container;
   @override
   Widget build(BuildContext context) {
@@ -49,14 +48,14 @@ class CustomContainer extends StatelessWidget {
                   height: 45,
                   decoration: BoxDecoration(
                     color: container.iconBgColor,
-      
+
                     borderRadius: BorderRadius.circular(20),
                   ),
-      
+
                   child: Icon(
                     container.icon,
                     color: container.iconColor,
-      
+
                     // Icons.thermostat, color: Colors.orange,
                   ),
                 ),
@@ -83,18 +82,18 @@ class CustomContainer extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-      
+
             const SizedBox(height: 30),
-      
+
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  container.value,
-                  // '27',
+                  // container.value,
+                  '312',
                   style: TextStyle(
                     color: container.valueColor,
-                    fontSize: 24,
+                    fontSize: 21,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -103,7 +102,7 @@ class CustomContainer extends StatelessWidget {
                   container.unit,
                   style: TextStyle(
                     color: Color(0xFF495464),
-                    fontSize: 14,
+                    fontSize: 12,
                     // fontWeight: FontWeight.bold,
                   ),
                 ),
