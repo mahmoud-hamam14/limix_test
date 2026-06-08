@@ -67,10 +67,7 @@ class _SplashScreenState extends State<SplashScreen>
           transitionDuration: const Duration(milliseconds: 600),
           pageBuilder: (_, __, ___) => LoginScreen(),
           transitionsBuilder: (_, animation, __, child) {
-            return FadeTransition(
-              opacity: animation,
-              child: child,
-            );
+            return FadeTransition(opacity: animation, child: child);
           },
         ),
       );
@@ -85,18 +82,14 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
-    final Color lightCircleColor =
-    const Color(0xFFC8EDFF);
+    final Color lightCircleColor = const Color(0xFFC8EDFF);
 
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [
-            Color(0xFFFFFFFF),
-            Color(0xffECFEFF),
-          ],
+          colors: [Color(0xFFFFFFFF), Color(0xffECFEFF)],
         ),
       ),
       child: Scaffold(
@@ -198,11 +191,3 @@ class _SplashScreenState extends State<SplashScreen>
     );
   }
 }
-
-
-
-
-
-
-
-

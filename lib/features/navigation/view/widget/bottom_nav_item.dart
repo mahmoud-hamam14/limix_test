@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:limix_test/core/helpers/dimensions_helper.dart';
 
 class BottomNavItem extends StatelessWidget {
   final String label;
@@ -17,18 +19,14 @@ class BottomNavItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (isSelected) {
-      
       return SizedBox(
-        width: 71,
-          height: 56,
+        width: 80.width,
+        height: 60.height,
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(18.radius),
             gradient: const LinearGradient(
-              colors: [
-                Color(0xFFEFF6FF),
-                Color(0xFFF0FDFA),
-              ],
+              colors: [Color(0xFFEFF6FF), Color(0xFFF0FDFA)],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
@@ -36,16 +34,12 @@ class BottomNavItem extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                icon,
-                size: 25,
-                color: activeColor,
-              ),
-              const SizedBox(height: 4),
+              Icon(icon, size: 26.radius, color: activeColor),
+              SizedBox(height: 5.height),
               Text(
                 label,
                 style: TextStyle(
-                  fontSize: 12,
+                  fontSize: 14.font,
                   fontWeight: FontWeight.w500,
                   color: activeColor,
                 ),
@@ -55,23 +49,18 @@ class BottomNavItem extends StatelessWidget {
         ),
       );
     } else {
-      
       return SizedBox(
-        width: 71,
-        height: 56,
+        width: 70.width,
+        height: 60.height,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              icon,
-              size: 22,
-              color: const Color(0xff9CA3AF),
-            ),
-            const SizedBox(height: 6),
+            Icon(icon, size: 23.radius, color: const Color(0xff9CA3AF)),
+            SizedBox(height: 5.height),
             Text(
               label,
-              style: const TextStyle(
-                fontSize: 12,
+              style: TextStyle(
+                fontSize: 12.font,
                 fontWeight: FontWeight.w500,
                 color: Color(0xff9CA3AF),
               ),

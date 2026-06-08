@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:limix_test/core/api/water_api_service.dart';
 import 'package:limix_test/core/cubit/water_quality_desplay_cubit/water_quality_desplay_cubit.dart';
 import 'package:limix_test/features/settings/data/cubit/profile_cubit/profile_cubit.dart';
@@ -53,9 +54,16 @@ class LimixApp extends StatelessWidget {
           create: (_) => WaterQualityDesplayCubit(WaterApiService())..start(),
         ),
       ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: SplashScreen(),
+      child: ScreenUtilInit(
+        designSize: const Size(360, 690),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context, child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: SplashScreen(),
+          );
+        },
       ),
     );
     // }
