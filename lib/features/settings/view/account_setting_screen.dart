@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:limix_test/core/constants/custom_appbar.dart';
-import 'package:limix_test/features/settings/data/cubit/profile_cubit/profile_cubit.dart';
 import 'package:limix_test/features/settings/widget/appbar_setting_view.dart';
 import 'package:limix_test/features/settings/widget/profile_widgets/custom_button.dart';
 import 'package:limix_test/features/settings/widget/profile_widgets/custom_profile_container.dart';
 import 'package:limix_test/features/settings/widget/profile_widgets/profile_image_widget.dart';
-import '../../auth/view/login_view.dart';
 import '../widget/profile_widgets/costum_password_field.dart';
 import '../widget/profile_widgets/custom_input_field.dart';
 
@@ -24,11 +20,11 @@ class AccountSettingScreen extends StatelessWidget {
           title: "Account Settings",
           subTitle: "Manage your information",
           gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
               colors: [
-                Color(0xff0891B2),
-                Color(0xff06B6D4)
+                Color(0xff01378E),
+                Color(0xff2563EB)
               ]
           ),
         iconTheme: IconThemeData(color:Colors.white),
@@ -49,7 +45,7 @@ class AccountSettingScreen extends StatelessWidget {
                   SizedBox(height: 20,),
                   Text("Personal Information",
                       style: TextStyle(
-                        color: Color(0xff0891B2),
+                        color: Color(0xff01378E),
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                       )
@@ -90,7 +86,7 @@ class AccountSettingScreen extends StatelessWidget {
                   Text(
                       "Farm Details",
                       style: TextStyle(
-                        color: Color(0xff0891B2),
+                        color: Color(0xff01378E),
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                       )
@@ -119,7 +115,7 @@ class AccountSettingScreen extends StatelessWidget {
                   Text(
                       "Security",
                       style: TextStyle(
-                        color: Color(0xff0891B2),
+                        color: Color(0xff01378E),
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                       )
@@ -164,8 +160,8 @@ class AccountSettingScreen extends StatelessWidget {
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                   colors: [
-                    Color(0xff0891B2),
-                    Color(0xff0E7490)
+                    Color(0xff01378E),
+                    Color(0xff2563EB)
                   ]
               ),
             )

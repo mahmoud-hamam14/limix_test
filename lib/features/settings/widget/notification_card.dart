@@ -150,11 +150,16 @@ class _NotificationsCardState extends State<NotificationsCard> {
           child: Switch(
             value: value,
             onChanged: onChanged,
-            activeColor: Colors.white,
-            activeTrackColor: const Color(0xFF3B82F6),
-            inactiveThumbColor: Colors.white,
-            inactiveTrackColor: Color(0xFFE5E7EB),
-          ),
+            thumbColor: WidgetStateProperty.all(Colors.white),
+            trackColor: WidgetStateProperty.resolveWith(
+                  (states) {
+                if (states.contains(WidgetState.selected)) {
+                  return const Color(0xFF3B82F6);
+                }
+                return const Color(0xFFE5E7EB);
+              },
+            ),
+          )
         ),
       ],
     );
@@ -184,11 +189,16 @@ class _NotificationsCardState extends State<NotificationsCard> {
             child: Switch(
               value: value,
               onChanged: onChanged,
-              activeColor: Colors.white,
-              activeTrackColor: const Color(0xFF3B82F6),
-              inactiveThumbColor: Colors.white,
-              inactiveTrackColor: Color(0xFFE5E7EB),
-            ),
+              thumbColor: WidgetStateProperty.all(Colors.white),
+              trackColor: WidgetStateProperty.resolveWith(
+                    (states) {
+                  if (states.contains(WidgetState.selected)) {
+                    return const Color(0xFF3B82F6);
+                  }
+                  return const Color(0xFFE5E7EB);
+                },
+              ),
+            )
           ),
         ],
       ),

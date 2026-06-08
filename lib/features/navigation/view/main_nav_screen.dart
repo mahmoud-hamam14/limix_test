@@ -8,6 +8,8 @@ import 'package:limix_test/features/navigation/view/widget/custom_bottom_nav_bar
 import 'package:limix_test/features/settings/view/account_setting_screen.dart';
 import 'package:limix_test/features/settings/view/settings_screen.dart';
 
+import '../../ai_assistant/view/ai_assistant_screen.dart';
+
 class MainNavScreen extends StatefulWidget {
   const MainNavScreen({super.key});
 
@@ -26,6 +28,7 @@ class _MainNavStateState extends State<MainNavScreen> {
     AiModelScreen(),
     SettingsScreen(),
     AccountSettingScreen(),
+    AiAssistantScreen(),
 
 
   ];

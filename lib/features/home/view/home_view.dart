@@ -1,12 +1,17 @@
 // import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:limix_test/features/ai_assistant/view/ai_assistant_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:limix_test/core/cubit/water_quality_desplay_cubit/water_quality_desplay_cubit.dart';
+import 'package:limix_test/core/cubit/water_quality_desplay_cubit/water_quality_desplay_state.dart';
 import 'package:limix_test/features/categoris/view/dissolved_oxygen.dart';
 import 'package:limix_test/features/categoris/view/ec.dart';
 import 'package:limix_test/features/categoris/view/ph_level.dart';
 import 'package:limix_test/features/categoris/view/salinity.dart';
 import 'package:limix_test/features/categoris/view/temperature.dart';
 import 'package:limix_test/features/categoris/view/turbidity.dart';
+
 import 'package:limix_test/features/home/models/container_model.dart';
 import 'package:limix_test/features/home/models/quick_actions_model.dart';
 import 'package:limix_test/features/home/view/avg_temp_view.dart';
@@ -23,180 +28,61 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
         child: const AppBarHomeView(),
       ),
-      backgroundColor: Colors.white,
 
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 16),
 
-            const Text(
-              "Welcome back, Farmer",
-              style: TextStyle(fontSize: 20, color: Color(0xff01378E)),
+      body: Stack(
+        children: [
+
+      /// Home Content
+      SingleChildScrollView(
+
+      padding:
+      const EdgeInsets.symmetric(
+        horizontal: 16,
+      ),
+
+
+      child: Column(
+
+        crossAxisAlignment:
+        CrossAxisAlignment.start,
+
+        children: [
+
+          const SizedBox(height: 16),
+
+          const Text(
+            "Welcome back, Farmer",
+
+            style: TextStyle(
+              fontSize: 20,
+              color: Color(0xff01378E),
             ),
+          ),
 
-            const SizedBox(height: 4),
+          const SizedBox(height: 4),
 
-            const Text(
-              "Here's your pond overview for today",
-              style: TextStyle(color: Color(0xFF495464), fontSize: 18),
+          const Text(
+            "Here's your pond overview for today",
+
+            style: TextStyle(
+              color: Color(0xFF495464),
+              fontSize: 18,
             ),
+          ),
 
-            const SizedBox(height: 16),
+          const SizedBox(height: 16),
 
-            Row(
-              children: [
-                Expanded(
-                  child: CustomContainer(
-                    container: ContainerModel(
-                      icon: Icons.thermostat,
-                      title: "Avg Temp",
-                      value: "26",
-                      unit: "°C",
-                      startColor: Color(0xffFFFFFF),
-                      endColor: Color(0xffFEF3C7),
-                      iconColor: Colors.orange,
-                      iconBgColor: Color(0xffFEF3C7),
-                      valueColor: Colors.orange,
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => TemperatureView(),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                const SizedBox(width: 15),
-                Expanded(
-                  child: CustomContainer(
-                    container: ContainerModel(
-                      icon: Icons.water_drop,
-                      title: "Oxygen",
-                      value: "7.5",
-                      unit: "mg/L",
-                      startColor: Color(0xffFFFFFF),
-                      endColor: Color(0xffDBEAFE),
-                      iconColor: Colors.blue,
-                      iconBgColor: Color(0xffDBEAFE),
-                      valueColor: Colors.blue,
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => DissolvedOxygen(),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                const SizedBox(width: 15),
-                Expanded(
-                  child: CustomContainer(
-                    container: ContainerModel(
-                      icon: Icons.show_chart_outlined,
-                      title: "pH Level",
-                      value: "7.5",
-                      unit: "pH",
-                      startColor: Color(0xffFFFFFF),
-                      endColor: Color(0xffE9D5FF),
-                      iconColor: Colors.purple,
-                      iconBgColor: Color(0xffE9D5FF),
-                      valueColor: Colors.purple,
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => PhLevel()),
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 20),
+          SensorDisplaySection(),
 
-            Row(
-              children: [
-                Expanded(
-                  child: CustomContainer(
-                    container: ContainerModel(
-                      icon: Icons.waves,
-                      title: "Salinty",
-                      value: "32",
-                      unit: "ppt",
-                      startColor: Color(0xffFFFFFF),
-                      endColor: Color(0xffD1FAE5),
-                      iconBgColor: Color(0xffD1FAE5),
-                      iconColor: Colors.green,
-                      valueColor: Colors.green,
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Salinity()),
-                      );
-                    },
-                  ),
-                ),
-                const SizedBox(width: 15),
-                Expanded(
-                  child: CustomContainer(
-                    container: ContainerModel(
-                      icon: Icons.speed_outlined,
-                      title: "Turbidity",
-                      value: "12",
-                      unit: "NTU",
-                      startColor: Color(0xffFFFFFF),
-                      endColor: Color(0xffFEAAAB),
-                      iconBgColor: Color(0xffFED7AA),
-                      iconColor: Color(0xffF67216),
-                      valueColor: Color(0xffF67216),
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Turbidity()),
-                      );
-                    },
-                  ),
-                ),
-                const SizedBox(width: 15),
-                Expanded(
-                  child: CustomContainer(
-                    container: ContainerModel(
-                      icon: Icons.bolt_outlined,
-                      title: "EC",
-                      value: "485",
-                      unit: "μS/cm",
-                      startColor: Color(0xffFFFFFF),
-                      endColor: Color(0xffFCE7F3),
-                      iconColor: Colors.pinkAccent,
-                      iconBgColor: Color(0xffFCE7F3),
-                      valueColor: Colors.pinkAccent,
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Ec()),
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
             const SizedBox(height: 20),
             Text(
-              'Pond Status',
+              'Water Quality',
               style: TextStyle(fontSize: 20, color: Color(0xff01378E)),
             ),
             const SizedBox(height: 15),
@@ -252,6 +138,252 @@ class HomeView extends StatelessWidget {
           ],
         ),
       ),
+          Positioned(
+            bottom: 20,
+            right: 20,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const AiAssistantScreen(),
+                  ),
+                );
+              },
+              child: Container(
+                width: 68,
+                height: 68,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: const LinearGradient(
+                    colors: [
+                      Color(0xff2457C5),
+                      Color(0xff4F7DFF),
+                    ],
+                  ),
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 3,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 12,
+                      offset: Offset(0, 5),
+                    ),
+                  ],
+                ),
+                child: const Icon(
+                  Icons.smart_toy,
+                  color: Colors.white,
+                  size: 34,
+                ),
+              ),
+            ),
+          ),
+    ]
+
+      ),
     );
   }
 }
+class SensorDisplaySection extends StatelessWidget {
+  const SensorDisplaySection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<WaterQualityDesplayCubit, WaterQualityDesplayState>(
+        builder: (context, state) {
+      // 🔹 Loading
+      if (state is WaterQualityDesplayLoading) {
+        return const Center(child: CircularProgressIndicator());
+      }
+
+      // 🔹 Error
+      if (state is WaterQualityDesplayError) {
+        return Center(child: Text(state.message));
+      }
+
+      // 🔹 Success
+      if (state is WaterQualityDesplaySuccess) {
+        final data = state.data;
+
+        return Column(
+          children: [
+            /// =========================
+            /// First Row
+            /// =========================
+            Row(
+              children: [
+                /// Temperature
+                Expanded(
+                  child: CustomContainer(
+                    container: ContainerModel(
+                      icon: Icons.thermostat,
+                      title: "Avg Temp",
+                      value: data.temperature.toString(),
+                      unit: "°C",
+                      startColor: const Color(0xffFFFFFF),
+                      endColor: const Color(0xffFEF3C7),
+                      iconColor: Colors.orange,
+                      iconBgColor: const Color(0xffFEF3C7),
+                      valueColor: Colors.orange,
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const TemperatureView(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+
+                const SizedBox(width: 15),
+
+                /// DO
+                Expanded(
+                  child: CustomContainer(
+                    container: ContainerModel(
+                      icon: Icons.water_drop,
+                      title: "Oxygen",
+                      value: data.dissolvedOxygen.toString(),
+                      unit: "mg/L",
+                      startColor: const Color(0xffFFFFFF),
+                      endColor: const Color(0xffDBEAFE),
+                      iconColor: Colors.blue,
+                      iconBgColor: const Color(0xffDBEAFE),
+                      valueColor: Colors.blue,
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const DissolvedOxygen(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+
+                const SizedBox(width: 15),
+
+                /// pH
+                Expanded(
+                  child: CustomContainer(
+                    container: ContainerModel(
+                      icon: Icons.show_chart_outlined,
+                      title: "pH Level",
+                      value: data.ph.toString(),
+                      unit: "pH",
+                      startColor: const Color(0xffFFFFFF),
+                      endColor: const Color(0xffE9D5FF),
+                      iconColor: Colors.purple,
+                      iconBgColor: const Color(0xffE9D5FF),
+                      valueColor: Colors.purple,
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const PhLevel()),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 20),
+
+            /// =========================
+            /// Second Row
+            /// =========================
+            Row(
+              children: [
+                /// Ammonia
+                Expanded(
+                  child: CustomContainer(
+                    container: ContainerModel(
+                      icon: Icons.waves,
+                      title: "Ammonia",
+                      value: data.ammonia.toString(),
+                      unit: "mg/L",
+                      startColor: const Color(0xffFFFFFF),
+                      endColor: const Color(0xffD1FAE5),
+                      iconBgColor: const Color(0xffD1FAE5),
+                      iconColor: Colors.green,
+                      valueColor: Colors.green,
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const Salinity()),
+                      );
+                    },
+                  ),
+                ),
+
+                const SizedBox(width: 15),
+
+                /// Turbidity
+                Expanded(
+                  child: CustomContainer(
+                    container: ContainerModel(
+                      icon: Icons.speed_outlined,
+                      title: "Turbidity",
+                      value: data.turbidity.toString(),
+                      unit: "NTU",
+                      startColor: const Color(0xffFFFFFF),
+                      endColor: const Color(0xffFEAAAB),
+                      iconBgColor: const Color(0xffFED7AA),
+                      iconColor: Color(0xffF67216),
+                      valueColor: Color(0xffF67216),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const Turbidity()),
+                      );
+                    },
+                  ),
+                ),
+
+                const SizedBox(width: 15),
+
+                /// EC
+                Expanded(
+                  child: CustomContainer(
+                    container: ContainerModel(
+                      icon: Icons.bolt_outlined,
+                      title: "EC",
+                      value: data.ec.toString(),
+                      unit: "μS/cm",
+                      startColor: const Color(0xffFFFFFF),
+                      endColor: const Color(0xffFCE7F3),
+                      iconColor: Colors.pinkAccent,
+                      iconBgColor: const Color(0xffFCE7F3),
+                      valueColor: Colors.pinkAccent,
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const Ec()),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ],
+        );
+      }
+      return const SizedBox();
+        },
+
+    );
+
+
+
+  }
+}
+

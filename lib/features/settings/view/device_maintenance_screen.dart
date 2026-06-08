@@ -18,8 +18,8 @@ class DeviceMaintenanceScreen extends StatelessWidget {
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
               colors: [
-                Color(0xff8B5CF6),
-                Color(0xffA78BFA)
+                Color(0xff01378E),
+                Color(0xff2563EB)
               ]
           ),
           iconTheme: IconThemeData(color:Colors.white),

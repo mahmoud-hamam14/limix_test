@@ -18,11 +18,11 @@ class SupportView extends StatelessWidget {
           title: "Help & Support",
           subTitle: "We're here to help",
           gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
               colors: [
-                Color(0xffF59E0B),
-                Color(0xffFBBF24)
+                Color(0xff01378E),
+                Color(0xff2563EB)
               ]
           ),
           iconTheme: IconThemeData(color:Colors.white),
@@ -40,7 +40,7 @@ class SupportView extends StatelessWidget {
               padding: const EdgeInsets.only(left: 23),
               child: Text("Learning Resources",
                 style: TextStyle(
-                    color: Color(0xff0891B2),
+                    color: Color(0xff01378E),
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
                     fontFamily: 'Inter'
@@ -79,7 +79,7 @@ class SupportView extends StatelessWidget {
               padding: const EdgeInsets.only(left: 23),
               child: Text("Contact Support",
                 style: TextStyle(
-                    color: Color(0xff0891B2),
+                    color: Color(0xff01378E),
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
                     fontFamily: 'Inter'

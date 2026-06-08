@@ -116,7 +116,9 @@ class SettingsScreen extends StatelessWidget {
               icon: Icons.chat_bubble_outline,
               backgroundColor: Color(0xFFFCE7F3),
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => AiAssistantScreen()));
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const AiAssistantScreen()),
+                );
               },
               iconColor: Color(0xff9810FA),
             ),

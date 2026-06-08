@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:limix_test/core/constants/custom_appbar.dart';
 
+import '../../home/view/home_view.dart';
 import '../../settings/view/settings_screen.dart';
 import '../cubit/ai_assistant_cubit.dart';
 import '../cubit/ai_assistant_state.dart';
@@ -71,7 +72,13 @@ class _AiAssistantBodyState extends State<_AiAssistantBody> {
           icon: Icons.smart_toy_outlined,
           iconColor: const Color(0xff01378E),
           onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen(),));
+            if (Navigator.canPop(context)) {
+              Navigator.pop(context);
+            } else {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => const HomeView()),
+              );
+            }
           },
         ),
       ),

@@ -27,13 +27,13 @@ class ProfileImageWidget extends StatelessWidget {
                   shape: BoxShape.circle,
                   gradient: LinearGradient(
                     colors: [
-                      Color(0xff0891B2),
-                      Color(0xff06B6D4)],
+                      Color(0xff01378E),
+                      Color(0xff2563EB)],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
                   image: imageFile != null
-                      ? DecorationImage(image: FileImage(imageFile!), fit: BoxFit.cover)
+                      ? DecorationImage(image: FileImage(imageFile), fit: BoxFit.cover)
                       : null,
                 ),
                 child: imageFile == null
@@ -48,10 +48,10 @@ class ProfileImageWidget extends StatelessWidget {
                 onTap: () => ShowImagePickerSheet(context),
                 child: CircleAvatar(
                   radius: 18,
-                  backgroundColor: Color(0xff0891B2),
+                  backgroundColor: Color(0xff01378E),
                   child: CircleAvatar(
                     radius: 15,
-                    backgroundColor: Color(0xff0891B2),
+                    backgroundColor: Color(0xff01378E),
                     child: Icon(Icons.camera_alt_outlined, size: 20, color: Colors.white),
                   ),
                 ),
