@@ -1,30 +1,25 @@
-
 import 'package:flutter/material.dart';
+import 'package:limix_test/core/helpers/dimensions_helper.dart';
 
 class FishRecommendatiomsCard extends StatelessWidget {
   final String image;
   final String type;
-  const FishRecommendatiomsCard({super.key,
+  const FishRecommendatiomsCard({
+    super.key,
     required this.image,
-    required this.type
+    required this.type,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 128,
-
-      margin:  const EdgeInsets.symmetric(vertical: 10),
-      padding: const EdgeInsets.all(16),
+      // height: 128,
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.all(16.radius),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-        border: Border(
-          left: BorderSide(
-            color: Color(0xff2B7FFF),
-            width: 4,
-          ),
-        ),
+        borderRadius: BorderRadius.circular(20.radius),
+        border: Border(left: BorderSide(color: Color(0xff2B7FFF), width: 4)),
         boxShadow: [
           BoxShadow(
             color: Color(0x1A000000),
@@ -40,66 +35,51 @@ class FishRecommendatiomsCard extends StatelessWidget {
           ),
         ],
       ),
-       child: Row(
-         children: [
-            GestureDetector(
-               onTap: () {
+      child: Row(
+        children: [
+          GestureDetector(
+            onTap: () {
+              showDialog(
+                context: context,
 
-                 showDialog(
+                builder: (context) {
+                  return Dialog(
+                    backgroundColor: Colors.transparent,
 
-                   context: context,
+                    child: InteractiveViewer(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.radius),
 
-                   builder: (context) {
+                        child: Image.network(image, fit: BoxFit.fill),
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
 
-                     return Dialog(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(16),
 
-                       backgroundColor: Colors.transparent,
+              child: Image.network(
+                image,
+                height: 90.height,
+                width: 100.width,
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
 
-                       child: InteractiveViewer(
+          const Spacer(),
 
-                         child: ClipRRect(
-
-                           borderRadius:
-                           BorderRadius.circular(20),
-
-                           child: Image.network(
-                             image,
-                             fit: BoxFit.cover,
-                           ),
-                         ),
-                       ),
-                     );
-                   },
-                 );
-               },
-
-               child: ClipRRect(
-
-                 borderRadius: BorderRadius.circular(16),
-
-                 child: Image.network(
-                   image,
-                   height: 90,
-                   width: 150,
-                   fit: BoxFit.cover,
-                 ),
-               ),
-             ),
-
-           const SizedBox(width: 20),
-           Expanded(
-    child: Text(
-    type,
-    style: const TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.w500,
-    ),
-    ),
-           ),
-         ]
-       ),
-
-
+          Expanded(
+            child: Text(
+              type,
+              style: TextStyle(fontSize: 16.font, fontWeight: FontWeight.w500),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

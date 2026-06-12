@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:limix_test/core/helpers/dimensions_helper.dart';
+
 class CustomSupportContainer extends StatelessWidget {
   final String title;
   final String subTitle;
@@ -7,94 +9,94 @@ class CustomSupportContainer extends StatelessWidget {
   final Color backgroundColor;
   final VoidCallback onTap;
 
-  const CustomSupportContainer({super.key,
+  const CustomSupportContainer({
+    super.key,
     required this.title,
     required this.subTitle,
     required this.icon,
     required this.iconColor,
     required this.onTap,
     required this.backgroundColor,
-
-  }
-      );
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      height: 103,
-      width:350,
+      height: 100.height,
+      width: double.infinity,
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(24),
-          boxShadow: [
-            BoxShadow(
-              color: Color(0x1A000000),
-              offset: Offset(0, 2),
-              blurRadius: 4,
-              spreadRadius: -2,
-            ),
-            BoxShadow(
-              color: Color(0x1A000000),
-              offset: Offset(0, 10),
-              blurRadius: 6,
-              spreadRadius: -1,
-            )
-          ]
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(24.radius),
+        boxShadow: [
+          BoxShadow(
+            color: Color(0x1A000000),
+            offset: Offset(0, 2),
+            blurRadius: 1,
+            spreadRadius: -2,
+          ),
+          BoxShadow(
+            color: Color(0x1A000000),
+            offset: Offset(0, 10),
+            blurRadius: 6,
+            spreadRadius: -1,
+          ),
+        ],
       ),
       child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(21),
-              child: Container(
-                // padding: const EdgeInsets.all(12),
-                height: 47,
-                width: 47,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: backgroundColor,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(
+            padding: EdgeInsets.all(12.radius),
+            child: Container(
+              height: 45.height,
+              width: 45.width,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30.radius),
+                color: backgroundColor,
+              ),
+              child: Icon(icon, color: iconColor, size: 25.radius),
+            ),
+          ),
+          SizedBox(width: 10.width),
+
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14.font,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Inter',
+                  ),
                 ),
-                child: Icon(icon,color: iconColor,size: 28,),
+                SizedBox(height: 5.height),
+                Text(
+                  subTitle,
+                  style: TextStyle(
+                    color: Color(0xff4A5565),
+                    fontSize: 12.font,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Inter',
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Center(
+            child: IconButton(
+              onPressed: onTap,
+              icon: Icon(
+                Icons.open_in_new,
+                color: Color(0xff99A1AF),
+                size: 20.radius,
               ),
             ),
-            SizedBox(width: 15,),
-            Expanded(
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20),
-                      child: Text(
-                        title,
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'Inter'
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 9.64,),
-                    Text(
-                      subTitle,style: TextStyle(
-                        color: Color(0xff4A5565),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'Inter'
-                    ),
-                    ),
-
-                        ]
-                    )
-              ),
-            Center(
-              child: IconButton(onPressed: onTap,
-                  icon:Icon(Icons.open_in_new,color: Color(0xff99A1AF),size: 20,
-                  )),
-            )
-          ]
-
+          ),
+        ],
       ),
     );
   }

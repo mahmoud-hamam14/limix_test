@@ -19,6 +19,8 @@ class CriticalView extends StatelessWidget {
               titleColor: Color(0xffC10007),
               borderColor: Color(0xffD32F2F),
             ),
+
+            
             NotificationCard(
               title: 'Pump Failure',
               message:

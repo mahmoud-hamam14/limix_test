@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
-
+import 'package:limix_test/core/helpers/dimensions_helper.dart';
 
 class PerformanceTrendCard extends StatelessWidget {
   const PerformanceTrendCard({super.key});
@@ -11,51 +11,48 @@ class PerformanceTrendCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(18.radius),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16.radius),
         boxShadow: [
           BoxShadow(
-             color: Color(0x1A000000), // اللون (#0000001A)
-        offset: Offset(0, 1),     // (0px, 1px)
-        blurRadius: 2.0,          // (2px)
-        spreadRadius: -1.0,       // (-1px)
-      ),
-      
-      BoxShadow(
-        color: Color(0x1A000000), // اللون (#0000001A)
-        offset: Offset(0, 1),     // (0px, 1px)
-        blurRadius: 3.0,          // (3px)
-        spreadRadius: 0.0,
+            color: Color(0x1A000000), // اللون (#0000001A)
+            offset: Offset(0, 1), // (0px, 1px)
+            blurRadius: 2.0, // (2px)
+            spreadRadius: -1.0, // (-1px)
+          ),
+
+          BoxShadow(
+            color: Color(0x1A000000), // اللون (#0000001A)
+            offset: Offset(0, 1), // (0px, 1px)
+            blurRadius: 3.0, // (3px)
+            spreadRadius: 0.0,
           ),
         ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          Text(
             "6-Month Performance Trend",
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 16.font,
               fontWeight: FontWeight.w500,
               color: Color(0xFF224B8F),
             ),
           ),
-          const SizedBox(height: 32),
+          SizedBox(height: 24.height),
+
           AspectRatio(
-            aspectRatio: 1.7,
+            aspectRatio: 1.2.radius,
             child: LineChart(
               LineChartData(
-                
-            
                 minY: 0,
-                maxY: 100,
+                maxY: 105,
 
-               
                 minX: 0,
-                maxX: 5, 
-               
+                maxX: 5,
 
                 gridData: FlGridData(
                   show: true,
@@ -77,25 +74,27 @@ class PerformanceTrendCard extends StatelessWidget {
                 ),
                 titlesData: FlTitlesData(
                   topTitles: const AxisTitles(
-                      sideTitles: SideTitles(showTitles: false)),
+                    sideTitles: SideTitles(showTitles: false),
+                  ),
                   rightTitles: const AxisTitles(
-                      sideTitles: SideTitles(showTitles: false)),
+                    sideTitles: SideTitles(showTitles: false),
+                  ),
                   leftTitles: AxisTitles(
                     sideTitles: SideTitles(
                       showTitles: true,
-                      reservedSize: 40,
+                      reservedSize: 24,
                       getTitlesWidget: leftTitleWidgets,
-                      
-                      interval: 25, 
+
+                      interval: 25,
                     ),
                   ),
                   bottomTitles: AxisTitles(
                     sideTitles: SideTitles(
                       showTitles: true,
-                      reservedSize: 30,
+                      reservedSize: 20,
                       getTitlesWidget: bottomTitleWidgets,
-                     
-                      interval: 1, 
+
+                      interval: 1,
                     ),
                   ),
                 ),
@@ -112,21 +111,19 @@ class PerformanceTrendCard extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: 20.height),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               buildLegendItem(efficiencyColor, "efficiency"),
-              const SizedBox(width: 24),
+              SizedBox(width: 24.width),
               buildLegendItem(qualityColor, "quality"),
             ],
-          )
+          ),
         ],
       ),
     );
   }
-
-  
 
   List<FlSpot> getEfficiencySpots() {
     return const [
@@ -150,20 +147,22 @@ class PerformanceTrendCard extends StatelessWidget {
     ];
   }
 
-  LineChartBarData buildLineChartBarData(
-      {required Color color, required List<FlSpot> spots}) {
+  LineChartBarData buildLineChartBarData({
+    required Color color,
+    required List<FlSpot> spots,
+  }) {
     return LineChartBarData(
       spots: spots,
       isCurved: true,
       color: color,
-      barWidth: 3,
+      barWidth: 3.width,
       isStrokeCapRound: true,
       belowBarData: BarAreaData(show: false),
       dotData: FlDotData(
         show: true,
         getDotPainter: (spot, percent, barData, index) {
           return FlDotCirclePainter(
-            radius: 5,
+            radius: 5.radius,
             color: Colors.white,
             strokeWidth: 1,
             strokeColor: color,
@@ -175,9 +174,17 @@ class PerformanceTrendCard extends StatelessWidget {
 
   Widget leftTitleWidgets(double value, TitleMeta meta) {
     const style = TextStyle(color: Color(0xff9CA3AF), fontSize: 12);
-    
-    if (value == 0 || value == 25 || value == 50 || value == 75 || value == 100) {
-      return Text(value.toInt().toString(), style: style, textAlign: TextAlign.right);
+
+    if (value == 0 ||
+        value == 25 ||
+        value == 50 ||
+        value == 75 ||
+        value == 100) {
+      return Text(
+        value.toInt().toString(),
+        style: style,
+        textAlign: TextAlign.right,
+      );
     }
     return Container();
   }
@@ -185,7 +192,7 @@ class PerformanceTrendCard extends StatelessWidget {
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
     const style = TextStyle(color: Colors.grey, fontSize: 12);
     String text;
-    
+
     switch (value.toInt()) {
       case 0:
         text = 'Jan';
@@ -214,10 +221,10 @@ class PerformanceTrendCard extends StatelessWidget {
   Widget buildLegendItem(Color color, String text) {
     return Row(
       children: [
-        Icon(Icons.commit, color: color, size: 20),
-        Icon(Icons.commit_rounded, color: color, size: 8),
-        const SizedBox(width: 4),
-        Text(text, style: TextStyle(color: color, fontSize: 14)),
+        Icon(Icons.commit, color: color, size: 20.radius),
+        Icon(Icons.commit_rounded, color: color, size: 8.radius),
+        SizedBox(width: 4.width),
+        Text(text, style: TextStyle(color: color, fontSize: 14.font)),
       ],
     );
   }

@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:limix_test/core/helpers/dimensions_helper.dart';
 
 class SensorForcastCard extends StatelessWidget {
   final Color borderColor;
@@ -10,8 +10,8 @@ class SensorForcastCard extends StatelessWidget {
   final Color changeColor;
   final IconData trendIcon;
 
-
-  const SensorForcastCard({super.key,
+  const SensorForcastCard({
+    super.key,
     required this.borderColor,
     required this.title,
     required this.currentValue,
@@ -19,27 +19,21 @@ class SensorForcastCard extends StatelessWidget {
     required this.change,
     required this.changeColor,
     required this.trendIcon,
-
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 16),
+      margin: EdgeInsets.only(bottom: 16.height),
 
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.all(15.radius),
 
       decoration: BoxDecoration(
         color: Colors.white,
 
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.radius),
 
-        border: Border(
-          left: BorderSide(
-            color: borderColor,
-            width: 4,
-          ),
-        ),
+        border: Border(left: BorderSide(color: borderColor, width: 4)),
 
         boxShadow: [
           BoxShadow(
@@ -60,105 +54,88 @@ class SensorForcastCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          /// Title
+          Text(
+            title,
+            style: TextStyle(fontSize: 14.font, fontWeight: FontWeight.w500),
+          ),
 
-        /// Title
-        Text(
-        title,
-        style: const TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w400,
-        ),
-      ),
+          SizedBox(height: 15.height),
 
-      const SizedBox(height: 12),
-
-      /// Values Row
-      Row(
-        children: [
-
-          /// Current
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          /// Values Row
+          Row(
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              /// Current
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Current",
+                    style: TextStyle(
+                      color: Color(0xFF6A7282),
+                      fontSize: 12.font,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
 
-              const Text(
-                "Current",
-                style: TextStyle(
-                  color: Color(0xFF6A7282),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+                  Text(
+                    currentValue,
+                    style: TextStyle(
+                      fontSize: 16.font,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
               ),
 
-              Text(
-                currentValue,
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w400,
-                ),
+              SizedBox(width: 30.width),
+
+              Icon(trendIcon, color: changeColor, size: 22.radius),
+
+              SizedBox(width: 30.width),
+
+              /// Forecast
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Forecast",
+                    style: TextStyle(
+                      color: Color(0xFF6A7282),
+                      fontSize: 12.font,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+
+                  Text(
+                    forecastValue,
+                    style: TextStyle(
+                      fontSize: 16.font,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
 
-          const SizedBox(width: 20),
+          SizedBox(height: 15.height),
 
-          Icon(
-            trendIcon,
-            color: changeColor,
-            size: 18,
+          /// Change Container
+          Container(
+            padding: EdgeInsets.all(10.radius),
+
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 241, 241, 241),
+              borderRadius: BorderRadius.circular(16.radius),
+            ),
+
+            child: Text(
+              "Change: $change",
+              style: TextStyle(color: changeColor, fontWeight: FontWeight.w500),
+            ),
           ),
-
-          const SizedBox(width: 20),
-
-          /// Forecast
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-
-              const Text(
-                "Forecast",
-                style: TextStyle(
-                  color: Color(0xFF6A7282),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500
-                ),
-              ),
-
-              Text(
-                forecastValue,
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-
-      const SizedBox(height: 14),
-
-      /// Change Container
-      Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 10,
-          vertical: 8,
-        ),
-
-        decoration: BoxDecoration(
-          color: const Color(0xffF9F9F9),
-          borderRadius: BorderRadius.circular(12),
-        ),
-
-        child: Text(
-          "Change: $change",
-          style: TextStyle(
-            color: changeColor,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-
-      )
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:limix_test/core/helpers/dimensions_helper.dart';
 
 class FarmOverviewCard extends StatelessWidget {
   final String fishCount;
@@ -15,10 +16,10 @@ class FarmOverviewCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(14.radius),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(28),
+        borderRadius: BorderRadius.circular(20.radius),
         boxShadow: [
           BoxShadow(
             color: Colors.black12,
@@ -39,31 +40,31 @@ class FarmOverviewCard extends StatelessWidget {
             ],
           ),
 
-          const SizedBox(height: 24),
+          SizedBox(height: 20.height),
 
-          const Text(
+          Text(
             "Capacity Usage",
             style: TextStyle(
-              fontSize: 16,
+              fontSize: 18.font,
               color: Colors.black54,
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
             ),
           ),
 
-          const SizedBox(height: 10),
+          SizedBox(height: 8.height),
 
           Row(
             children: [
               Expanded(
                 child: LinearProgressIndicator(
-                  borderRadius: BorderRadius.circular(5),
+                  borderRadius: BorderRadius.circular(5.radius),
                   value: usagePercent,
-                  minHeight: 10,
+                  minHeight: 8.height,
                   backgroundColor: const Color(0xFFE6E6E6),
                   valueColor: const AlwaysStoppedAnimation(Color(0xFF1A1A2F)),
                 ),
               ),
-              const SizedBox(width: 12),
+              SizedBox(width: 12.width),
               Text(
                 "${(usagePercent * 100).toInt()}%",
                 style: const TextStyle(
@@ -88,24 +89,28 @@ class _FarmInfoBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 140,
-      padding: const EdgeInsets.symmetric(vertical: 18),
+      width: 140.width,
+      padding: EdgeInsets.symmetric(vertical: 16.height),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.radius),
         border: Border.all(color: Colors.black12.withOpacity(0.08)),
       ),
       child: Column(
         children: [
           Text(
             title,
-            style: const TextStyle(fontSize: 14, color: Colors.black54),
+            style: TextStyle(
+              fontSize: 18.font,
+              fontWeight: FontWeight.w500,
+              color: Colors.black54,
+            ),
           ),
-          const SizedBox(height: 6),
+          SizedBox(height: 10.height),
           Text(
             value,
-            style: const TextStyle(
+            style: TextStyle(
               color: Color(0xFF2454C2),
-              fontSize: 22,
+              fontSize: 22.font,
               fontWeight: FontWeight.bold,
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:limix_test/core/helpers/dimensions_helper.dart';
 
 class RecentActivityCard extends StatelessWidget {
   final List<ActivityItem> activities;
@@ -8,10 +9,10 @@ class RecentActivityCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(14.radius),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(28),
+        borderRadius: BorderRadius.circular(20.radius),
         boxShadow: [
           BoxShadow(
             color: Colors.black12,
@@ -25,7 +26,7 @@ class RecentActivityCard extends StatelessWidget {
             activities
                 .map(
                   (item) => Padding(
-                    padding: const EdgeInsets.only(bottom: 14),
+                    padding: EdgeInsets.only(bottom: 18.height),
                     child: _ActivityRow(item: item),
                   ),
                 )
@@ -53,27 +54,28 @@ class _ActivityRow extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: 10,
-          height: 10,
+          width: 12.width,
+          height: 12.height,
           decoration: BoxDecoration(shape: BoxShape.circle, color: item.color),
         ),
-        const SizedBox(width: 12),
+        SizedBox(width: 15.width),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 item.title,
-                style: const TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
+                style: TextStyle(
+                  fontSize: 16.font,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
-              const SizedBox(height: 4),
+              SizedBox(height: 4.height),
               Text(
                 "${item.time} • Main Pond",
                 style: TextStyle(
-                  fontSize: 13,
+                  fontSize: 14.font,
+                  fontWeight: FontWeight.w500,
                   color: Colors.black54.withOpacity(0.7),
                 ),
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:limix_test/core/helpers/dimensions_helper.dart';
 
 class CustomAppbar extends StatelessWidget {
   final String title;
@@ -35,10 +36,7 @@ class CustomAppbar extends StatelessWidget {
       flexibleSpace: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              Color(0xff01378E),
-              Color(0xff2563EB),
-            ],
+            colors: [Color(0xff01378E), Color(0xff2563EB)],
           ),
           boxShadow: [
             BoxShadow(
@@ -60,27 +58,23 @@ class CustomAppbar extends StatelessWidget {
         children: [
           if (icon != null)
             Container(
-              height: 40,
-              width: 40,
+              height: 40.height,
+              width: 40.width,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(16.radius),
                 color: iconBgColor,
               ),
-              child: Icon(
-                icon,
-                color: iconColor,
-                size: 30,
-              ),
+              child: Icon(icon, color: iconColor, size: 30.radius),
             ),
-          const SizedBox(width: 12),
+          SizedBox(width: 10.width),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 title,
-                style: const TextStyle(
-                  fontSize: 16,
+                style: TextStyle(
+                  fontSize: 16.font,
                   fontWeight: FontWeight.w400,
                   color: Colors.white,
                 ),
@@ -89,19 +83,19 @@ class CustomAppbar extends StatelessWidget {
                 children: [
                   if (showOnlineDot) ...[
                     Container(
-                      width: 8,
-                      height: 8,
+                      width: 8.width,
+                      height: 8.height,
                       decoration: const BoxDecoration(
                         color: Color(0xff22C55E),
                         shape: BoxShape.circle,
                       ),
                     ),
-                    const SizedBox(width: 4),
+                    SizedBox(width: 4.width),
                   ],
                   Text(
                     subTitle,
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 12.font,
                       fontWeight: FontWeight.w500,
                       color: Colors.white.withOpacity(0.7),
                     ),
@@ -112,12 +106,17 @@ class CustomAppbar extends StatelessWidget {
           ),
         ],
       ),
-      leading: showBackButton
-          ? IconButton(
-        icon: const Icon(Icons.arrow_back, color: Colors.white),
-        onPressed: onTap,
-      )
-          : null,
+      leading:
+          showBackButton
+              ? IconButton(
+                icon: Icon(
+                  Icons.arrow_back,
+                  color: Colors.white,
+                  size: 18.radius,
+                ),
+                onPressed: onTap,
+              )
+              : null,
     );
   }
 }

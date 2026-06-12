@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:limix_test/core/helpers/dimensions_helper.dart';
 
 class StatCard extends StatelessWidget {
   final String title;
   final String value;
   final String change;
   final IconData icon;
-  final Color baseColor; 
+  final Color baseColor;
 
   const StatCard({
     super.key,
@@ -13,34 +14,28 @@ class StatCard extends StatelessWidget {
     required this.value,
     required this.change,
     required this.icon,
-    required this.baseColor, 
+    required this.baseColor,
   });
 
   @override
   Widget build(BuildContext context) {
- 
-    final Color lightColor = baseColor.withOpacity(0.08); 
-    
+    final Color lightColor = baseColor.withOpacity(0.08);
+
     final Color veryLightColor = baseColor.withOpacity(0.02);
 
     return Container(
-      height: 158.5167694091797,
-      width: 101.45551300048828,
-      padding: const EdgeInsets.all(16),
+      height: 165.height,
+      width: double.infinity,
+      padding: EdgeInsets.all(10.radius),
       decoration: BoxDecoration(
-    
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [
-            lightColor, 
-            veryLightColor, 
-          ],
+          colors: [lightColor, veryLightColor],
         ),
-        borderRadius: BorderRadius.circular(20),
-      
+        borderRadius: BorderRadius.circular(20.radius),
+
         border: Border.all(color: baseColor.withOpacity(0.2)),
-      
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,34 +43,31 @@ class StatCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-             
-              Icon(icon, color: baseColor, size: 24),
+              Icon(icon, color: baseColor, size: 20.radius),
               Text(
                 change,
                 style: TextStyle(
-                  color: baseColor, 
+                  color: baseColor,
                   fontWeight: FontWeight.bold,
-                  fontSize: 14,
+                  fontSize: 12.font,
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 12),
+          const Spacer(),
+
           Text(
             value,
-            style: const TextStyle(
-              fontSize: 24,
+            style: TextStyle(
+              fontSize: 18.font,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF224B8F), 
+              color: Color(0xFF224B8F),
             ),
           ),
           const Spacer(),
           Text(
             title,
-            style: const TextStyle(
-              fontSize: 14,
-              color: Colors.black54, 
-            ),
+            style: TextStyle(fontSize: 13.font, color: Colors.black54),
           ),
         ],
       ),
