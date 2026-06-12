@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:limix_test/core/helpers/dimensions_helper.dart';
 
 class NotificationsCard extends StatefulWidget {
   const NotificationsCard({super.key});
@@ -20,11 +21,10 @@ class _NotificationsCardState extends State<NotificationsCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(20.radius),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(24.radius),
         boxShadow: const [
           BoxShadow(
             color: Color(0x1A000000),
@@ -43,26 +43,25 @@ class _NotificationsCardState extends State<NotificationsCard> {
             value: masterSwitch,
             onChanged: (v) => setState(() => masterSwitch = v),
           ),
-          const SizedBox(height: 10),
-          const Divider(color: Color(0xFFEEEEEE)),
-          const SizedBox(height: 40),
-          const Text(
+
+          Divider(height: 50.height, color: Color(0xFFEEEEEE), thickness: 2),
+
+          Text(
             "PER SENSOR ALERTS",
             style: TextStyle(
               color: Color(0xff4A5565),
-              fontSize: 12,
-              fontWeight: FontWeight.bold,
+              fontSize: 14.font,
+              fontWeight: FontWeight.w500,
               letterSpacing: 0.3,
             ),
           ),
-          const SizedBox(height: 12),
+          SizedBox(height: 12.height),
           _buildSensorRow(
             title: "🌡️ Temperature",
             value: tempSwitch,
             onChanged: (v) => setState(() => tempSwitch = v),
           ),
           _buildSensorRow(
-
             title: "💧 Oxygen",
             value: oxygenSwitch,
             onChanged: (v) => setState(() => oxygenSwitch = v),
@@ -78,15 +77,13 @@ class _NotificationsCardState extends State<NotificationsCard> {
             onChanged: (v) => setState(() => salinitySwitch = v),
           ),
           _buildSensorRow(
-
             title: "🔍 Turbidity",
             value: turbiditySwitch,
             onChanged: (v) => setState(() => turbiditySwitch = v),
           ),
 
-          const SizedBox(height: 10),
-          const Divider(color: Color(0xFFEEEEEE),thickness: 2,),
-          const SizedBox(height: 10),
+          Divider(height: 50.height, color: Color(0xFFEEEEEE), thickness: 2),
+
           _buildMainSwitchRow(
             icon: Icons.notification_important_outlined,
             iconColor: Color(0xffE7000B),
@@ -96,9 +93,7 @@ class _NotificationsCardState extends State<NotificationsCard> {
             onChanged: (v) => setState(() => criticalSwitch = v),
           ),
 
-          const SizedBox(height: 40),
-          const Divider(color: Color(0xFFEEEEEE),thickness: 2,),
-          const SizedBox(height: 40),
+          Divider(height: 50.height, color: Color(0xFFEEEEEE), thickness: 2),
 
           _buildMainSwitchRow(
             icon: Icons.notifications_outlined,
@@ -112,7 +107,6 @@ class _NotificationsCardState extends State<NotificationsCard> {
       ),
     );
   }
-
 
   Widget _buildMainSwitchRow({
     required IconData icon,
@@ -151,21 +145,19 @@ class _NotificationsCardState extends State<NotificationsCard> {
             value: value,
             onChanged: onChanged,
             thumbColor: WidgetStateProperty.all(Colors.white),
-            trackColor: WidgetStateProperty.resolveWith(
-                  (states) {
-                if (states.contains(WidgetState.selected)) {
-                  return const Color(0xFF3B82F6);
-                }
-                return const Color(0xFFE5E7EB);
-              },
-            ),
-          )
+            trackColor: WidgetStateProperty.resolveWith((states) {
+              if (states.contains(WidgetState.selected)) {
+                return const Color(0xFF3B82F6);
+              }
+              return const Color(0xFFE5E7EB);
+            }),
+          ),
         ),
       ],
     );
   }
-  Widget _buildSensorRow({
 
+  Widget _buildSensorRow({
     required String title,
     required bool value,
     required Function(bool) onChanged,
@@ -190,15 +182,13 @@ class _NotificationsCardState extends State<NotificationsCard> {
               value: value,
               onChanged: onChanged,
               thumbColor: WidgetStateProperty.all(Colors.white),
-              trackColor: WidgetStateProperty.resolveWith(
-                    (states) {
-                  if (states.contains(WidgetState.selected)) {
-                    return const Color(0xFF3B82F6);
-                  }
-                  return const Color(0xFFE5E7EB);
-                },
-              ),
-            )
+              trackColor: WidgetStateProperty.resolveWith((states) {
+                if (states.contains(WidgetState.selected)) {
+                  return const Color(0xFF3B82F6);
+                }
+                return const Color(0xFFE5E7EB);
+              }),
+            ),
           ),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:limix_test/core/helpers/dimensions_helper.dart';
 import 'package:limix_test/features/analytics/sensor_performance/view/widget/chart_card.dart';
 import 'package:limix_test/features/analytics/sensor_performance/view/widget/sensor_card.dart';
 
@@ -10,41 +11,42 @@ class SensorPerformanceScreen extends StatelessWidget {
     return Column(
       children: [
         SensorCard(
-          sensorName: "Temperature Sensor", 
+          sensorName: "Temperature Sensor",
           accuracy: "98%",
-           upTime: "99.8%",
-            alarts: "3",
-            ),
-        SizedBox(height: 12),
+          upTime: "99.8%",
+          alarts: "3",
+        ),
+        SizedBox(height: 12.height),
         SensorCard(
-          sensorName: "pH Sensor", 
+          sensorName: "pH Sensor",
           accuracy: "96%",
-           upTime: "99.5%",
-            alarts: "5",
-            ),
-        SizedBox(height: 12),
+          upTime: "99.5%",
+          alarts: "5",
+        ),
+        SizedBox(height: 12.height),
         SensorCard(
-          sensorName: "DO Sensor", 
+          sensorName: "DO Sensor",
           accuracy: "97%",
-           upTime: "99.9%",
-            alarts: "2",
-            ),
-            SizedBox(height: 12),
-            SensorCard(
-              sensorName: "Amonia Sensor",
-              accuracy: "95%",
-               upTime: "98.5%",
-                alarts: "7"
-                ),
-                SizedBox(height: 12),
-                SensorCard( 
-                  sensorName: "Turbidity Sensor", 
-                  accuracy: "94%",
-                   upTime: "99.2%",
-                    alarts: "4",
-                    ),
-                    const SizedBox(height: 25),
-                   SensorAccuracyChart(),
+          upTime: "99.9%",
+          alarts: "2",
+        ),
+        SizedBox(height: 12.height),
+        SensorCard(
+          sensorName: "Amonia Sensor",
+          accuracy: "95%",
+          upTime: "98.5%",
+          alarts: "7",
+        ),
+        SizedBox(height: 12.height),
+        SensorCard(
+          sensorName: "Turbidity Sensor",
+          accuracy: "94%",
+          upTime: "99.2%",
+          alarts: "4",
+        ),
+        SizedBox(height: 25.height),
+
+        SensorAccuracyChart(),
       ],
     );
   }

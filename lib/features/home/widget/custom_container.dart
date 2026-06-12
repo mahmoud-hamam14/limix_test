@@ -32,10 +32,10 @@ class CustomContainer extends StatelessWidget {
           borderRadius: BorderRadius.circular(20.radius),
         ),
         width: double.infinity,
-        height: 155.height,
+        height: 165.height,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -84,7 +84,7 @@ class CustomContainer extends StatelessWidget {
                   container.value,
                   style: TextStyle(
                     color: container.valueColor,
-                    fontSize: 17.font,
+                    fontSize: 15.font,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -93,7 +93,7 @@ class CustomContainer extends StatelessWidget {
 
                 Text(
                   container.unit,
-                  style: TextStyle(color: Color(0xFF495464), fontSize: 12.font),
+                  style: TextStyle(color: Color(0xFF495464), fontSize: 10.font),
                 ),
               ],
             ),

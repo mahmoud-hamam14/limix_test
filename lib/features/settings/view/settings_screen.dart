@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:limix_test/core/constants/custom_appbar.dart';
+import 'package:limix_test/core/helpers/dimensions_helper.dart';
 import 'package:limix_test/features/ai_assistant/view/ai_assistant_screen.dart';
 import 'package:limix_test/features/auth/view/login_view.dart';
 import 'package:limix_test/features/settings/view/account_setting_screen.dart';
@@ -28,169 +29,172 @@ class SettingsScreen extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 16),
-            Padding(
-              padding: const EdgeInsets.only(left: 45),
-              child: Text(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 12.width),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 20.height),
+              Text(
                 'Account',
                 style: TextStyle(
                   color: Color(0xff0891B2),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
+                  fontSize: 18.font,
+                  fontWeight: FontWeight.w500,
                   fontFamily: 'Inter',
                 ),
               ),
-            ),
-            SizedBox(height: 22),
-            CustomSettingContainer(
-              title: "Account Settings ",
-              subtitle: "Email, password, security",
-              icon: Icons.lock_outline_rounded,
-              backgroundColor: Color(0xFFDBEAFE),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => AccountSettingScreen(),
-                  ),
-                );
-              },
-              iconColor: Color(0xff155DFC),
-            ),
-            SizedBox(height: 22),
-            Padding(
-              padding: const EdgeInsets.only(left: 45),
-              child: Text(
+
+              SizedBox(height: 18.height),
+
+              CustomSettingContainer(
+                title: "Account Settings ",
+                subtitle: "Email, password, security",
+                icon: Icons.lock_outline_rounded,
+                backgroundColor: Color(0xFFDBEAFE),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AccountSettingScreen(),
+                    ),
+                  );
+                },
+                iconColor: Color(0xff155DFC),
+              ),
+
+              SizedBox(height: 22.height),
+
+              Text(
                 'Notifications',
                 style: TextStyle(
                   color: Color(0xff0891B2),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
+                  fontSize: 18.font,
+                  fontWeight: FontWeight.w500,
                   fontFamily: 'Inter',
                 ),
               ),
-            ),
-            SizedBox(height: 12),
-            NotificationsCard(),
-            SizedBox(height: 22),
-            Padding(
-              padding: const EdgeInsets.only(left: 45),
-              child: Text(
+
+              SizedBox(height: 18.height),
+
+              NotificationsCard(),
+
+              SizedBox(height: 22.height),
+
+              Text(
                 'Device Maintenance',
                 style: TextStyle(
                   color: Color(0xff0891B2),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
+                  fontSize: 18.font,
+                  fontWeight: FontWeight.w500,
                   fontFamily: 'Inter',
                 ),
               ),
-            ),
-            SizedBox(height: 12),
-            CustomSettingContainer(
-              title: 'Device Maintenance',
-              subtitle: 'Manage device health',
-              icon: Icons.build_outlined,
-              backgroundColor: Color(0xFFF3E8FF),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DeviceMaintenanceScreen(),
-                  ),
-                );
-              },
-              iconColor: Color(0xff9810FA),
-            ),
-            SizedBox(height: 22),
-            Padding(
-              padding: const EdgeInsets.only(left: 45),
-              child: Text(
+
+              SizedBox(height: 18.height),
+
+              CustomSettingContainer(
+                title: 'Device Maintenance',
+                subtitle: 'Manage device health',
+                icon: Icons.build_outlined,
+                backgroundColor: Color(0xFFF3E8FF),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DeviceMaintenanceScreen(),
+                    ),
+                  );
+                },
+                iconColor: Color(0xff9810FA),
+              ),
+
+              SizedBox(height: 22.height),
+
+              Text(
                 'AI Assistant',
                 style: TextStyle(
                   color: Color(0xff0891B2),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
+                  fontSize: 18.font,
+                  fontWeight: FontWeight.w500,
                   fontFamily: 'Inter',
                 ),
               ),
-            ),
-            SizedBox(height: 12),
-            CustomSettingContainer(
-              title: 'Chat with AI Assistant',
-              subtitle: 'Get help and insights',
-              icon: Icons.chat_bubble_outline,
-              backgroundColor: Color(0xFFFCE7F3),
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const AiAssistantScreen(),
-                  ),
-                );
-              },
-              iconColor: Color(0xff9810FA),
-            ),
-            SizedBox(height: 22),
-            Padding(
-              padding: const EdgeInsets.only(left: 45),
-              child: Text(
+
+              SizedBox(height: 18.height),
+
+              CustomSettingContainer(
+                title: 'Chat with AI Assistant',
+                subtitle: 'Get help and insights',
+                icon: Icons.chat_bubble_outline,
+                backgroundColor: Color(0xFFFCE7F3),
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const AiAssistantScreen(),
+                    ),
+                  );
+                },
+                iconColor: Color(0xff9810FA),
+              ),
+
+              SizedBox(height: 22.height),
+              Text(
                 'Support',
                 style: TextStyle(
                   color: Color(0xff0891B2),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
+                  fontSize: 18.font,
+                  fontWeight: FontWeight.w500,
                   fontFamily: 'Inter',
                 ),
               ),
-            ),
-            SizedBox(height: 12),
-            CustomSettingContainer(
-              title: "Help & Support",
-              icon: Icons.help_outline_outlined,
-              backgroundColor: Color(0xFFFEF3C6),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SupportView()),
-                );
-              },
-              iconColor: Color(0xffE17100),
-              titlePadding: EdgeInsets.only(top: 10),
-            ),
-            SizedBox(height: 25),
-            Center(
-              child: CustomButton(
-                title: "logout",
-                icon: Icons.logout,
-                iconColor: Color(0xffE7000B),
-                titleColor: Color(0xffE7000B),
+              SizedBox(height: 18.height),
+              CustomSettingContainer(
+                title: "Help & Support",
+                icon: Icons.help_outline_outlined,
+                backgroundColor: Color(0xFFFEF3C6),
                 onTap: () {
-                  Navigator.pushReplacement(
+                  Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LoginScreen()),
+                    MaterialPageRoute(builder: (context) => SupportView()),
                   );
                 },
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x1A000000),
-                    offset: Offset(0, 2),
-                    blurRadius: 4,
-                    spreadRadius: -2,
-                  ),
-                  BoxShadow(
-                    color: Color(0x1A000000),
-                    offset: Offset(0, 4),
-                    blurRadius: 6,
-                    spreadRadius: -1,
-                  ),
-                ],
-                backgroundColor: Colors.white,
-                borderColor: Color(0xffE7000B),
+                iconColor: Color(0xffE17100),
+                titlePadding: EdgeInsets.only(top: 10),
               ),
-            ),
-          ],
+              SizedBox(height: 22.height),
+              Center(
+                child: CustomButton(
+                  title: "logout",
+                  icon: Icons.logout,
+                  iconColor: Color(0xffE7000B),
+                  titleColor: Color(0xffE7000B),
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                    );
+                  },
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0x1A000000),
+                      offset: Offset(0, 2),
+                      blurRadius: 4,
+                      spreadRadius: -2,
+                    ),
+                    BoxShadow(
+                      color: Color(0x1A000000),
+                      offset: Offset(0, 4),
+                      blurRadius: 6,
+                      spreadRadius: -1,
+                    ),
+                  ],
+                  backgroundColor: Colors.white,
+                  borderColor: Color(0xffE7000B),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

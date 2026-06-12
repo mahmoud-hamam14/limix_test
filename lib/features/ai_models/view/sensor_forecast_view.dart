@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:limix_test/core/helpers/dimensions_helper.dart';
 import 'package:limix_test/features/ai_models/widget/sensor_forcast_card.dart';
 
 import '../../../core/constants/custom_appbar.dart';
@@ -10,34 +11,29 @@ class SensorForecastView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar:PreferredSize(
+      appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
-        child:
-        CustomAppbar(
+        child: CustomAppbar(
           title: 'Sensor Forecast',
           subTitle: 'AI-powered predictions',
           showBackButton: false,
-          onTap: () {  },
+          onTap: () {},
           iconTheme: IconThemeData(color: Colors.white),
         ),
       ),
-      body:  Padding(
-        padding: const EdgeInsets.only(top: 12),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 15.width),
         child: DefaultTabController(
           length: 3,
           child: Column(
             children: [
+              SizedBox(height: 20.height),
 
-              /// Tabs
               Container(
-                height: 36,
-                margin: const EdgeInsets.symmetric(horizontal: 16),
-
-                padding: const EdgeInsets.all(3),
-
+                height: 40.height,
                 decoration: BoxDecoration(
                   color: const Color(0xffF1F1F1),
-                  borderRadius: BorderRadius.circular(24),
+                  borderRadius: BorderRadius.circular(24.radius),
                 ),
 
                 child: TabBar(
@@ -45,9 +41,9 @@ class SensorForecastView extends StatelessWidget {
 
                   indicatorSize: TabBarIndicatorSize.tab,
 
-                  labelPadding: const EdgeInsets.symmetric(
-                    horizontal: 8,
-                    vertical: 4,
+                  labelPadding: EdgeInsets.symmetric(
+                    horizontal: 8.width,
+                    vertical: 4.height,
                   ),
 
                   indicator: BoxDecoration(
@@ -64,13 +60,13 @@ class SensorForecastView extends StatelessWidget {
                   labelColor: Colors.white,
                   unselectedLabelColor: Colors.black,
 
-                  labelStyle: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
+                  labelStyle: TextStyle(
+                    fontSize: 12.font,
+                    fontWeight: FontWeight.w500,
                   ),
 
-                  unselectedLabelStyle: const TextStyle(
-                    fontSize: 14,
+                  unselectedLabelStyle: TextStyle(
+                    fontSize: 10.font,
                     fontWeight: FontWeight.w500,
                   ),
 
@@ -82,205 +78,194 @@ class SensorForecastView extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.height),
 
               /// Content
               Expanded(
                 child: TabBarView(
                   children: [
-
                     /// 24 Hours
                     ListView(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
                       children: const [
-
-                        SizedBox(height: 10),
-
+                        SizedBox(height: 5),
                         SensorForcastCard(
-                            borderColor: Color(0xFFFF6900),
-                            title: 'Temperature',
-                            currentValue: '26.5°C',
-                            forecastValue: '28.5°C',
-                            change: '+2.0°C',
-                            changeColor: Color(0xFF009966),
-                            trendIcon: Icons.trending_up
+                          borderColor: Color(0xFFFF6900),
+                          title: 'Temperature',
+                          currentValue: '26.5°C',
+                          forecastValue: '28.5°C',
+                          change: '+2.0°C',
+                          changeColor: Color(0xFF009966),
+                          trendIcon: Icons.trending_up,
                         ),
                         SensorForcastCard(
-                            borderColor: Color(0xFFA855F7),
-                            title: 'pH Level',
-                            currentValue: '7.2',
-                            forecastValue: '7',
-                            change: '-0.2',
-                            changeColor: Color(0xFF155DFC),
-                            trendIcon:Icons.trending_down
+                          borderColor: Color(0xFFA855F7),
+                          title: 'pH Level',
+                          currentValue: '7.2',
+                          forecastValue: '7',
+                          change: '-0.2',
+                          changeColor: Color(0xFF155DFC),
+                          trendIcon: Icons.trending_down,
                         ),
                         SensorForcastCard(
-                            borderColor: Color(0xFF00B8DB),
-                            title: 'Dissolved Oxygen',
-                            currentValue: '6.8 mg/L',
-                            forecastValue: '7.2 mg/L',
-                            change: '+0.4 mg/L',
-                            changeColor: Color(0xFF009966),
-                            trendIcon: Icons.trending_up
+                          borderColor: Color(0xFF00B8DB),
+                          title: 'Dissolved Oxygen',
+                          currentValue: '6.8 mg/L',
+                          forecastValue: '7.2 mg/L',
+                          change: '+0.4 mg/L',
+                          changeColor: Color(0xFF009966),
+                          trendIcon: Icons.trending_up,
                         ),
                         SensorForcastCard(
-                            borderColor: Color(0xFF10B981),
-                            title: 'Ammonia',
-                            currentValue: '15 mg/L',
-                            forecastValue: '16 mg/L',
-                            change: '+1 mg/L',
-                            changeColor: Color(0xFF009966),
-                            trendIcon: Icons.trending_up
+                          borderColor: Color(0xFF10B981),
+                          title: 'Ammonia',
+                          currentValue: '15 mg/L',
+                          forecastValue: '16 mg/L',
+                          change: '+1 mg/L',
+                          changeColor: Color(0xFF009966),
+                          trendIcon: Icons.trending_up,
                         ),
                         SensorForcastCard(
-                            borderColor: Color(0xFFFEAAAB),
-                            title: 'Turbidity',
-                            currentValue: '12 NTU',
-                            forecastValue: '10 NTU',
-                            change: '-2.0 NTU',
-                            changeColor: Color(0xFF155DFC),
-                            trendIcon: Icons.trending_down
+                          borderColor: Color(0xFFFEAAAB),
+                          title: 'Turbidity',
+                          currentValue: '12 NTU',
+                          forecastValue: '10 NTU',
+                          change: '-2.0 NTU',
+                          changeColor: Color(0xFF155DFC),
+                          trendIcon: Icons.trending_down,
                         ),
                         SensorForcastCard(
-                            borderColor: Color(0xFFEC4899),
-                            title: 'Electrical Conductivity',
-                            currentValue: '24.5 mS/cm',
-                            forecastValue: '25.5 mS/cm',
-                            change: '+1.0 mS/cm',
-                            changeColor: Color(0xFF009966),
-                            trendIcon: Icons.trending_up
+                          borderColor: Color(0xFFEC4899),
+                          title: 'Electrical Conductivity',
+                          currentValue: '24.5 mS/cm',
+                          forecastValue: '25.5 mS/cm',
+                          change: '+1.0 mS/cm',
+                          changeColor: Color(0xFF009966),
+                          trendIcon: Icons.trending_up,
                         ),
-
                       ],
                     ),
 
                     /// Week
                     ListView(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
                       children: const [
+                        SizedBox(height: 5),
 
-                        SizedBox(height: 10),
-
                         SensorForcastCard(
-                            borderColor: Color(0xFFFF6900),
-                            title: 'Temperature',
-                            currentValue: '26.5°C',
-                            forecastValue: '28.5°C',
-                            change: '+2.0°C',
-                            changeColor: Color(0xFF009966),
-                            trendIcon: Icons.trending_up
+                          borderColor: Color(0xFFFF6900),
+                          title: 'Temperature',
+                          currentValue: '26.5°C',
+                          forecastValue: '28.5°C',
+                          change: '+2.0°C',
+                          changeColor: Color(0xFF009966),
+                          trendIcon: Icons.trending_up,
                         ),
                         SensorForcastCard(
-                            borderColor: Color(0xFFA855F7),
-                            title: 'pH Level',
-                            currentValue: '7.2',
-                            forecastValue: '7',
-                            change: '-0.2',
-                            changeColor: Color(0xFF155DFC),
-                            trendIcon:Icons.trending_down
+                          borderColor: Color(0xFFA855F7),
+                          title: 'pH Level',
+                          currentValue: '7.2',
+                          forecastValue: '7',
+                          change: '-0.2',
+                          changeColor: Color(0xFF155DFC),
+                          trendIcon: Icons.trending_down,
                         ),
                         SensorForcastCard(
-                            borderColor: Color(0xFF00B8DB),
-                            title: 'Dissolved Oxygen',
-                            currentValue: '6.8 mg/L',
-                            forecastValue: '7.2 mg/L',
-                            change: '+0.4 mg/L',
-                            changeColor: Color(0xFF009966),
-                            trendIcon: Icons.trending_up
+                          borderColor: Color(0xFF00B8DB),
+                          title: 'Dissolved Oxygen',
+                          currentValue: '6.8 mg/L',
+                          forecastValue: '7.2 mg/L',
+                          change: '+0.4 mg/L',
+                          changeColor: Color(0xFF009966),
+                          trendIcon: Icons.trending_up,
                         ),
                         SensorForcastCard(
-                            borderColor: Color(0xFF10B981),
-                            title: 'Ammonia',
-                            currentValue: '15 mg/L',
-                            forecastValue: '16 mg/L',
-                            change: '+1 mg/L',
-                            changeColor: Color(0xFF009966),
-                            trendIcon: Icons.trending_up
+                          borderColor: Color(0xFF10B981),
+                          title: 'Ammonia',
+                          currentValue: '15 mg/L',
+                          forecastValue: '16 mg/L',
+                          change: '+1 mg/L',
+                          changeColor: Color(0xFF009966),
+                          trendIcon: Icons.trending_up,
                         ),
                         SensorForcastCard(
-                            borderColor: Color(0xFFFEAAAB),
-                            title: 'Turbidity',
-                            currentValue: '12 NTU',
-                            forecastValue: '10 NTU',
-                            change: '-2.0 NTU',
-                            changeColor: Color(0xFF155DFC),
-                            trendIcon: Icons.trending_down
+                          borderColor: Color(0xFFFEAAAB),
+                          title: 'Turbidity',
+                          currentValue: '12 NTU',
+                          forecastValue: '10 NTU',
+                          change: '-2.0 NTU',
+                          changeColor: Color(0xFF155DFC),
+                          trendIcon: Icons.trending_down,
                         ),
                         SensorForcastCard(
-                            borderColor: Color(0xFFEC4899),
-                            title: 'Electrical Conductivity',
-                            currentValue: '24.5 mS/cm',
-                            forecastValue: '25.5 mS/cm',
-                            change: '+1.0 mS/cm',
-                            changeColor: Color(0xFF009966),
-                            trendIcon: Icons.trending_up
+                          borderColor: Color(0xFFEC4899),
+                          title: 'Electrical Conductivity',
+                          currentValue: '24.5 mS/cm',
+                          forecastValue: '25.5 mS/cm',
+                          change: '+1.0 mS/cm',
+                          changeColor: Color(0xFF009966),
+                          trendIcon: Icons.trending_up,
                         ),
-
                       ],
                     ),
 
                     /// Month
                     ListView(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
                       children: const [
+                        SizedBox(height: 5),
 
-                        SizedBox(height: 10),
-
                         SensorForcastCard(
-                            borderColor: Color(0xFFFF6900),
-                            title: 'Temperature',
-                            currentValue: '26.5°C',
-                            forecastValue: '28.5°C',
-                            change: '+2.0°C',
-                            changeColor: Color(0xFF009966),
-                            trendIcon: Icons.trending_up
+                          borderColor: Color(0xFFFF6900),
+                          title: 'Temperature',
+                          currentValue: '26.5°C',
+                          forecastValue: '28.5°C',
+                          change: '+2.0°C',
+                          changeColor: Color(0xFF009966),
+                          trendIcon: Icons.trending_up,
                         ),
                         SensorForcastCard(
-                            borderColor: Color(0xFFA855F7),
-                            title: 'pH Level',
-                            currentValue: '7.2',
-                            forecastValue: '7',
-                            change: '-0.2',
-                            changeColor: Color(0xFF155DFC),
-                            trendIcon:Icons.trending_down
+                          borderColor: Color(0xFFA855F7),
+                          title: 'pH Level',
+                          currentValue: '7.2',
+                          forecastValue: '7',
+                          change: '-0.2',
+                          changeColor: Color(0xFF155DFC),
+                          trendIcon: Icons.trending_down,
                         ),
                         SensorForcastCard(
-                            borderColor: Color(0xFF00B8DB),
-                            title: 'Dissolved Oxygen',
-                            currentValue: '6.8 mg/L',
-                            forecastValue: '7.2 mg/L',
-                            change: '+0.4 mg/L',
-                            changeColor: Color(0xFF009966),
-                            trendIcon: Icons.trending_up
+                          borderColor: Color(0xFF00B8DB),
+                          title: 'Dissolved Oxygen',
+                          currentValue: '6.8 mg/L',
+                          forecastValue: '7.2 mg/L',
+                          change: '+0.4 mg/L',
+                          changeColor: Color(0xFF009966),
+                          trendIcon: Icons.trending_up,
                         ),
                         SensorForcastCard(
-                            borderColor: Color(0xFF10B981),
-                            title: 'Ammonia',
-                            currentValue: '15 mg/L',
-                            forecastValue: '16 mg/L',
-                            change: '+1 mg/L',
-                            changeColor: Color(0xFF009966),
-                            trendIcon: Icons.trending_up
+                          borderColor: Color(0xFF10B981),
+                          title: 'Ammonia',
+                          currentValue: '15 mg/L',
+                          forecastValue: '16 mg/L',
+                          change: '+1 mg/L',
+                          changeColor: Color(0xFF009966),
+                          trendIcon: Icons.trending_up,
                         ),
                         SensorForcastCard(
-                            borderColor: Color(0xFFFEAAAB),
-                            title: 'Turbidity',
-                            currentValue: '12 NTU',
-                            forecastValue: '10 NTU',
-                            change: '-2.0 NTU',
-                            changeColor: Color(0xFF155DFC),
-                            trendIcon: Icons.trending_down
+                          borderColor: Color(0xFFFEAAAB),
+                          title: 'Turbidity',
+                          currentValue: '12 NTU',
+                          forecastValue: '10 NTU',
+                          change: '-2.0 NTU',
+                          changeColor: Color(0xFF155DFC),
+                          trendIcon: Icons.trending_down,
                         ),
                         SensorForcastCard(
-                            borderColor: Color(0xFFEC4899),
-                            title: 'Electrical Conductivity',
-                            currentValue: '24.5 mS/cm',
-                            forecastValue: '25.5 mS/cm',
-                            change: '+1.0 mS/cm',
-                            changeColor: Color(0xFF009966),
-                            trendIcon: Icons.trending_up
+                          borderColor: Color(0xFFEC4899),
+                          title: 'Electrical Conductivity',
+                          currentValue: '24.5 mS/cm',
+                          forecastValue: '25.5 mS/cm',
+                          change: '+1.0 mS/cm',
+                          changeColor: Color(0xFF009966),
+                          trendIcon: Icons.trending_up,
                         ),
-
                       ],
                     ),
                   ],
