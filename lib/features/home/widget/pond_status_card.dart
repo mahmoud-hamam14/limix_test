@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:limix_test/core/helpers/dimensions_helper.dart';
 
 class PondStatusCard extends StatelessWidget {
