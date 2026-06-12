@@ -20,7 +20,7 @@ class AiModelScreen extends StatelessWidget {
         child: CustomAppbar(
           title: "AI Models",
           subTitle: "Advanced fish farming intelligence",
-          showBackButton: true,
+          showBackButton: false,
           onTap: () {},
           iconBgColor: Colors.white.withOpacity(0.2),
           icon: Icons.psychology_outlined,

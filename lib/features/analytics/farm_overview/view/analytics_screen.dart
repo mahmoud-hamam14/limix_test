@@ -23,7 +23,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
         child: CustomAppbar(
           title: 'analytics',
           subTitle: "Performance insights",
-          showBackButton: true,
+          showBackButton: false,
           onTap: () {},
         ),
       ),

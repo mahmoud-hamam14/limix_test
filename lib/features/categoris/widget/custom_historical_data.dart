@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:limix_test/core/helpers/dimensions_helper.dart';
 
 class CustomHistoricalData extends StatelessWidget {
   const CustomHistoricalData({super.key});
@@ -8,44 +9,93 @@ class CustomHistoricalData extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(height: 23),
+        SizedBox(height: 20.height),
         Text(
           'Historical Data',
-          style: TextStyle(fontSize: 24, color: Color(0xFF224B8F)),
+          style: TextStyle(fontSize: 20.font, color: Color(0xFF224B8F)),
         ),
 
-        const SizedBox(height: 23),
+        SizedBox(height: 20.height),
 
         Container(
           width: double.infinity,
-          height: 50,
+          height: 45.height,
           decoration: BoxDecoration(
             color: Color(0xFFF3F4F6),
-            borderRadius: BorderRadius.circular(22),
+            borderRadius: BorderRadius.circular(20.radius),
           ),
           child: Row(
-            // mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              historicalDataCustomContainer(
-                title: '24 Hours',
-                textColor: Colors.white,
-                BgColor: Color(0xFF224B8F),
+              Container(
+                width: 100.width,
+                height: double.infinity,
+                margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                decoration: BoxDecoration(
+                  color: Color(0xFF224B8F),
+                  borderRadius: BorderRadius.circular(22),
+                ),
+                child: Center(
+                  child: Text(
+                    '24 Hours',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14.font,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
               ),
-              historicalDataCustomContainer(
-                title: 'Week',
-                textColor: Colors.black,
-                BgColor: Color(0xFFF3F4F6),
+
+              Spacer(),
+
+              Container(
+                width: 80.width,
+                height: double.infinity,
+                margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                decoration: BoxDecoration(
+                  color: Color(0xFFF3F4F6),
+                  borderRadius: BorderRadius.circular(22),
+                ),
+                child: Center(
+                  child: Text(
+                    '24 Hours',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14.font,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
               ),
-              historicalDataCustomContainer(
-                title: 'Month',
-                textColor: Colors.black,
-                BgColor: Color(0xFFF3F4F6),
+
+              Spacer(),
+
+              Container(
+                width: 80.width,
+                height: double.infinity,
+                margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                decoration: BoxDecoration(
+                  color: Color(0xFFF3F4F6),
+                  borderRadius: BorderRadius.circular(22),
+                ),
+                child: Center(
+                  child: Text(
+                    '24 Hours',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14.font,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
         ),
-        const SizedBox(height: 23),
+        SizedBox(height: 20.height),
       ],
     );
   }
@@ -66,7 +116,7 @@ class historicalDataCustomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 110,
+      width: 100.width,
       height: double.infinity,
       margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
       padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -79,8 +129,8 @@ class historicalDataCustomContainer extends StatelessWidget {
           title,
           style: TextStyle(
             color: textColor,
-            fontSize: 17,
-            fontWeight: FontWeight.bold,
+            fontSize: 14.font,
+            fontWeight: FontWeight.w500,
           ),
         ),
       ),

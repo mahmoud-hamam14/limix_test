@@ -24,7 +24,7 @@ class SettingsScreen extends StatelessWidget {
         child: CustomAppbar(
           title: "Settings",
           subTitle: "Manage your preferences",
-          showBackButton: true,
+          showBackButton: false,
           onTap: () {},
         ),
       ),

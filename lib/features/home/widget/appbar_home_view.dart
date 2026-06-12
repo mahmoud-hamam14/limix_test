@@ -9,6 +9,8 @@ class AppBarHomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      leading: null,
+
       flexibleSpace: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -70,37 +72,7 @@ class AppBarHomeView extends StatelessWidget {
             size: 20.radius,
           ),
         ),
-        Stack(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.notifications_none,
-                color: Colors.white,
-                size: 20.radius,
-              ),
-            ),
-            Positioned(
-              right: 5.radius,
-              top: 2.radius,
-              child: Container(
-                padding: EdgeInsets.all(4.radius),
-                decoration: const BoxDecoration(
-                  color: Colors.red,
-                  shape: BoxShape.circle,
-                ),
-                child: Text(
-                  '3',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 8.font,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
+
         SizedBox(width: 6.radius),
       ],
     );

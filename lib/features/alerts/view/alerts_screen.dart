@@ -23,7 +23,7 @@ class _AlertsScreenState extends State<AlertsScreen> {
         child: CustomAppbar(
           title: "Notifications",
           subTitle: "Stay updated on farm alerts",
-          showBackButton: true,
+          showBackButton: false,
           onTap: () {},
           backgroundColor: Color(0xff224B8F),
         ),

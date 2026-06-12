@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:limix_test/core/helpers/dimensions_helper.dart';
 
 class CustomCurrentReading extends StatelessWidget {
   const CustomCurrentReading({
@@ -27,12 +28,12 @@ class CustomCurrentReading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(25),
+      padding: EdgeInsets.all(25.radius),
       width: double.infinity,
-      height: 260,
+      // height: 250.height,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(25.radius),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.4),
@@ -47,10 +48,10 @@ class CustomCurrentReading extends StatelessWidget {
         children: [
           Row(
             children: [
-              const Text(
+              Text(
                 'Current Reading',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 18.font,
                   color: Color(0xFF4A5565),
                   // fontWeight: FontWeight.w600,
                 ),
@@ -59,20 +60,20 @@ class CustomCurrentReading extends StatelessWidget {
               const Spacer(),
 
               Container(
-                width: 90,
-                height: 35,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 6,
+                width: 100.width,
+                height: 30.height,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 12.width,
+                  vertical: 6.height,
                 ),
                 decoration: BoxDecoration(
                   color: iconBgColor, // Color(0xFFE0E7FF),
-                  borderRadius: BorderRadius.circular(18),
+                  borderRadius: BorderRadius.circular(18.radius),
                 ),
                 child: Row(
                   children: [
                     Icon(icon, color: iconColor),
-                    const SizedBox(width: 6),
+                    Spacer(),
                     Text(
                       rate,
                       style: TextStyle(color: rateColor, fontSize: 16),
@@ -83,7 +84,7 @@ class CustomCurrentReading extends StatelessWidget {
             ],
           ),
 
-          const SizedBox(height: 5),
+          SizedBox(height: 5.height),
 
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -92,25 +93,20 @@ class CustomCurrentReading extends StatelessWidget {
                 value,
                 style: TextStyle(
                   color: Color(0xFF224B8F),
-                  fontSize: 45,
-                  fontWeight: FontWeight.w400,
+                  fontSize: 26.font,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
-              const SizedBox(width: 4),
+              SizedBox(width: 4.width),
               Text(
                 unit,
-                style: TextStyle(
-                  color: Color(0xFF495464),
-                  fontSize: 25,
-                  // fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(color: Color(0xFF495464), fontSize: 20.font),
               ),
             ],
           ),
 
-          const SizedBox(height: 20),
-
-          const Divider(
+          Divider(
+            height: 35.height,
             color: Colors.grey,
             thickness: 0.7,
             indent: 5,
@@ -119,10 +115,10 @@ class CustomCurrentReading extends StatelessWidget {
 
           Row(
             children: [
-              const Text(
+              Text(
                 'Optimal Range',
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 16.font,
                   color: Color(0xFF4A5565),
                   // fontWeight: FontWeight.w600,
                 ),
@@ -130,10 +126,10 @@ class CustomCurrentReading extends StatelessWidget {
 
               const Spacer(),
 
-              const Text(
+              Text(
                 'Status',
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 16.font,
                   color: Color(0xFF4A5565),
                   // fontWeight: FontWeight.w600,
                 ),
@@ -141,20 +137,24 @@ class CustomCurrentReading extends StatelessWidget {
             ],
           ),
 
-          const SizedBox(height: 5),
+          SizedBox(height: 10.height),
 
           Row(
             children: [
               Text(
                 range,
-                style: TextStyle(fontSize: 22, color: Color(0xFF224B8F)),
+                style: TextStyle(
+                  fontSize: 18.font,
+                  color: Color(0xFF224B8F),
+                  fontWeight: FontWeight.w500,
+                ),
               ),
 
               const Spacer(),
 
               Text(
                 status,
-                style: TextStyle(fontSize: 21, color: Color(0xFF00A63E)),
+                style: TextStyle(fontSize: 18.font, color: Color(0xFF00A63E)),
               ),
             ],
           ),

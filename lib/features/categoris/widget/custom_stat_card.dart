@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:limix_test/core/helpers/dimensions_helper.dart';
 
 class CustomStatCard extends StatelessWidget {
   const CustomStatCard({
@@ -14,12 +15,12 @@ class CustomStatCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 160,
-      width: 110,
-      padding: const EdgeInsets.all(20),
+      height: 135.height,
+      width: 90.width,
+      padding: EdgeInsets.all(15.radius),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(25.radius),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.3),
@@ -36,27 +37,25 @@ class CustomStatCard extends StatelessWidget {
           Text(
             title,
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 16.font,
               fontWeight: FontWeight.w500,
 
-              // fontWeight: FontWeight.bold,
               color: Color(0xFF6A7282),
             ),
           ),
 
-          // SizedBox(height: 10),
           Text(
             value,
             style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.w600,
+              fontSize: 18.font,
+              fontWeight: FontWeight.w500,
               color: Color(0xFF224B8F),
             ),
           ),
           Text(
             unit,
             style: TextStyle(
-              fontSize: 16,
+              fontSize: 14.font,
               fontWeight: FontWeight.w500,
               color: Color(0xFF6A7282),
             ),

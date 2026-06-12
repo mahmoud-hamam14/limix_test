@@ -25,4 +25,6 @@ class WaterQualityModel {
       turbidity: (json['turbidity'] as num).toDouble(),
     );
   }
+
+  get salinity => null;
 }
